@@ -6,14 +6,15 @@
     </title> 
   </head> 
 <body>
+<a href="#" onclick="fbLogin()">log in</a>
 <div id="fb-root"></div>
 <script src="https://connect.facebook.net/en_US/all.js "></script>
 <script>
   // Additional JS functions here
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '430537743669484', // App ID
-      channelUrl : 'https://aqueous-earth-7421.herokuapp.com/',
+      appId      : '432328693495893', // App ID
+      channelUrl : 'localhost:3000',
       status     : true, // check login status
       cookie     : true, // enable cookies to allow the server to access the session
       xfbml      : true  // parse XFBML
@@ -26,6 +27,7 @@
       } else if (response.status === 'not_authorized') {
         // not_authorized
         fbLogin();
+        console.log('must log in');
       } else {
         // not_logged_in
         console.log('aaa');

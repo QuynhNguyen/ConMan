@@ -8,7 +8,7 @@
       %th Last Name
       %th Email
       %th Admin
-      %th More info
+      %th Edit
     %tbody
       - @users.each do |user|
         %tr
@@ -17,7 +17,8 @@
           %td= user.last_name
           %td= user.email
           %td= user.admin
-          %td= link_to "More about #{user.first_name}", user_path(user) 
+          %td= link_to "Edit", edit_user_path(user)
+         
 
 = link_to 'Add new user', new_user_path
 

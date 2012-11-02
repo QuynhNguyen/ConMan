@@ -1,5 +1,11 @@
-%h1 Create New User
-= form_tag users_path do
+-# edit.html.haml using partial
+
+%h1 Edit User
+
+= form_tag user_path(@user), :method => :put do
+
+  = label :user, :admin, 'Admin'
+  = text_field :user, 'admin'
 
   = label :user, :username, 'Username'
   = text_field :user, 'username'
@@ -25,4 +31,6 @@
   = label :user, :birthday, 'Birthday'
   = date_select :user, 'birthday'
 
-  = submit_tag 'Register User'
+  = submit_tag 'Update User Info'
+
+  = link_to 'Back to user list', users_path

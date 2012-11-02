@@ -827,3 +827,194 @@ Served asset /application.js - 304 Not Modified (42ms)
 
 Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-01 23:11:54 -0700
 Served asset /bootstrap.js - 304 Not Modified (11ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-01 23:17:42 -0700
+Connecting to database specified by database.yml
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 311ms (Views: 96.1ms | ActiveRecord: 24.2ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-01 23:17:43 -0700
+Served asset /bootstrap.css - 304 Not Modified (69ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-01 23:17:43 -0700
+Served asset /global.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-01 23:17:43 -0700
+Served asset /bootstrap.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-01 23:17:43 -0700
+Served asset /jquery.js - 304 Not Modified (17ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-01 23:17:43 -0700
+Served asset /bootstrap-responsive.css - 304 Not Modified (21ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-01 23:17:43 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-01 23:17:43 -0700
+Served asset /profiles.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-01 23:17:43 -0700
+Served asset /searches.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-01 23:17:43 -0700
+Served asset /statuses.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-01 23:17:43 -0700
+Served asset /application.js - 304 Not Modified (39ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-01 23:17:44 -0700
+Served asset /bootstrap.js - 304 Not Modified (7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2012-11-01 23:17:46 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.haml within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionController::RoutingError (No route matches {:action=>"show", :controller=>"users"}):
+  app/views/users/new.html.haml:2:in `_app_views_users_new_html_haml__955330483_86754160'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-01 23:21:41 -0700
+Connecting to database specified by database.yml
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 291ms (Views: 129.0ms | ActiveRecord: 29.1ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-01 23:21:43 -0700
+Served asset /bootstrap.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-01 23:21:43 -0700
+Served asset /global.css - 304 Not Modified (42ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-01 23:21:43 -0700
+Served asset /jquery.js - 304 Not Modified (22ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-01 23:21:43 -0700
+Served asset /bootstrap-responsive.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-01 23:21:43 -0700
+Served asset /bootstrap.js - 304 Not Modified (19ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-01 23:21:43 -0700
+Served asset /profiles.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-01 23:21:43 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-01 23:21:43 -0700
+Served asset /searches.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-01 23:21:43 -0700
+Served asset /statuses.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-01 23:21:43 -0700
+Served asset /application.js - 304 Not Modified (49ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-01 23:21:43 -0700
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2012-11-01 23:21:45 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.haml within layouts/application (11.6ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionController::RoutingError (No route matches {:action=>"show", :controller=>"users"}):
+  app/views/users/new.html.haml:2:in `_app_views_users_new_html_haml___313141425__616245248'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2012-11-01 23:24:11 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.haml within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 25ms
+
+ActionController::RoutingError (No route matches {:action=>"show", :controller=>"users"}):
+  app/views/users/new.html.haml:2:in `_app_views_users_new_html_haml___313141425__616245248'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2012-11-01 23:28:53 -0700
+Connecting to database specified by database.yml
+Processing by UsersController#new as HTML
+  Rendered users/new.html.haml within layouts/application (71.9ms)
+Completed 200 OK in 166ms (Views: 165.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-01 23:28:55 -0700
+Served asset /bootstrap.css - 304 Not Modified (22ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-01 23:28:55 -0700
+Served asset /bootstrap-responsive.css - 304 Not Modified (47ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-01 23:28:55 -0700
+Served asset /global.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-01 23:28:55 -0700
+Served asset /jquery.js - 304 Not Modified (20ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-01 23:28:55 -0700
+Served asset /bootstrap.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-01 23:28:55 -0700
+Served asset /profiles.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-01 23:28:55 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-01 23:28:55 -0700
+Served asset /searches.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-01 23:28:55 -0700
+Served asset /statuses.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-01 23:28:55 -0700
+Served asset /application.js - 304 Not Modified (40ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-01 23:28:55 -0700
+Served asset /bootstrap.js - 304 Not Modified (3ms)

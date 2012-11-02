@@ -14,14 +14,15 @@
 ActiveRecord::Schema.define(:version => 20121031025436) do
 
   create_table "users", :force => true do |t|
-    t.string  "first_name"
-    t.string  "last_name"
-    t.string  "address"
-    t.integer "phone"
-    t.integer "admin"
-    t.string  "email"
-    t.date    "birthday"
-    t.string  "nickname"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address"
+    t.string   "password"
+    t.integer  "phone"
+    t.integer  "admin"
+    t.string   "email"
+    t.datetime "birthday"
+    t.string   "nickname"
   end
 
 end

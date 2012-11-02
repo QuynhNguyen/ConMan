@@ -1,4 +1,8 @@
 ConMan::Application.routes.draw do
+  resources :statuses
+  resources :profiles
+  resources :searches
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

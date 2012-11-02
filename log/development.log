@@ -513,3 +513,317 @@ ActionView::Template::Error (undefined method `username' for #<User:0xac5c920>):
   Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
   Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.5ms)
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateStatuses (20121030022539)
+Migrating to CreateUsers (20121031025436)
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("statuses")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+Connecting to database specified by database.yml
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-01 23:07:32 -0700
+Connecting to database specified by database.yml
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.haml within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 203ms
+
+ActionView::Template::Error (undefined method `username' for #<User:0x8db22cc>):
+    11:       %tr More info
+    12:     %tbody
+    13:       - @users.each do |user|
+    14:         %td= user.username
+    15:         %td= user.first_name
+    16:         %td= user.last_name
+    17:         %td= user.email
+  app/views/users/index.html.haml:14:in `block in _app_views_users_index_html_haml__145933209__616162128'
+  app/views/users/index.html.haml:13:in `each'
+  app/views/users/index.html.haml:13:in `_app_views_users_index_html_haml__145933209__616162128'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-01 23:07:34 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" 
+  Rendered users/index.html.haml within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (undefined method `username' for #<User:0x8a5adb8>):
+    11:       %tr More info
+    12:     %tbody
+    13:       - @users.each do |user|
+    14:         %td= user.username
+    15:         %td= user.first_name
+    16:         %td= user.last_name
+    17:         %td= user.email
+  app/views/users/index.html.haml:14:in `block in _app_views_users_index_html_haml__145933209__616162128'
+  app/views/users/index.html.haml:13:in `each'
+  app/views/users/index.html.haml:13:in `_app_views_users_index_html_haml__145933209__616162128'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (23.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-01 23:07:36 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.haml within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `username' for #<User:0xb6730224>):
+    11:       %tr More info
+    12:     %tbody
+    13:       - @users.each do |user|
+    14:         %td= user.username
+    15:         %td= user.first_name
+    16:         %td= user.last_name
+    17:         %td= user.email
+  app/views/users/index.html.haml:14:in `block in _app_views_users_index_html_haml__145933209__616162128'
+  app/views/users/index.html.haml:13:in `each'
+  app/views/users/index.html.haml:13:in `_app_views_users_index_html_haml__145933209__616162128'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (23.1ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (39.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-01 23:07:37 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" 
+  Rendered users/index.html.haml within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `username' for #<User:0xb6c70194>):
+    11:       %tr More info
+    12:     %tbody
+    13:       - @users.each do |user|
+    14:         %td= user.username
+    15:         %td= user.first_name
+    16:         %td= user.last_name
+    17:         %td= user.email
+  app/views/users/index.html.haml:14:in `block in _app_views_users_index_html_haml__145933209__616162128'
+  app/views/users/index.html.haml:13:in `each'
+  app/views/users/index.html.haml:13:in `_app_views_users_index_html_haml__145933209__616162128'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-01 23:07:38 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.haml within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 13ms
+
+ActionView::Template::Error (undefined method `username' for #<User:0xb6739e64>):
+    11:       %tr More info
+    12:     %tbody
+    13:       - @users.each do |user|
+    14:         %td= user.username
+    15:         %td= user.first_name
+    16:         %td= user.last_name
+    17:         %td= user.email
+  app/views/users/index.html.haml:14:in `block in _app_views_users_index_html_haml__145933209__616162128'
+  app/views/users/index.html.haml:13:in `each'
+  app/views/users/index.html.haml:13:in `_app_views_users_index_html_haml__145933209__616162128'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-01 23:07:39 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" 
+  Rendered users/index.html.haml within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error (undefined method `username' for #<User:0x8cd0318>):
+    11:       %tr More info
+    12:     %tbody
+    13:       - @users.each do |user|
+    14:         %td= user.username
+    15:         %td= user.first_name
+    16:         %td= user.last_name
+    17:         %td= user.email
+  app/views/users/index.html.haml:14:in `block in _app_views_users_index_html_haml__145933209__616162128'
+  app/views/users/index.html.haml:13:in `each'
+  app/views/users/index.html.haml:13:in `_app_views_users_index_html_haml__145933209__616162128'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-01 23:07:39 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.haml within layouts/application (17.2ms)
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (undefined method `username' for #<User:0x86a1744>):
+    11:       %tr More info
+    12:     %tbody
+    13:       - @users.each do |user|
+    14:         %td= user.username
+    15:         %td= user.first_name
+    16:         %td= user.last_name
+    17:         %td= user.email
+  app/views/users/index.html.haml:14:in `block in _app_views_users_index_html_haml__145933209__616162128'
+  app/views/users/index.html.haml:13:in `each'
+  app/views/users/index.html.haml:13:in `_app_views_users_index_html_haml__145933209__616162128'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-01 23:07:42 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" 
+  Rendered users/index.html.haml within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 28ms
+
+ActionView::Template::Error (undefined method `username' for #<User:0xb6c13a0c>):
+    11:       %tr More info
+    12:     %tbody
+    13:       - @users.each do |user|
+    14:         %td= user.username
+    15:         %td= user.first_name
+    16:         %td= user.last_name
+    17:         %td= user.email
+  app/views/users/index.html.haml:14:in `block in _app_views_users_index_html_haml__145933209__616162128'
+  app/views/users/index.html.haml:13:in `each'
+  app/views/users/index.html.haml:13:in `_app_views_users_index_html_haml__145933209__616162128'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (23.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-01 23:08:58 -0700
+Connecting to database specified by database.yml
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.haml within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 188ms
+
+ActionView::Template::Error (undefined method `username' for #<User:0xa4ef494>):
+    11:       %tr More info
+    12:     %tbody
+    13:       - @users.each do |user|
+    14:         %td= user.username
+    15:         %td= user.first_name
+    16:         %td= user.last_name
+    17:         %td= user.email
+  app/views/users/index.html.haml:14:in `block in _app_views_users_index_html_haml___235306970__613549328'
+  app/views/users/index.html.haml:13:in `each'
+  app/views/users/index.html.haml:13:in `_app_views_users_index_html_haml___235306970__613549328'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-01 23:11:05 -0700
+Connecting to database specified by database.yml
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.haml within layouts/application (8.5ms)
+Completed 500 Internal Server Error in 185ms
+
+ActionView::Template::Error (undefined method `lint_to' for #<#<Class:0xb6a4129c>:0xb6a3fd84>):
+    16:         %td= user.last_name
+    17:         %td= user.email
+    18:         %td= user.admin
+    19:         %td= lint_to "More about #{user.first_name}", user_path(user) 
+    20: 
+    21: = link_to 'Add new user', new_user_path
+  app/views/users/index.html.haml:19:in `block in _app_views_users_index_html_haml___1066230380__614577668'
+  app/views/users/index.html.haml:13:in `each'
+  app/views/users/index.html.haml:13:in `_app_views_users_index_html_haml___1066230380__614577668'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-01 23:11:49 -0700
+Connecting to database specified by database.yml
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.haml within layouts/application (8.2ms)
+Compiled jquery.js  (5ms)  (pid 8751)
+Compiled jquery_ujs.js  (0ms)  (pid 8751)
+Compiled bootstrap.js  (0ms)  (pid 8751)
+Compiled bootstrap.js  (286ms)  (pid 8751)
+Compiled profiles.js  (339ms)  (pid 8751)
+Compiled searches.js  (312ms)  (pid 8751)
+Compiled statuses.js  (264ms)  (pid 8751)
+Compiled application.js  (1399ms)  (pid 8751)
+Completed 200 OK in 2079ms (Views: 1607.6ms | ActiveRecord: 97.8ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-01 23:11:53 -0700
+Compiled bootstrap.css  (2ms)  (pid 8751)
+Served asset /bootstrap.css - 304 Not Modified (53ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-01 23:11:53 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-01 23:11:53 -0700
+Served asset /bootstrap.js - 304 Not Modified (84ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-01 23:11:53 -0700
+Compiled bootstrap-responsive.css  (0ms)  (pid 8751)
+Served asset /bootstrap-responsive.css - 304 Not Modified (32ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-01 23:11:53 -0700
+Compiled global.css  (104ms)  (pid 8751)
+Served asset /global.css - 304 Not Modified (153ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-01 23:11:53 -0700
+Served asset /jquery.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-01 23:11:53 -0700
+Served asset /profiles.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-01 23:11:53 -0700
+Served asset /searches.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-01 23:11:53 -0700
+Served asset /statuses.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-01 23:11:53 -0700
+Served asset /application.js - 304 Not Modified (42ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-01 23:11:54 -0700
+Served asset /bootstrap.js - 304 Not Modified (11ms)

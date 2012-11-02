@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20121031025436) do
     t.integer  "admin"
     t.string   "email"
     t.datetime "birthday"
-    t.string   "username"
+    t.string   "nickname"
   end
 
 end

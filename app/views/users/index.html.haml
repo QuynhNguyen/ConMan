@@ -11,12 +11,12 @@
       %tr More info
     %tbody
       - @users.each do |user|
-        %td= user.username
+        %td= user.nickname
         %td= user.first_name
         %td= user.last_name
         %td= user.email
         %td= user.admin
-        %td= lint_to "More about #{user.first_name}", user_path(user) 
+        %td= link_to "More about #{user.first_name}", user_path(user) 
 
 = link_to 'Add new user', new_user_path
 

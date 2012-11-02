@@ -1,7 +1,7 @@
 %h1 Create New User
 = form_tag users_path do
 
-  = label :user, :username, 'Username'
+  = label :user, :username, 'username'
   = text_field :user, 'username'
 
   = label :user, :password, 'Password'
@@ -24,3 +24,5 @@
 
   = label :user, :birthday, 'Birthday'
   = date_select :user, 'birthday'
+
+  = submit_tag 'Register User'

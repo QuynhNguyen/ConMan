@@ -4,6 +4,7 @@ ConMan::Application.routes.draw do
   resources :searches
   resources :users
   resources :log_in
+  resources :password_recovery
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

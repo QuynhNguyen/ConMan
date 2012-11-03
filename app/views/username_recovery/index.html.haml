@@ -1,0 +1,9 @@
+%h1 Username Recovery
+= form_tag do
+
+  = label :user, :email, 'Email'
+  = email_field :user, 'email', :size => 50, :maxlength => 20, :autofocus => true
+
+
+  = button_to 'Send to My Email'
+

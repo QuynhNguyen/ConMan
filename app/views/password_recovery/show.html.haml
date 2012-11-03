@@ -5,6 +5,6 @@
 Your password is: 
 = form_tag user_path(@user), :method => :put do
 
-  = label :user, :password, :password
+  = text_field :user, :password
 
   = link_to "Back to password recovery", password_recovery_index_path

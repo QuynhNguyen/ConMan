@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     # default: render 'new' template
   end
 
-  def create
+ def create
     @user = User.create!(params[:user])
     flash[:notice] = "#{@user.username} was successfully created."
     redirect_to users_path

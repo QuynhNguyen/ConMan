@@ -2038,3 +2038,4 @@ Migrating to CreateUsers (20121031025436)
   [1m[35m (0.0ms)[0m  PRAGMA index_list("statuses")
   [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml

@@ -1,0 +1,14 @@
+%h2 Inbox
+
+%table#private_messages
+	%thead
+		%tr
+			%th From
+			%th Subject
+			%th Date
+	%tbody
+		- @pm.each do |private_message|
+			%tr
+				%td= private_message.from
+				%td= link_to "#{private_message.subject}"
+				%td= private_message.date

@@ -7,6 +7,9 @@ ConMan::Application.routes.draw do
   resources :password_recovery
   resources :username_recovery
   resources :private_messages
+
+  match 'FB/test', :to => redirect('/facebook_sdk.html')
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

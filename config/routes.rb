@@ -1,4 +1,5 @@
 ConMan::Application.routes.draw do
+  match 'FB/test', :to => redirect('/facebook_sdk.html')
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

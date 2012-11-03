@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :address, :phone, :admin, :email, :birthday, :username, :password
-  has_many :private_messages
   before_save :default_values
   
   def default_values

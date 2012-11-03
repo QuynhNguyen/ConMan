@@ -3,22 +3,25 @@
 %table#users
   %thead
     %tr
+      %th ID
       %th Username
       %th First Name
       %th Last Name
       %th Email
       %th Admin
       %th Edit
+      %th Delete
     %tbody
       - @users.each do |user|
         %tr
+          %td= user.id
           %td= user.username
           %td= user.first_name
           %td= user.last_name
           %td= user.email
           %td= user.admin
           %td= link_to "Edit", edit_user_path(user)
-         
+          %td= link_to "Delete", user_path(user), :method => :delete, :confirm => 'Are you sure?'
 
 = link_to 'Add new user', new_user_path
 

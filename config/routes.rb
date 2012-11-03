@@ -3,6 +3,7 @@ ConMan::Application.routes.draw do
   resources :profiles
   resources :searches
   resources :users
+  resources :log_in
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

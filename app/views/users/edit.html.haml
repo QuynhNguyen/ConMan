@@ -8,28 +8,32 @@
   = select :user, :admin, [["User", 0],["Admin", 1]]
 
   = label :user, :username, 'Username'
-  = text_field :user, 'username'
+  = text_field :user, 'username', :size => 50, :maxlength => 20, :autofocus => true
 
   = label :user, :password, 'Password'
-  = password_field :user, 'password'
+  = password_field :user, 'password', :size => 50, :maxlength => 20
+
+  = label :user, :password, 'Re-type Password'
+  = password_field :user, 'password_confirmation', :size => 50, :maxlength => 20
 
   = label :user, :first_name, 'First Name'
-  = text_field :user, 'first_name'
+  = text_field :user, 'first_name', :size => 50, :maxlength => 50
 
   = label :user, :last_name, 'Last Name'
-  = text_field :user, 'last_name'
+  = text_field :user, 'last_name', :size => 50, :maxlength => 50
 
   = label :user, :email, 'Email'
-  = text_field :user, 'email'
+  = email_field :user, 'email', :size => 50, :maxlength => 50
 
   = label :user, :address, 'Address'
-  = text_field :user, 'address'
+  = text_field :user, 'address', :size => 100, :maxlength => 100
 
   = label :user, :phone, 'Phone'
-  = text_field :user, 'phone'
+  = text_field :user, 'phone', :size => 15, :maxlength => 15
 
   = label :user, :birthday, 'Birthday'
-  = date_select :user, 'birthday'
+  = date_select :user, 'birthday',{:start_year => 1926,
+:end_year => Time.now.year}
 
   = submit_tag 'Update User Info'
 

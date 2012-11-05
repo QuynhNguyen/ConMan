@@ -1,5 +1,4 @@
-%h1 Password Recovery
-%b= flash[:notice]
+%h1 Username Recovery
 = form_tag do
 
   = label :user, :email, 'Email'

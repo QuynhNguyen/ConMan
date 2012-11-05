@@ -15,6 +15,7 @@ class PasswordRecoveryController < ApplicationController
       session[:id] = @user.id
       redirect_to password_recovery_path(@user)
     else
+      flash[:notice]= "Email is not in our database" 
       redirect_to password_recovery_index_path
     end
   end

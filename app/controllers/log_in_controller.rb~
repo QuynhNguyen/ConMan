@@ -10,8 +10,7 @@ class LogInController < ApplicationController
       session[:id] = @user.id
       redirect_to profiles_path
     else
-      flash[:notice] = "Username or Password don't match with our database"
-      redirect_to log_in_index_path
+      redirect_to users_path
     end
   end
 

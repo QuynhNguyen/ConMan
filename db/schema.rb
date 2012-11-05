@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121031025436) do
+ActiveRecord::Schema.define(:version => 20121103045152) do
+
+  create_table "private_messages", :force => true do |t|
+    t.integer  "user"
+    t.integer  "from"
+    t.string   "message"
+    t.datetime "date"
+    t.boolean  "read"
+    t.string   "subject"
+  end
 
   create_table "statuses", :force => true do |t|
     t.string   "message"

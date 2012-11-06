@@ -1,0 +1,10 @@
+-# in app/views/password_recovery/show.html.haml
+
+%h2 Username Recovery
+
+Your username is: 
+= form_tag user_path(@user), :method => :put do
+
+  = text_field :user, :username
+
+  = link_to "Back to username recovery", username_recovery_index_path

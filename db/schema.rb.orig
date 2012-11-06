@@ -11,7 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c33b887935279fb0fc9817f2e64c68d15ee2eb1e
 ActiveRecord::Schema.define(:version => 20121031025436) do
 
   create_table "statuses", :force => true do |t|
@@ -19,7 +22,11 @@ ActiveRecord::Schema.define(:version => 20121031025436) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+<<<<<<< HEAD
+  
+=======
 
+>>>>>>> c33b887935279fb0fc9817f2e64c68d15ee2eb1e
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "password"
@@ -30,8 +37,12 @@ ActiveRecord::Schema.define(:version => 20121031025436) do
     t.integer  "phone"
     t.integer  "admin"
     t.datetime "birthday"
+<<<<<<< HEAD
+    t.string   "nickname"
+=======
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+>>>>>>> c33b887935279fb0fc9817f2e64c68d15ee2eb1e
   end
 
 end

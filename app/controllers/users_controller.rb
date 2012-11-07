@@ -16,9 +16,14 @@ class UsersController < ApplicationController
   end
 
  def create
-    @user = User.create!(params[:user])
-    flash[:notice] = "#{@user.username} was successfully created."
-    redirect_to users_path
+    if params[:user][:password] == params[:user][:repassword]
+      @user.create!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email], :birthday => params[:user][:birthday], :password => params[:user][:password])
+      flash[:notice] = "#{@user.username} was successfully created."
+      redirect_to users_path
+    else
+      flash[:notice] = "Password and confirm password doesn't match."
+      redirect_to new_user_path
+    end
   end
 
   def edit
@@ -27,31 +32,19 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find params[:id]
-    @user.update_attributes!(params[:user])
-    flash[:notice] = "#{@user.username} was successfully updated."
-    redirect_to users_path
-    #username   = params[:users][:username]
-    #admin      = params[:users][:admin]
-    #first_name = params[:users][:first_name]
-    #last_name  = params[:users][:last_name]
-    #phone      = params[:users][:phone]
-    #address    = params[:users][:address]
-    #email      = params[:users][:email]
-    #birthday   = params[:users][:birthday]
-    #password   = params[:users][:password]
-    #repassword = params[:users][:password_confirmation]
-    #if password == repassword
-      #@user = User.find params[:id]
-      #if password == ""
-      #  @user.update!(username, first_name, last_name, address, phone, admin, email, birthday)
-      #else
-        #@user.update_attributes!(:params[:users])
-      #end
-      #flash[:notice] = "#{@user.username} was successfully updated."
-      #redirect_to users_path
-    #else
-      #flash[:notice] = "Password and confirm password doesn't match."
-    #end
+    if params[:user][:password] == params[:user][:repassword]
+      @user = User.find params[:id]
+      if params[:user][:password] == ""
+        @user.update_attributes!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email], :birthday => params[:user][:birthday])
+      else
+        @user.update_attributes!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email], :birthday => params[:user][:birthday], :password => params[:user][:password])
+      end
+      flash[:notice] = "#{@user.username} was successfully updated."
+      redirect_to users_path
+    else
+      flash[:notice] = "Password and confirm password doesn't match."
+      redirect_to edit_user_path(params[:id])
+    end
   end
 
   def destroy

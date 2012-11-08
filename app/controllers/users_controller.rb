@@ -17,7 +17,8 @@ class UsersController < ApplicationController
 
  def create
     if params[:user][:password] == params[:user][:repassword]
-      @user.create!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email], :birthday => params[:user][:birthday], :password => params[:user][:password])
+        @user = User.create!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email], :birthday => params[:user][:birthday], :password => params[:user][:password])
+    
       flash[:notice] = "#{@user.username} was successfully created."
       redirect_to users_path
     else

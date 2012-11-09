@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :address, :phone, :admin, :email, :birthday, :username, :password
+  attr_accessible :first_name, :last_name, :address, :phone, :admin, :email, :birthday, :username, :password, :show_fn, :show_ln, :show_addr, :show_phone, :show_email, :show_birthday
   before_save :default_values
 
   def default_values
@@ -12,6 +12,14 @@ class User < ActiveRecord::Base
     self.admin ||= 0
     self.phone ||= 1234567890
     self.birthday ||= 11/11/11
+
+#all shows are defualt to true
+    self.show_fn ||= 1
+    self.show_ln ||= 1
+    self.show_addr ||= 1
+    self.show_phone ||= 1
+    self.show_email ||= 1
+    self.show_birthday ||= 1
     
   end
 

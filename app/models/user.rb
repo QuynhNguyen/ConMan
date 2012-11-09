@@ -37,4 +37,14 @@ class User < ActiveRecord::Base
 
 # validates_confirmation_of :password
 
+  def self.authenticate(username,pass)
+    user=find(:first, :conditions=>["username = ?", username])
+    return nil if user.nil?
+    return user if User.encrypt(pass)==user.password
+    nil
+  end
+
+  def self.encrypt(pass)
+    Digest::SHA512.hexdigest("KelYos"+pass+"YosKel")
+  end
 end

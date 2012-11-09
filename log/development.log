@@ -5222,3 +5222,667 @@ Connecting to database specified by database.yml
   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
   [1m[35mSQL (0.5ms)[0m  INSERT INTO "private_messages" ("date", "from", "message", "read", "subject", "user") VALUES (?, ?, ?, ?, ?, ?)  [["date", Fri, 09 Nov 2012 06:55:15 UTC +00:00], ["from", 2], ["message", "user2 message1"], ["read", false], ["subject", "subject2"], ["user", 1]]
   [1m[36m (43.2ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-08 23:48:30 -0800
+
+SyntaxError (/home/ubuntu/work/ConMan/app/models/user.rb:50: syntax error, unexpected $end, expecting keyword_end):
+  app/controllers/users_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-08 23:49:21 -0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  Rendered users/index.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 35ms (Views: 12.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-08 23:49:21 -0800
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-08 23:49:22 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:22 -0800
+Served asset /jquery.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:22 -0800
+Served asset /log_in.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:22 -0800
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-08 23:49:22 -0800
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:22 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:22 -0800
+Served asset /private_messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:22 -0800
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:22 -0800
+Served asset /searches.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:22 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:22 -0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:22 -0800
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2012-11-08 23:49:34 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.haml within layouts/application (12.1ms)
+Completed 200 OK in 32ms (Views: 31.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-08 23:49:34 -0800
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:34 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:34 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-08 23:49:34 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-08 23:49:34 -0800
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:34 -0800
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:34 -0800
+Served asset /log_in.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:34 -0800
+Served asset /private_messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:34 -0800
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:34 -0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:34 -0800
+Served asset /searches.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:34 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:34 -0800
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-11-08 23:49:51 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AsTsO1G/HbcJYqZxFvWZF5pWb1XQx23UANgcKaftFgY=", "user"=>{"username"=>"kelvin", "password"=>"[FILTERED]", "repassword"=>"[FILTERED]", "first_name"=>"kelvin", "last_name"=>"kelvin", "email"=>"kelvin@kelvin.com", "address"=>"kelvin", "phone"=>"12345", "birthday(1i)"=>"2012", "birthday(2i)"=>"11", "birthday(3i)"=>"9"}, "commit"=>"Register User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `password`
+  [1m[35mSQL (37.1ms)[0m  INSERT INTO "users" ("address", "admin", "birthday", "created_at", "email", "first_name", "last_name", "password", "phone", "show_addr", "show_birthday", "show_email", "show_fn", "show_ln", "show_phone", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "kelvin"], ["admin", 0], ["birthday", 0], ["created_at", Fri, 09 Nov 2012 07:49:51 UTC +00:00], ["email", "kelvin@kelvin.com"], ["first_name", "kelvin"], ["last_name", "kelvin"], ["password", "acebfe7ecd0c6eba468c05b06e727c3ea933e766c9adc66a0d2bd10824d962efd171e9c7e7206415806e5478f92befbd9f8fe8b829f1bafe6e4abe17915b3d10"], ["phone", 12345], ["show_addr", 1], ["show_birthday", 1], ["show_email", 1], ["show_fn", 1], ["show_ln", 1], ["show_phone", 1], ["updated_at", Fri, 09 Nov 2012 07:49:51 UTC +00:00], ["username", "kelvin"]]
+  [1m[36m (81.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 145ms (ActiveRecord: 118.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-08 23:49:51 -0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" 
+  Rendered users/index.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-08 23:49:51 -0800
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:51 -0800
+Served asset /jquery.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-08 23:49:51 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:51 -0800
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-08 23:49:51 -0800
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:51 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:51 -0800
+Served asset /log_in.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:51 -0800
+Served asset /private_messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:51 -0800
+Served asset /searches.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:51 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:51 -0800
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:52 -0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:52 -0800
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-08 23:49:56 -0800
+Processing by LogInController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered log_in/index.html.haml within layouts/application (31.9ms)
+Completed 200 OK in 50ms (Views: 48.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-08 23:49:57 -0800
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:57 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:57 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:57 -0800
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-08 23:49:57 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-08 23:49:57 -0800
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:57 -0800
+Served asset /log_in.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:57 -0800
+Served asset /private_messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:57 -0800
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:57 -0800
+Served asset /searches.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:57 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:57 -0800
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-08 23:49:57 -0800
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started POST "/log_in" for 127.0.0.1 at 2012-11-08 23:49:59 -0800
+Processing by LogInController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AsTsO1G/HbcJYqZxFvWZF5pWb1XQx23UANgcKaftFgY=", "user"=>{"username"=>"kelvin", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'kelvin' AND "users"."password" = '2b1980a947f0aeab6d5072b1fa89a9763150cab14bcbe59f05ff194d5b0e09eab551b3682d6d15a7b6662b160b839088140e40b06ae58ad74343a953393d8dba' LIMIT 1
+Redirected to http://localhost:3000/log_in
+Completed 302 Found in 114ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/log_in" for 127.0.0.1 at 2012-11-08 23:50:00 -0800
+Processing by LogInController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered log_in/index.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-08 23:50:00 -0800
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-08 23:50:00 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-08 23:50:00 -0800
+Served asset /jquery.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-08 23:50:00 -0800
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-08 23:50:00 -0800
+Served asset /bootstrap.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-08 23:50:00 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-08 23:50:00 -0800
+Served asset /log_in.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-08 23:50:00 -0800
+Served asset /private_messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-08 23:50:00 -0800
+Served asset /searches.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-08 23:50:00 -0800
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-08 23:50:00 -0800
+Served asset /application.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-08 23:50:00 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-08 23:50:00 -0800
+Served asset /bootstrap.js - 304 Not Modified (6ms)
+
+
+Started GET "/log_in" for 127.0.0.1 at 2012-11-08 23:51:46 -0800
+Processing by LogInController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" 
+  Rendered log_in/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 88ms (Views: 44.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-08 23:51:46 -0800
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-08 23:51:46 -0800
+Served asset /jquery.js - 304 Not Modified (23ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-08 23:51:47 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-08 23:51:47 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-08 23:51:47 -0800
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-08 23:51:47 -0800
+Served asset /log_in.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-08 23:51:47 -0800
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-08 23:51:47 -0800
+Served asset /private_messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-08 23:51:47 -0800
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-08 23:51:47 -0800
+Served asset /searches.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-08 23:51:47 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-08 23:51:47 -0800
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-08 23:51:47 -0800
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started POST "/log_in" for 127.0.0.1 at 2012-11-08 23:51:50 -0800
+Processing by LogInController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AsTsO1G/HbcJYqZxFvWZF5pWb1XQx23UANgcKaftFgY=", "user"=>{"username"=>"kelvin", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+Completed 500 Internal Server Error in 2ms
+
+NameError (undefined local variable or method `pararms' for #<LogInController:0x9bcd53c>):
+  app/controllers/log_in_controller.rb:9:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.0ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.3ms)
+
+
+Started GET "/log_in" for 127.0.0.1 at 2012-11-08 23:52:27 -0800
+Processing by LogInController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered log_in/index.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 29ms (Views: 9.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-08 23:52:27 -0800
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-08 23:52:27 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-08 23:52:27 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-08 23:52:27 -0800
+Served asset /log_in.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-08 23:52:27 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-08 23:52:27 -0800
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-08 23:52:27 -0800
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-08 23:52:27 -0800
+Served asset /private_messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-08 23:52:27 -0800
+Served asset /profiles.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-08 23:52:27 -0800
+Served asset /searches.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-08 23:52:27 -0800
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-08 23:52:27 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-08 23:52:28 -0800
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started POST "/log_in" for 127.0.0.1 at 2012-11-08 23:52:30 -0800
+Processing by LogInController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AsTsO1G/HbcJYqZxFvWZF5pWb1XQx23UANgcKaftFgY=", "user"=>{"username"=>"kelvin", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username = 'kelvin') LIMIT 1
+Completed 500 Internal Server Error in 16ms
+
+NameError (undefined local variable or method `u' for #<Class:0xb703abd0>):
+  app/models/user.rb:43:in `authenticate'
+  app/controllers/log_in_controller.rb:9:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-08 23:53:11 -0800
+Processing by LogInController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered log_in/index.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 63ms (Views: 23.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-08 23:53:12 -0800
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:12 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:12 -0800
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-08 23:53:12 -0800
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:12 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:12 -0800
+Served asset /log_in.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-08 23:53:12 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:12 -0800
+Served asset /searches.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:12 -0800
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:12 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:12 -0800
+Served asset /private_messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:12 -0800
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:12 -0800
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started POST "/log_in" for 127.0.0.1 at 2012-11-08 23:53:15 -0800
+Processing by LogInController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AsTsO1G/HbcJYqZxFvWZF5pWb1XQx23UANgcKaftFgY=", "user"=>{"username"=>"kelvin", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username = 'kelvin') LIMIT 1
+Redirected to http://localhost:3000/profiles
+Completed 302 Found in 10ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2012-11-08 23:53:15 -0800
+Processing by ProfilesController#index as HTML
+  Rendered profiles/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 20ms (Views: 19.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-08 23:53:15 -0800
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-08 23:53:15 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-08 23:53:15 -0800
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:15 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:15 -0800
+Served asset /jquery.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:15 -0800
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:15 -0800
+Served asset /log_in.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:15 -0800
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:15 -0800
+Served asset /private_messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:15 -0800
+Served asset /searches.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:15 -0800
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:15 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:15 -0800
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started POST "/log_in" for 127.0.0.1 at 2012-11-08 23:53:18 -0800
+Processing by LogInController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AsTsO1G/HbcJYqZxFvWZF5pWb1XQx23UANgcKaftFgY=", "user"=>{"username"=>"kelvin", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username = 'kelvin') LIMIT 1[0m
+Redirected to http://localhost:3000/log_in
+Completed 302 Found in 12ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/log_in" for 127.0.0.1 at 2012-11-08 23:53:18 -0800
+Processing by LogInController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" 
+  Rendered log_in/index.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-08 23:53:18 -0800
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:18 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:18 -0800
+Served asset /jquery.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-08 23:53:19 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-08 23:53:19 -0800
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:19 -0800
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:19 -0800
+Served asset /log_in.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:19 -0800
+Served asset /private_messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:19 -0800
+Served asset /searches.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:19 -0800
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:19 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:19 -0800
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-08 23:53:19 -0800
+Served asset /bootstrap.js - 304 Not Modified (0ms)

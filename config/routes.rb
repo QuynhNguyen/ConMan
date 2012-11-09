@@ -1,4 +1,6 @@
+
 ConMan::Application.routes.draw do
+  root :to => 'log_in#index'
   resources :statuses
   resources :profiles
   resources :searches
@@ -9,7 +11,7 @@ ConMan::Application.routes.draw do
   resources :private_messages
 
   match 'FB/test', :to => redirect('/facebook_sdk.html')
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

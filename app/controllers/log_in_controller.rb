@@ -5,7 +5,7 @@ class LogInController < ApplicationController
   end
 
   def create
-    @user = User.where(params[:user]).first
+    @user = User.where(:username => params[:user][:username], :password => Digest::SHA512.hexdigest(params[:user][:password])).first
     if @user
       session[:id] = @user.id
       redirect_to profiles_path

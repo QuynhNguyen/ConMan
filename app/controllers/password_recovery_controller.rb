@@ -13,6 +13,9 @@ class PasswordRecoveryController < ApplicationController
     @user = User.where(params[:user]).first
     if @user
       api = GoogleVoice::Api.new('project.conman@gmail.com','Raging_Flamingos')
+      newpass = @user.random_password
+      @user.password = newpass
+      @user.save
       message = "Project ConMan. PLEASE DON'T REPLY THIS SMS. Your password is " + @user.password
       api.sms(@user.phone.to_s(), message)
       flash[:notice] = "We have sent the password to your phone"

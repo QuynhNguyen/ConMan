@@ -12,7 +12,6 @@ class UsernameRecoveryController < ApplicationController
   def create
     @user = User.where(params[:user]).first
     if @user
-      session[:id] = @user.id
       api = GoogleVoice::Api.new('project.conman@gmail.com','Raging_Flamingos')
       message = "Project ConMan. PLEASE DON'T REPLY THIS SMS. Your username is " + @user.username
       api.sms(@user.phone.to_s(), message)

@@ -34,7 +34,6 @@ class UsersController < ApplicationController
   def update
     @user = User.find params[:id]
     if params[:user][:password] == params[:user][:repassword]
-      @user = User.find params[:id]
       if params[:user][:password] == ""
         @user.update_attributes!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email], :birthday => params[:user][:birthday])
       else

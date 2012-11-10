@@ -11,6 +11,7 @@ end
 
 module ConMan
   class Application < Rails::Application
+    Koala.http_service.http_options = {:ssl => { :verify_mode => OpenSSL::SSL::VERIFY_NONE }}
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

@@ -1,0 +1,6 @@
+
+
+= form_tag( controller: :twitter, action: :tweet) do
+	= label_tag(:tweet,"tweet message")
+	= text_field_tag(:message)
+	= submit_tag 'tweet'

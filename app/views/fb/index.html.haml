@@ -1,0 +1,19 @@
+%a{ href: '#', onclick: "fbLogin()"} this login works
+= button_to 'log_in_fb', {controller: :fb, action: :login}, remote: true
+
+= button_to 'request permission', controller: :fb, action: :get_permission
+
+= button_to 'get_friend_list', {controller: :fb, action: :get_friend_list}, method: :get
+
+= link_to 'feed', controller: :fb, action: :get_newsfeed
+
+= form_tag( controller: :fb, action: :update_status) do
+	= label_tag(:fb_status,"update fb status")
+	= text_field_tag(:fb_status_message)
+	= submit_tag 'update status'
+
+= if(@friends_images) 
+	= @friends_images.each do |image|
+		= image_tag(src=image)
+
+= image_tag "http://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Colouring_pencils.jpg/300px-Colouring_pencils.jpg"

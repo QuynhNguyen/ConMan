@@ -7,7 +7,7 @@ class FbController < ApplicationController
 
 		if (params[:code])
 			access_token = @oauth.get_access_token(params[:code])
-			flash[:notice] = access_token
+			#flash[:notice] = access_token
 			session[:fb_access_token] = access_token
 		end
 		if (session[:fb_friend_list])
@@ -16,7 +16,7 @@ class FbController < ApplicationController
 			session[:fb_friend_list].each do |id|
 				@friends_images << @graph.get_picture(id).to_s
 			end
-			flash[:notice] = @friends_images
+			#flash[:notice] = @friends_images
 			 
 		end
 	end
@@ -46,7 +46,7 @@ class FbController < ApplicationController
 			id_list << f["id"]
 		end
 		session[:fb_friend_list] = id_list
-		redirect_to action: :index
+		redirect_to controller: :profiles, action: :index
 	end
 
 	def get_newsfeed

@@ -14,8 +14,7 @@
 	= text_field_tag(:fb_status_message)
 	= submit_tag 'update status'
 
-= if(@friends_images) 
-	= @friends_images.each do |image|
-		= image_tag(image.to_s)
+- if (@friends_images)
+	- @friends_images.each do |image|
+		= image_tag (image)
 
-= image_tag "http://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Colouring_pencils.jpg/300px-Colouring_pencils.jpg"

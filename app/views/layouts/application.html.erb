@@ -75,6 +75,12 @@
               <li><a href="#">Link</a></li>
               <li><a href="#">Link</a></li>
               <li><a href="#">Link</a></li>
+              <li class="nav-header">Friends</li>
+              <% if @fb_friend_images %>
+                <% @fb_friend_images.each do |photo| %>
+                  <li><%= image_tag(photo) %></li>
+                <% end %>
+              <% end %>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->

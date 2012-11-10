@@ -16,6 +16,15 @@ ConMan::Application.routes.draw do
   post 'fb/logout'
   post 'fb/update_status'
 
+  get 'profiles/index'
+  get 'profiles/get_fb_friend_list'
+  get 'profiles/get_fb_newsfeed'
+  post 'profiles/get_fb_permission'
+  post 'profiles/fb_login'
+  post 'profiles/fb_logout'
+  post 'profiles/update_fb_status'
+
+
   get 'twitter/index'
   post 'twitter/tweet'
   post 'twitter/login'

@@ -1,3 +1,4 @@
+'require twitter'
 class TwitterController < ApplicationController
 	def index
 		@nothing = 'lala'
@@ -5,17 +6,19 @@ class TwitterController < ApplicationController
 
 	def tweet
 		#Thread.new{@client.update(params[:message]}
-		@client = Twitter::Client.new(oauth_token: '900537602-pEPUPkjMQ298wriHHuruUzGnWmWImuVteUxoCcU', oauth_token_secret:'F0UiEJC1aBC5w3xxzy7dgg3jwbiIWEhiLMsA9uh0s')
-		@client.update(params[:message])
+		#@client = Twitter::Client.new(oauth_token: session[:twitter_oauth_token], oauth_token_secret: session[:twitter_oauth_verifier])
+		@client = Twitter::Client.new(oauth_token: '900537602-pEPUPkjMQ298wriHHuruUzGnWmWImuVteUxoCcU',oauth_token_secret: 'F0UiEJC1aBC5w3xxzy7dgg3jwbiIWEhiLMsA9uh0s')
+		#@client.update(params[:message])
 		flash[:notice] = 'Tweet has been posted!'
+		Twitter.update(params[:message])
 		redirect_to action: :index
 	end
 
 	def login
-		oauth_callback = "http:localhost:3000/twitter/index"
-		oauth_consumer_key = 'H3fbcU3ByJj1lT81ctvISg'
-		oauth_nonce = 'random'
-		oauth_siganture = 
-
+		session[:twitter_oauth_token] = params[:oauth_token]
+		session[:twitter_oauth_verifier] = params[:oauth_verifier]
+		flash[:notice] = params[:oauth_token]
+		flash[:notice] << params[:oauth_verifier]
+		redirect_to action: :index
 	end
 end

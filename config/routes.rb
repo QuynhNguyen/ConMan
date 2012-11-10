@@ -13,11 +13,14 @@ ConMan::Application.routes.draw do
   get 'fb/get_newsfeed'
   post 'fb/get_permission'
   post 'fb/login'
+  post 'fb/logout'
   post 'fb/update_status'
 
   get 'twitter/index'
   post 'twitter/tweet'
   post 'twitter/login'
+  post 'auth/twitter'
+  match 'auth/twitter/callback' => 'twitter#login'
 
 
 

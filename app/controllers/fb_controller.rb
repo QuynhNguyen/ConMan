@@ -14,9 +14,9 @@ class FbController < ApplicationController
 			@graph = Koala::Facebook::API.new(session[:fb_access_token])
 			@friends_images = []
 			session[:fb_friend_list].each do |id|
-				@friends_images << @graph.get_picture(id)
+				@friends_images << @graph.get_picture(id).to_s
 			end
-			#flash[:notice] = @friends_images
+			flash[:notice] = @friends_images
 			 
 		end
 	end
@@ -43,7 +43,6 @@ class FbController < ApplicationController
 		friends = @graph.get_connections("me", "friends")
 		id_list = []
 		friends.each do |f|
-			#f[:image]= @graph.get_picture(f["id"])
 			id_list << f["id"]
 		end
 		session[:fb_friend_list] = id_list
@@ -68,6 +67,8 @@ class FbController < ApplicationController
 	end
 
 	def logout
+		reset_session
+		redirect_to action: :index
 	end
 
 	def inbox

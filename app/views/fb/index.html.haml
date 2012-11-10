@@ -7,6 +7,8 @@
 
 = link_to 'feed', controller: :fb, action: :get_newsfeed
 
+= link_to 'logout', {controller: :fb, action: :logout}, method: :post
+
 = form_tag( controller: :fb, action: :update_status) do
 	= label_tag(:fb_status,"update fb status")
 	= text_field_tag(:fb_status_message)
@@ -14,6 +16,6 @@
 
 = if(@friends_images) 
 	= @friends_images.each do |image|
-		= image_tag(src=image)
+		= image_tag(image.to_s)
 
 = image_tag "http://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Colouring_pencils.jpg/300px-Colouring_pencils.jpg"

@@ -8,9 +8,9 @@ class User < ActiveRecord::Base
     self.last_name ||= ""
     self.address ||= ""
     self.email ||= ""
-    self.password ||= "ConMan"
+    self.password ||= ""
     self.admin ||= 0
-    self.phone ||= 1234567890
+    self.phone ||= ""
     self.birthday ||= 11/11/11
 
 #all shows are defualt to true
@@ -23,15 +23,15 @@ class User < ActiveRecord::Base
     
   end
 
-# validates_length_of :username, :within => 1..20
-# validates_length_of :password, :within => 1..20
+# validates_length_of :username, :within => 6..20
+# validates_length_of :password, :within => 6..20
 # validates_length_of :first_name, :within => 1..50
 # validates_length_of :last_name, :within => 1..50
-# validates_length_of :email, :within => 1..50
+# validates_length_of :email, :within => 4..50
 # validates_length_of :address, :within => 1..100
 # validates_length_of :phone, :within => 1..15
 
-# validates_presence_of :username, :password, :first_name, :last_name, :email
+# validates_presence_of :username, :password, :first_name, :last_name, :email, :phone
 
 # validates_uniqueness_of :username, :email
 

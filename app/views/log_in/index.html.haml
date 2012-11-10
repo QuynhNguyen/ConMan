@@ -1,6 +1,6 @@
 %h1 Log In
 = form_tag log_in_index_path do
-  %b= flash[:notice]
+  %p{:style => "color:red"}= flash[:notice]
   = label :user, :username, 'Username'
   = text_field :user, 'username', :size => 50, :maxlength => 20, :autofocus => true
 

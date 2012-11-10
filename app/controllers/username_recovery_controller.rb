@@ -13,7 +13,11 @@ class UsernameRecoveryController < ApplicationController
     @user = User.where(params[:user]).first
     if @user
       session[:id] = @user.id
-      redirect_to username_recovery_path(@user)
+      api = GoogleVoice::Api.new('project.conman@gmail.com','Raging_Flamingos')
+      message = "Project ConMan. PLEASE DON'T REPLY THIS SMS. Your username is " + @user.username
+      api.sms(@user.phone.to_s(), message)
+      flash[:notice] = "We have sent the username to your phone"
+      redirect_to username_recovery_index_path
     else
       flash[:notice]= "Email is not in our database"
       redirect_to username_recovery_index_path

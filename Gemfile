@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'sqlite3'
 gem 'rails', '3.2.8'
+gem 'googlevoiceapi'
 
 #haml
 gem 'haml-rails', '>= 0.3.4', :group => :development

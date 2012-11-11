@@ -39,7 +39,7 @@
           <a class="brand" href="#">ConMan</a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link"><%= @User.username %></a>
+              Logged in as <a href="#" class="navbar-link">Test</a>
             </p>
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
@@ -81,6 +81,7 @@
         </div><!--/span-->
 
          <div class="span9">
+          <%= flash[:notice] %>
           <%= yield %>
          </div>
 

@@ -7,12 +7,11 @@
       <img class="media-object" src="http://www.yaf.org/uploadedImages/Blogs/UCSD%20Logo.jpg" width="80" height="80">
     </a>
     <div class="media-body">
-      <h4 class="media-heading">Welcome back, <%= @User.first_name %> </h4>
+      <h4 class="media-heading"><button class="btn btn-success">Add Me as Friend</button> </h4>
         <% @User.attributes.each do |name, value| %>
           <p><b><%= name %>: </b> <%= value %>
         <% end %>
         <p><b>Status: </b> Hey there man
-        <p><button class="btn btn-primary">Update Status Message</button>
     </div>
 
   </li>

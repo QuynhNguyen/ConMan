@@ -62,7 +62,7 @@
             <ul class="nav nav-list">
               <li class="nav-header">Preferences</li>
               <li><a href="/private_messages">Inbox</a></li>
-              <li><a href="/profiles/1">Profile</a></li>
+              <li><a href=<%= "/profiles/#{session[:id]}" %>>Profile</a></li>
               <li><a href="/statuses/1">Status</a></li>
               <li class="nav-header">Sidebar</li>
               <li><a href="#">Link</a></li>
@@ -80,7 +80,6 @@
         </div><!--/span-->
 
          <div class="span9">
-          <%= flash[:notice]%>
           <%= yield %>
          </div>
 

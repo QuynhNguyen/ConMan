@@ -1,0 +1,10 @@
+%h1 Contact Us
+%b= flash[:notice]
+= form_tag do
+  = label :mail, :email, 'Email'
+  = email_field :mail, 'email', :size => 50, :maxlength => 20, :autofocus => true
+  
+  = label :mail, :comment, 'Comment'
+  = text_area :mail, 'comment'
+  
+  = button_to 'Send'

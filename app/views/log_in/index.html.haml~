@@ -1,0 +1,10 @@
+%h1 Log In
+= form_tag do
+  %b= flash[:notice]
+  = label :user, :username, 'Username'
+  = text_field :user, 'username', :size => 50, :maxlength => 20, :autofocus => true
+
+  =label :user, :password, 'Password'
+  =password_field :user, 'password', :size => 50, :maxlength => 20
+
+  = button_to 'Log In'

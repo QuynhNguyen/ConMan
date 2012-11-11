@@ -5,12 +5,14 @@ class LogInController < ApplicationController
   end
 
   def create
-    @user = User.where(params[:user]).first
+#@user = User.where(:username => params[:user][:username], :password => Digest::SHA512.hexdigest(params[:user][:password])).first
+    @user = User.authenticate(params[:user][:username], params[:user][:password])
     if @user
       session[:id] = @user.id
       redirect_to profiles_path
     else
-      redirect_to users_path
+      flash[:notice] = "Username or Password don't match with our database"
+      redirect_to log_in_index_path
     end
   end
 

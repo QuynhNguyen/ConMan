@@ -1,4 +1,5 @@
 %h1 Create New User
+=flash[:notice]
 = form_tag users_path do
 
   = label :user, :username, 'Username'
@@ -6,6 +7,9 @@
 
   = label :user, :password, 'Password'
   = password_field :user, 'password'
+
+  = label :user, :repassword, 'Re-type password'
+  = password_field :user, 'repassword'
 
   = label :user, :first_name, 'First Name'
   = text_field :user, 'first_name'

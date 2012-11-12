@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def login
     puts "------------session[:user]---------#{session[:user].blank?}"
-    render "log_in/index" if session[:user].blank?
+    render "log_in/index" if session[:id].blank?
   end
 
   def render_404

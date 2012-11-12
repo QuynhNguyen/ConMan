@@ -10,7 +10,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer   :phone
       t.integer   :admin
       t.datetime  :birthday
-
+      
       t.integer   :show_fn
       t.integer   :show_ln
       t.integer   :show_addr

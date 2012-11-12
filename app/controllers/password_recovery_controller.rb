@@ -1,4 +1,7 @@
 class PasswordRecoveryController < ApplicationController
+
+  skip_filter :login
+
   def show
     id = params[:id] # retrieve movie ID from URI route
     @user = User.find(id) # look up movie by unique ID

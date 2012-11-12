@@ -1,13 +1,8 @@
 ConMan::Application.routes.draw do
-  resources :statuses
-  resources :profiles
-  resources :searches
-  resources :users
-  resources :log_in
-  resources :password_recovery
-  resources :username_recovery
-  resources :private_messages
 
+  match 'settings' => 'settings#index'
+  post 'settings/get_fb_permission'
+ 
   get 'fb/index'
   get 'fb/get_friend_list'
   get 'fb/get_newsfeed'
@@ -16,14 +11,15 @@ ConMan::Application.routes.draw do
   post 'fb/logout'
   post 'fb/update_status'
 
-  get 'profiles/index'
   get 'profiles/get_fb_friend_list'
   get 'profiles/get_fb_newsfeed'
   post 'profiles/get_fb_permission'
   post 'profiles/fb_login'
   post 'profiles/fb_logout'
   post 'profiles/update_fb_status'
-
+  match 'profiles' => 'profiles#index'
+  get 'profiles/fb_wall'
+  post 'profiles/post_fb_wall'
 
   get 'twitter/index'
   post 'twitter/tweet'
@@ -31,8 +27,14 @@ ConMan::Application.routes.draw do
   post 'auth/twitter'
   match 'auth/twitter/callback' => 'twitter#login'
 
-
-
+  resources :statuses
+  resources :profiles
+  resources :searches
+  resources :users
+  resources :log_in
+  resources :password_recovery
+  resources :username_recovery
+  resources :private_messages
 
 
   # The priority is based upon order of creation:

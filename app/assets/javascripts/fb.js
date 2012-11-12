@@ -1,3 +1,6 @@
+
+
+
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '430537743669484', // App ID
@@ -22,6 +25,31 @@
       }
      });
   };
+
+function getPosition(e){
+  var evt =e || window.event;
+  var position = [];
+  if (e.pageX && e.pageY){
+    position.x =e.pageX;
+    position.y =e.pageY;
+  }
+  else{
+    position.x = e.clientX + document.body.scrollLeft+ document.documentElement.scrollLeft;
+    position.y =  e.clientY + document.body.scrollTop+ document.documentElement.scrollTop;
+  }
+  return position;
+}
+
+  function fbMenu(e){
+    var evt =e || window.event;
+    fb = document.getElementById("fb");
+    pos = getPosition(evt);
+    fb.style.left = pos.x;
+    fb.style.top = posy.y;
+    link = document.getElementById("fb_message");
+    //link.href = ;
+    return false;
+  }
 
   function testAPI() {
     console.log('Welcome!  Fetching your information.... ');

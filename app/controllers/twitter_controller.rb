@@ -17,8 +17,12 @@ class TwitterController < ApplicationController
 	def login
 		session[:twitter_oauth_token] = params[:oauth_token]
 		session[:twitter_oauth_verifier] = params[:oauth_verifier]
-		flash[:notice] = params[:oauth_token]
-		flash[:notice] << params[:oauth_verifier]
+		notice = []
+		notice << "oauth_token"
+		notice << params[:oauth_token]
+		notice << "verifier"
+		notice << params[:oauth_verifier]
+		flash[:notice] = notice
 		redirect_to action: :index
 	end
 end

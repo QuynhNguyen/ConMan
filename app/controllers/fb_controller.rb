@@ -3,22 +3,7 @@
 class FbController < ApplicationController
 	#before_filter :login
 	def index
-		@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/fb/index')
-
-		if (params[:code])
-			access_token = @oauth.get_access_token(params[:code])
-			#flash[:notice] = access_token
-			session[:fb_access_token] = access_token
-		end
-		if (session[:fb_friend_list])
-			@graph = Koala::Facebook::API.new(session[:fb_access_token])
-			@friends_images = []
-			session[:fb_friend_list].each do |id|
-				@friends_images << @graph.get_picture(id).to_s
-			end
-			#flash[:notice] = @friends_images
-			 
-		end
+		
 	end
 
 	def get_permission

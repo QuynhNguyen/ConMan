@@ -1,20 +1,6 @@
-%a{ href: '#', onclick: "fbLogin()"} this login works
-= button_to 'log_in_fb', {controller: :fb, action: :login}, remote: true
+- if (!session[:fb_access_token])
+	%p Please log into facebook
+	= button_to 'Facebook Login', "javascript:fbLogin()"
 
-= button_to 'request permission', controller: :fb, action: :get_permission
-
-= button_to 'get_friend_list', {controller: :fb, action: :get_friend_list}, method: :get
-
-= link_to 'feed', controller: :fb, action: :get_newsfeed
-
-= link_to 'logout', {controller: :fb, action: :logout}, method: :post
-
-= form_tag( controller: :fb, action: :update_status) do
-	= label_tag(:fb_status,"update fb status")
-	= text_field_tag(:fb_status_message)
-	= submit_tag 'update status'
-
-- if (@friends_images)
-	- @friends_images.each do |image|
-		= image_tag (image)
+= button_to 'request permission', controller: :profiles, action: :get_permission
 

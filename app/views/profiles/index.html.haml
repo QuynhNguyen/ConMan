@@ -1,20 +1,12 @@
-%a{ href: '#', onclick: "fbLogin()"} this login works
-= button_to 'log_in_fb', {controller: :profiles, action: :fb_login}, remote: true
-
-= button_to 'request permission', controller: :profiles, action: :get_fb_permission
-
-= button_to 'get_friend_list', {controller: :profiles, action: :get_fb_friend_list}, method: :get
-
-= link_to 'feed', controller: :profiles, action: :get_fb_newsfeed
-
-= link_to 'logout', {controller: :profiles, action: :fb_logout}, method: :post
+= button_to 'get friendlist', {controller: :profiles, action: :get_fb_friend_list}, method: :get
 
 = form_tag( controller: :profiles, action: :update_fb_status) do
 	= label_tag(:fb_status,"update fb status")
 	= text_field_tag(:fb_status_message)
 	= submit_tag 'update status'
 
-- if (@friends_images)
-	- @friends_images.each do |image|
-		= image_tag (image)
+- if (@fb_friend_images)
+	- @fb_friend_images.each do |image|
+		= image_tag(image)
 
+#fb= link_to "send message", action: :fb_wall, friend_id: :minhta 

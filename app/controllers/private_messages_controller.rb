@@ -12,8 +12,8 @@ class PrivateMessagesController < ApplicationController
 	end
 	
 	def create
-		@user = User.where("username = '#{params[:private_message][:user]}'").first
-		#@private_message = PrivateMessage.create(message: params[:private_message][:message], subject: params[:private_message][:subject], user: @user.id)
+		@user_id = User.where("username = '#{params[:private_message][:user]}'").first.id
+		@private_message = PrivateMessage.create(message: params[:private_message][:message], date: DateTime.now, subject: params[:private_message][:subject], from: @user_id)
 		flash[:notice] = "Message was successfully sent!"
 		redirect_to private_messages_path
 	end

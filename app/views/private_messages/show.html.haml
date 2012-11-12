@@ -9,7 +9,7 @@
 			%th Message
 	%tbody
 		%td
-			%td= @private_message.from
+			%td= User.find(@private_message.from).username
 			%td= @private_message.subject
 			%td= @private_message.date
 			%td= @private_message.message

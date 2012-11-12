@@ -1,5 +1,7 @@
 class LogInController < ApplicationController
 
+  skip_filter :login
+
   def index
     @Users = User.all
   end

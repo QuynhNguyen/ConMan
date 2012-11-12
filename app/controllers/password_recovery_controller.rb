@@ -18,8 +18,8 @@ class PasswordRecoveryController < ApplicationController
       @user.password = User.encrypt(newpass)
       @user.save
       api.sms(@user.phone.to_s(), message)
-      flash[:notice] = "We have sent the password to your phone"
-      redirect_to password_recovery_index_path
+      flash[:notice] = "We have sent the password to your phone. Please change your password ASAP."
+      redirect_to log_in_index_path
     else
       flash[:notice]= "Email is not in our database" 
       redirect_to password_recovery_index_path

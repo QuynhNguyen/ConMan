@@ -1,4 +1,4 @@
-%h1 User
+%h1 Users
 =flash[:notice]
 %table#users
   %thead
@@ -24,3 +24,5 @@
           %td= link_to "Delete", user_path(user), :method => :delete, :confirm => 'Are you sure?'
 
 = link_to 'Add new user', new_user_path
+%br
+= link_to 'Go to your profile', profile_path(session[:id])

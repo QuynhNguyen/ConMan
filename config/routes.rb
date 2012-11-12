@@ -1,7 +1,6 @@
 
 ConMan::Application.routes.draw do
   root :to => 'log_in#index'
-  resources :statuses
   resources :searches
   resources :users
   resources :log_in
@@ -12,6 +11,8 @@ ConMan::Application.routes.draw do
   resources :contact_us
 
   match 'profiles/:id' => 'profiles#index'
+  match 'status' => 'statuses#index', :via => :get
+  match 'status' => 'statuses#update', :via => :put
   match 'FB/test', :to => redirect('/facebook_sdk.html')
   
   # The priority is based upon order of creation:

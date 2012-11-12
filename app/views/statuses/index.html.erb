@@ -1,4 +1,6 @@
-<h1>Update statuses</h1>
+<h3>Update status</h3>
 
-<%= @user.statuses.last.message %>
-
+<form method="PUT">
+	<input type="text" name="message" value="<%= @user.status.message %>" /> <br/>
+	<input type="submit" class="btn btn-primary" value="update!" />
+</form>

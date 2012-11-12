@@ -11,7 +11,7 @@
         <% @User.attributes.each do |name, value| %>
           <p><b><%= name %>: </b> <%= value %>
         <% end %>
-        <p><b>Status: </b> Hey there man
+        <p><b>Status: </b> <%= @User.status.message %>
     </div>
 
   </li>

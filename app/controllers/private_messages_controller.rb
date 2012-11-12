@@ -1,4 +1,6 @@
 class PrivateMessagesController < ApplicationController
+	after_filter :mark_read, :only => [:show]
+
 	def index
 		@pm = PrivateMessage.all
 	end
@@ -32,4 +34,9 @@ class PrivateMessagesController < ApplicationController
 		flash[:notice] = "Message deleted."
 		redirect_to private_messages_path
 	end
+
+	protected
+		def mark_read
+			@private_message.update_attribute(:read, true)
+		end
 end

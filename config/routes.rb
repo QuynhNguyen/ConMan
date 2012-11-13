@@ -26,6 +26,7 @@ ConMan::Application.routes.draw do
   post 'twitter/login'
   post 'auth/twitter'
   match 'auth/twitter/callback' => 'twitter#login'
+  get 'twitter/twitter2'
 
   resources :statuses
   resources :profiles

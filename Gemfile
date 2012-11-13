@@ -32,6 +32,7 @@ gem 'jquery-rails'
 gem "koala"
 gem "twitter"
 gem 'omniauth-twitter'
+gem 'twitter_oauth'
 
 
 # To use ActiveModel has_secure_password

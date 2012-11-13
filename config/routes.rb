@@ -1,7 +1,35 @@
 
 ConMan::Application.routes.draw do
 
+
   root :to => 'frontpage#index'
+
+  match 'settings' => 'settings#index'
+  post 'settings/get_fb_permission'
+ 
+  get 'fb/index'
+  get 'fb/get_friend_list'
+  get 'fb/get_newsfeed'
+  post 'fb/get_permission'
+  post 'fb/login'
+  post 'fb/logout'
+  post 'fb/update_status'
+
+  get 'profiles/get_fb_friend_list'
+  get 'profiles/get_fb_newsfeed'
+  post 'profiles/get_fb_permission'
+  post 'profiles/fb_login'
+  post 'profiles/fb_logout'
+  post 'profiles/update_fb_status'
+  match 'profiles' => 'profiles#index'
+  get 'profiles/fb_wall'
+  post 'profiles/post_fb_wall'
+
+  get 'twitter/index'
+  post 'twitter/tweet'
+  post 'twitter/twitter_login'
+  get 'twitter/twitter_authorize'
+
   resources :statuses
   resources :searches
   resources :users

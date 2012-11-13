@@ -1,0 +1,9 @@
+%h2 Sign in the following profiles
+
+= link_to image_tag("fb_logo.png", :size => "64x64"), "javascript:fbLogin()"
+= link_to image_tag("twitter_logo.png", :size => "64x64"), {controller: :twitter, action: :twitter_login}, method: :post
+
+- if(cookies)
+	= button_to 'Request Facebook permission', controller: :settings, action: :get_fb_permission
+
+

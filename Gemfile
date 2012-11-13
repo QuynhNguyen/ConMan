@@ -33,6 +33,13 @@ group :assets do
 end
 
 gem 'jquery-rails'
+<<<<<<< HEAD
+=======
+gem "koala"
+gem 'twitter_oauth'
+
+
+>>>>>>> e09c9cbb81a6174a2ec1428be790359d1a88f816
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -47,4 +54,3 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
-gem 'haml-rails', '>= 0.3.4', :group => :development

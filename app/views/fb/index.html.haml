@@ -1,0 +1,6 @@
+- if (!session[:fb_access_token])
+	%p Please log into facebook
+	= button_to 'Facebook Login', "javascript:fbLogin()"
+
+= button_to 'request permission', controller: :profiles, action: :get_permission
+

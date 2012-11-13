@@ -1,0 +1,14 @@
+= button_to 'get friendlist', {controller: :profiles, action: :get_fb_friend_list}, method: :get
+
+= form_tag( controller: :profiles, action: :update_fb_status) do
+	= label_tag(:fb_status,"update fb status")
+	= text_field_tag(:fb_status_message)
+	= submit_tag 'update status'
+
+- if (@fb_friend_images)
+	- index = 0
+	- @fb_friend_images.each do |image|
+		= link_to image_tag(image), controller: :profiles, action: :fb_wall, friend_id: "#{@fb_friends_list[index]}"
+		-index+=1
+
+= link_to "send message", action: :fb_wall, friend_id: :minhta 

@@ -1,0 +1,16 @@
+%h2 Message
+
+%table#private_messages
+	%thead
+		%tr
+			%th From
+			%th Subject
+			%th Date
+			%th Message
+	%tbody
+		%td
+			%td= User.find(@private_message.from).username
+			%td= @private_message.subject
+			%td= @private_message.date
+			%td= @private_message.message
+= link_to "Back to Inbox", private_messages_path

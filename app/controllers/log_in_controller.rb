@@ -16,7 +16,6 @@ class LogInController < ApplicationController
       else
         redirect_to "/profiles/#{@user.id}"
       end
->>>>>>> b9950502cc02b61520ecc4e17a9a487a06c985a3
     else
       flash[:notice] = "Username or Password don't match with our database"
       redirect_to log_in_index_path

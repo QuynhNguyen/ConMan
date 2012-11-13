@@ -22,7 +22,7 @@ class UsersController < ApplicationController
         @user = User.create!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email], :birthday => params[:user][:birthday], :password => User.encrypt(params[:user][:password]))
     
       flash[:notice] = "#{@user.username} was successfully created."
-      redirect_to profile_path(@user.id)
+      redirect_to "/profiles/#{@user.id}"
     else
       flash[:notice] = "Password and confirm password doesn't match."
       redirect_to new_user_path

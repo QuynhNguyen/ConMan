@@ -66326,3 +66326,2135 @@ ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"
 
 
   Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-12 22:44:29 -0800
+Processing by FrontpageController#index as HTML
+  Rendered frontpage/index.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 31ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-12 22:44:29 -0800
+Served asset /bootstrap.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-12 22:44:29 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-12 22:44:29 -0800
+Served asset /global.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:29 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:29 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:29 -0800
+Served asset /bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fb.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:29 -0800
+Served asset /fb.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/fb_all.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:29 -0800
+Served asset /fb_all.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:29 -0800
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:29 -0800
+Served asset /log_in.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:29 -0800
+Served asset /private_messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:29 -0800
+Served asset /searches.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:29 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:29 -0800
+Served asset /twitter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:29 -0800
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:44:30 -0800
+Served asset /ico/favicon.ico - 404 Not Found (7ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/log_in" for 127.0.0.1 at 2012-11-12 22:44:35 -0800
+Processing by LogInController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered log_in/index.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 104ms (Views: 21.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-12 22:44:35 -0800
+Served asset /bootstrap.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-12 22:44:35 -0800
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:35 -0800
+Served asset /bootstrap.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:35 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:35 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-12 22:44:35 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fb.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:35 -0800
+Served asset /fb.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fb_all.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:35 -0800
+Served asset /fb_all.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:35 -0800
+Served asset /private_messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:35 -0800
+Served asset /log_in.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:36 -0800
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:36 -0800
+Served asset /searches.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:36 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:36 -0800
+Served asset /twitter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:36 -0800
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:44:36 -0800
+Served asset /ico/favicon.ico - 404 Not Found (8ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:44:38 -0800
+Served asset /ico/favicon.ico - 404 Not Found (9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:44:38 -0800
+Served asset /ico/favicon.ico - 404 Not Found (8ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2012-11-12 22:44:41 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.haml within layouts/application (75.9ms)
+Completed 200 OK in 94ms (Views: 93.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-12 22:44:41 -0800
+Served asset /global.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-12 22:44:41 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-12 22:44:41 -0800
+Served asset /bootstrap.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:41 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:41 -0800
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:41 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fb.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:41 -0800
+Served asset /fb.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/fb_all.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:41 -0800
+Served asset /fb_all.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:41 -0800
+Served asset /log_in.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:41 -0800
+Served asset /private_messages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:41 -0800
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:41 -0800
+Served asset /searches.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:41 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:41 -0800
+Served asset /twitter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-12 22:44:41 -0800
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:44:42 -0800
+Served asset /ico/favicon.ico - 404 Not Found (9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-11-12 22:45:03 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zXcHxEuhrsVMOe1BiwNq8b69HQ51Z3S8uqP+r1fvkHc=", "user"=>{"username"=>"qu", "password"=>"[FILTERED]", "repassword"=>"[FILTERED]", "first_name"=>"sdasd", "last_name"=>"asd", "email"=>"quynhnguyen003@gmail.com", "address"=>"asdsad", "phone"=>"8582018027", "birthday(1i)"=>"2012", "birthday(2i)"=>"11", "birthday(3i)"=>"13"}, "commit"=>"Register User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+Binary data inserted for `string` type on column `password`
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "users" ("address", "admin", "birthday", "created_at", "email", "first_name", "last_name", "password", "phone", "show_addr", "show_birthday", "show_email", "show_fn", "show_ln", "show_phone", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "asdsad"], ["admin", 0], ["birthday", 0], ["created_at", Tue, 13 Nov 2012 06:45:04 UTC +00:00], ["email", "quynhnguyen003@gmail.com"], ["first_name", "sdasd"], ["last_name", "asd"], ["password", "7e7a31dbcba40b04ebeabeed551e6ea2b1b31ca59c630d292cb29c28263c6c0b03cc321c5beb271bff6dd11eca4225eb6b0bac83712e54ad8a7affb068f6f425"], ["phone", 8582018027], ["show_addr", 1], ["show_birthday", 1], ["show_email", 1], ["show_fn", 1], ["show_ln", 1], ["show_phone", 1], ["updated_at", Tue, 13 Nov 2012 06:45:04 UTC +00:00], ["username", "qu"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Completed 500 Internal Server Error in 15ms
+
+NoMethodError (undefined method `profile_path' for #<UsersController:0x007faceda7cc08>):
+  app/controllers/users_controller.rb:25:in `create'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.2ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:48:03 -0800
+Served asset /ico/favicon.ico - 404 Not Found (8ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:48:03 -0800
+Served asset /ico/favicon.ico - 404 Not Found (8ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:48:03 -0800
+Served asset /ico/favicon.ico - 404 Not Found (58ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:48:03 -0800
+Served asset /ico/favicon.ico - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:48:03 -0800
+Served asset /ico/favicon.ico - 404 Not Found (9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2012-11-12 22:48:06 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.haml within layouts/application (8.9ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-12 22:48:07 -0800
+Served asset /bootstrap.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-12 22:48:07 -0800
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-12 22:48:07 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-12 22:48:07 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-12 22:48:07 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-12 22:48:07 -0800
+Served asset /bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fb.js?body=1" for 127.0.0.1 at 2012-11-12 22:48:07 -0800
+Served asset /fb.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fb_all.js?body=1" for 127.0.0.1 at 2012-11-12 22:48:07 -0800
+Served asset /fb_all.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-12 22:48:07 -0800
+Served asset /log_in.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-12 22:48:07 -0800
+Served asset /private_messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-12 22:48:07 -0800
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-12 22:48:07 -0800
+Served asset /searches.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-12 22:48:07 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter.js?body=1" for 127.0.0.1 at 2012-11-12 22:48:07 -0800
+Served asset /twitter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-12 22:48:07 -0800
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:48:08 -0800
+Served asset /ico/favicon.ico - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (59.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-11-12 22:48:20 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zXcHxEuhrsVMOe1BiwNq8b69HQ51Z3S8uqP+r1fvkHc=", "user"=>{"username"=>"q3", "password"=>"[FILTERED]", "repassword"=>"[FILTERED]", "first_name"=>"q3", "last_name"=>"q3", "email"=>"q3", "address"=>"q3", "phone"=>"q3", "birthday(1i)"=>"2012", "birthday(2i)"=>"11", "birthday(3i)"=>"13"}, "commit"=>"Register User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `password`
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("address", "admin", "birthday", "created_at", "email", "first_name", "last_name", "password", "phone", "show_addr", "show_birthday", "show_email", "show_fn", "show_ln", "show_phone", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "q3"], ["admin", 0], ["birthday", 0], ["created_at", Tue, 13 Nov 2012 06:48:20 UTC +00:00], ["email", "q3"], ["first_name", "q3"], ["last_name", "q3"], ["password", "124d3bd3eceda9f8c54b615e053ced52b9a1dccfa21c97b2558ff46658adcb44a6a9b5bfa488d31a7efe174068347c63aae163c314604d99b3fae465cc9905da"], ["phone", 0], ["show_addr", 1], ["show_birthday", 1], ["show_email", 1], ["show_fn", 1], ["show_ln", 1], ["show_phone", 1], ["updated_at", Tue, 13 Nov 2012 06:48:20 UTC +00:00], ["username", "q3"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 53ms
+
+NoMethodError (undefined method `redirect' for #<UsersController:0x007facecc66830>):
+  app/controllers/users_controller.rb:25:in `create'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.4ms)
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.4ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:48:34 -0800
+Served asset /ico/favicon.ico - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:48:35 -0800
+Served asset /ico/favicon.ico - 404 Not Found (8ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:48:35 -0800
+Served asset /ico/favicon.ico - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:48:35 -0800
+Served asset /ico/favicon.ico - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:48:35 -0800
+Served asset /ico/favicon.ico - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-11-12 22:48:40 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zXcHxEuhrsVMOe1BiwNq8b69HQ51Z3S8uqP+r1fvkHc=", "user"=>{"username"=>"q4", "password"=>"[FILTERED]", "repassword"=>"[FILTERED]", "first_name"=>"q3", "last_name"=>"q3", "email"=>"q3", "address"=>"q3", "phone"=>"q3", "birthday(1i)"=>"2012", "birthday(2i)"=>"11", "birthday(3i)"=>"13"}, "commit"=>"Register User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+Binary data inserted for `string` type on column `password`
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("address", "admin", "birthday", "created_at", "email", "first_name", "last_name", "password", "phone", "show_addr", "show_birthday", "show_email", "show_fn", "show_ln", "show_phone", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "q3"], ["admin", 0], ["birthday", 0], ["created_at", Tue, 13 Nov 2012 06:48:40 UTC +00:00], ["email", "q3"], ["first_name", "q3"], ["last_name", "q3"], ["password", "5e221fcdb8f710a0bbcfd78cff0bfd6a994d23517109366461b94464215058177800804591b4595260cec7dfeadac5815c2230a2a5378563964a7a52eb8e220a"], ["phone", 0], ["show_addr", 1], ["show_birthday", 1], ["show_email", 1], ["show_fn", 1], ["show_ln", 1], ["show_phone", 1], ["updated_at", Tue, 13 Nov 2012 06:48:40 UTC +00:00], ["username", "q4"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+Redirected to http://localhost:3000profile_path9
+Completed 302 Found in 41ms (ActiveRecord: 3.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-11-12 22:48:40 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zXcHxEuhrsVMOe1BiwNq8b69HQ51Z3S8uqP+r1fvkHc=", "user"=>{"username"=>"q4", "password"=>"[FILTERED]", "repassword"=>"[FILTERED]", "first_name"=>"q3", "last_name"=>"q3", "email"=>"q3", "address"=>"q3", "phone"=>"q3", "birthday(1i)"=>"2012", "birthday(2i)"=>"11", "birthday(3i)"=>"13"}, "commit"=>"Register User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `password`
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("address", "admin", "birthday", "created_at", "email", "first_name", "last_name", "password", "phone", "show_addr", "show_birthday", "show_email", "show_fn", "show_ln", "show_phone", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "q3"], ["admin", 0], ["birthday", 0], ["created_at", Tue, 13 Nov 2012 06:48:40 UTC +00:00], ["email", "q3"], ["first_name", "q3"], ["last_name", "q3"], ["password", "5e221fcdb8f710a0bbcfd78cff0bfd6a994d23517109366461b94464215058177800804591b4595260cec7dfeadac5815c2230a2a5378563964a7a52eb8e220a"], ["phone", 0], ["show_addr", 1], ["show_birthday", 1], ["show_email", 1], ["show_fn", 1], ["show_ln", 1], ["show_phone", 1], ["updated_at", Tue, 13 Nov 2012 06:48:40 UTC +00:00], ["username", "q4"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000profile_path10
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:48:55 -0800
+Served asset /ico/favicon.ico - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:48:55 -0800
+Served asset /ico/favicon.ico - 404 Not Found (9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:48:55 -0800
+Served asset /ico/favicon.ico - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:48:55 -0800
+Served asset /ico/favicon.ico - 404 Not Found (7ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:48:55 -0800
+Served asset /ico/favicon.ico - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2012-11-12 22:50:14 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.haml within layouts/application (9.7ms)
+Completed 200 OK in 32ms (Views: 31.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-12 22:50:15 -0800
+Served asset /bootstrap.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-12 22:50:15 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:15 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-12 22:50:15 -0800
+Served asset /global.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:15 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:15 -0800
+Served asset /bootstrap.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/fb.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:15 -0800
+Served asset /fb.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fb_all.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:15 -0800
+Served asset /fb_all.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:15 -0800
+Served asset /log_in.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:15 -0800
+Served asset /private_messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:15 -0800
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:15 -0800
+Served asset /searches.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/twitter.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:15 -0800
+Served asset /twitter.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:15 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:15 -0800
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:50:15 -0800
+Served asset /ico/favicon.ico - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-11-12 22:50:24 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zXcHxEuhrsVMOe1BiwNq8b69HQ51Z3S8uqP+r1fvkHc=", "user"=>{"username"=>"q6", "password"=>"[FILTERED]", "repassword"=>"[FILTERED]", "first_name"=>"q6", "last_name"=>"q6", "email"=>"q6", "address"=>"q6", "phone"=>"q6", "birthday(1i)"=>"2012", "birthday(2i)"=>"11", "birthday(3i)"=>"13"}, "commit"=>"Register User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+Binary data inserted for `string` type on column `password`
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("address", "admin", "birthday", "created_at", "email", "first_name", "last_name", "password", "phone", "show_addr", "show_birthday", "show_email", "show_fn", "show_ln", "show_phone", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "q6"], ["admin", 0], ["birthday", 0], ["created_at", Tue, 13 Nov 2012 06:50:24 UTC +00:00], ["email", "q6"], ["first_name", "q6"], ["last_name", "q6"], ["password", "b22cbc7c6f20efcceb3bb524971c807899005e707348e966ee3869485a4ce14cd77ec8a97c9495b76b237f93f68acdac7a0b4e29315c4c411e4564f3f1fe6ea2"], ["phone", 0], ["show_addr", 1], ["show_birthday", 1], ["show_email", 1], ["show_fn", 1], ["show_ln", 1], ["show_phone", 1], ["updated_at", Tue, 13 Nov 2012 06:50:24 UTC +00:00], ["username", "q6"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000profiles/11
+Completed 302 Found in 40ms (ActiveRecord: 2.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-11-12 22:50:24 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zXcHxEuhrsVMOe1BiwNq8b69HQ51Z3S8uqP+r1fvkHc=", "user"=>{"username"=>"q6", "password"=>"[FILTERED]", "repassword"=>"[FILTERED]", "first_name"=>"q6", "last_name"=>"q6", "email"=>"q6", "address"=>"q6", "phone"=>"q6", "birthday(1i)"=>"2012", "birthday(2i)"=>"11", "birthday(3i)"=>"13"}, "commit"=>"Register User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `password`
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("address", "admin", "birthday", "created_at", "email", "first_name", "last_name", "password", "phone", "show_addr", "show_birthday", "show_email", "show_fn", "show_ln", "show_phone", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "q6"], ["admin", 0], ["birthday", 0], ["created_at", Tue, 13 Nov 2012 06:50:24 UTC +00:00], ["email", "q6"], ["first_name", "q6"], ["last_name", "q6"], ["password", "b22cbc7c6f20efcceb3bb524971c807899005e707348e966ee3869485a4ce14cd77ec8a97c9495b76b237f93f68acdac7a0b4e29315c4c411e4564f3f1fe6ea2"], ["phone", 0], ["show_addr", 1], ["show_birthday", 1], ["show_email", 1], ["show_fn", 1], ["show_ln", 1], ["show_phone", 1], ["updated_at", Tue, 13 Nov 2012 06:50:24 UTC +00:00], ["username", "q6"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000profiles/12
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-12 22:50:26 -0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" 
+  Rendered users/index.html.haml within layouts/application (25.0ms)
+Completed 200 OK in 97ms (Views: 93.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-12 22:50:26 -0800
+Served asset /bootstrap.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-12 22:50:26 -0800
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:27 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-12 22:50:27 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:27 -0800
+Served asset /bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:27 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fb.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:27 -0800
+Served asset /fb.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/fb_all.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:27 -0800
+Served asset /fb_all.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:27 -0800
+Served asset /log_in.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:27 -0800
+Served asset /private_messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:27 -0800
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:27 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:27 -0800
+Served asset /searches.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:27 -0800
+Served asset /twitter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-12 22:50:27 -0800
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:50:28 -0800
+Served asset /ico/favicon.ico - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:52:10 -0800
+Connecting to database specified by database.yml
+Served asset /ico/favicon.ico - 404 Not Found (40ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:52:11 -0800
+Served asset /ico/favicon.ico - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-11-12 22:52:17 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zXcHxEuhrsVMOe1BiwNq8b69HQ51Z3S8uqP+r1fvkHc=", "user"=>{"username"=>"q7", "password"=>"[FILTERED]", "repassword"=>"[FILTERED]", "first_name"=>"q6", "last_name"=>"q6", "email"=>"q6", "address"=>"q6", "phone"=>"q6", "birthday(1i)"=>"2012", "birthday(2i)"=>"11", "birthday(3i)"=>"13"}, "commit"=>"Register User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `password`
+  [1m[35mSQL (13.1ms)[0m  INSERT INTO "users" ("address", "admin", "birthday", "created_at", "email", "first_name", "last_name", "password", "phone", "show_addr", "show_birthday", "show_email", "show_fn", "show_ln", "show_phone", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "q6"], ["admin", 0], ["birthday", 0], ["created_at", Tue, 13 Nov 2012 06:52:17 UTC +00:00], ["email", "q6"], ["first_name", "q6"], ["last_name", "q6"], ["password", "b22cbc7c6f20efcceb3bb524971c807899005e707348e966ee3869485a4ce14cd77ec8a97c9495b76b237f93f68acdac7a0b4e29315c4c411e4564f3f1fe6ea2"], ["phone", 0], ["show_addr", 1], ["show_birthday", 1], ["show_email", 1], ["show_fn", 1], ["show_ln", 1], ["show_phone", 1], ["updated_at", Tue, 13 Nov 2012 06:52:17 UTC +00:00], ["username", "q7"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/profiles/6
+Completed 302 Found in 138ms (ActiveRecord: 18.4ms)
+
+
+Started GET "/profiles/6" for 127.0.0.1 at 2012-11-12 22:52:17 -0800
+Processing by ProfilesController#index as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT id, first_name, last_name, username, email, phone FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "6"]]
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = 6 LIMIT 1[0m
+  Rendered profiles/index.html.erb within layouts/application (85.9ms)
+Completed 200 OK in 207ms (Views: 202.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-12 22:52:17 -0800
+Served asset /bootstrap.css - 304 Not Modified (32ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-12 22:52:17 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-12 22:52:17 -0800
+Served asset /global.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-12 22:52:17 -0800
+Served asset /bootstrap.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-12 22:52:17 -0800
+Served asset /jquery.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-12 22:52:17 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/fb.js?body=1" for 127.0.0.1 at 2012-11-12 22:52:18 -0800
+Served asset /fb.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/fb_all.js?body=1" for 127.0.0.1 at 2012-11-12 22:52:18 -0800
+Served asset /fb_all.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-12 22:52:18 -0800
+Served asset /log_in.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-12 22:52:18 -0800
+Served asset /private_messages.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-12 22:52:18 -0800
+Served asset /profiles.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-12 22:52:18 -0800
+Served asset /searches.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-12 22:52:18 -0800
+Served asset /statuses.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/twitter.js?body=1" for 127.0.0.1 at 2012-11-12 22:52:18 -0800
+Served asset /twitter.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-12 22:52:18 -0800
+Served asset /application.js - 304 Not Modified (27ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:52:19 -0800
+Served asset /ico/favicon.ico - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:52:43 -0800
+Served asset /ico/favicon.ico - 404 Not Found (10ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:52:43 -0800
+Served asset /ico/favicon.ico - 404 Not Found (8ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:52:43 -0800
+Served asset /ico/favicon.ico - 404 Not Found (8ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:52:43 -0800
+Served asset /ico/favicon.ico - 404 Not Found (8ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:52:43 -0800
+Served asset /ico/favicon.ico - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-11-12 22:52:47 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zXcHxEuhrsVMOe1BiwNq8b69HQ51Z3S8uqP+r1fvkHc=", "user"=>{"username"=>"q8", "password"=>"[FILTERED]", "repassword"=>"[FILTERED]", "first_name"=>"q6", "last_name"=>"q6", "email"=>"q6", "address"=>"q6", "phone"=>"q6", "birthday(1i)"=>"2012", "birthday(2i)"=>"11", "birthday(3i)"=>"13"}, "commit"=>"Register User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+Binary data inserted for `string` type on column `password`
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "users" ("address", "admin", "birthday", "created_at", "email", "first_name", "last_name", "password", "phone", "show_addr", "show_birthday", "show_email", "show_fn", "show_ln", "show_phone", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "q6"], ["admin", 0], ["birthday", 0], ["created_at", Tue, 13 Nov 2012 06:52:47 UTC +00:00], ["email", "q6"], ["first_name", "q6"], ["last_name", "q6"], ["password", "b22cbc7c6f20efcceb3bb524971c807899005e707348e966ee3869485a4ce14cd77ec8a97c9495b76b237f93f68acdac7a0b4e29315c4c411e4564f3f1fe6ea2"], ["phone", 0], ["show_addr", 1], ["show_birthday", 1], ["show_email", 1], ["show_fn", 1], ["show_ln", 1], ["show_phone", 1], ["updated_at", Tue, 13 Nov 2012 06:52:47 UTC +00:00], ["username", "q8"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/profiles/14
+Completed 302 Found in 44ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/profiles/14" for 127.0.0.1 at 2012-11-12 22:52:47 -0800
+Processing by ProfilesController#index as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT id, first_name, last_name, username, email, phone FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "14"]]
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = 14 LIMIT 1
+  Rendered profiles/index.html.erb within layouts/application (11.4ms)
+Completed 500 Internal Server Error in 68ms
+
+ActionView::Template::Error (undefined method `message' for nil:NilClass):
+    9:         <% @User.attributes.each do |name, value| %>
+    10:           <p><b><%= name %>: </b> <%= value %>
+    11:         <% end %>
+    12:         <p><b>Status: </b> <%= @User.status.message %>
+    13:     </div>
+    14: 
+    15:   </li>
+  app/views/profiles/index.html.erb:12:in `_app_views_profiles_index_html_erb___2948241785984460791_70347097930960'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.2ms)
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (23.4ms)
+
+
+Started GET "/profiles/14" for 127.0.0.1 at 2012-11-12 22:53:39 -0800
+Processing by ProfilesController#index as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT id, first_name, last_name, username, email, phone FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "14"]]
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = 14 LIMIT 1
+  Rendered profiles/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (undefined method `message' for nil:NilClass):
+    9:         <% @User.attributes.each do |name, value| %>
+    10:           <p><b><%= name %>: </b> <%= value %>
+    11:         <% end %>
+    12:         <p><b>Status: </b> <%= @User.status.message if @User.status.message != nil %>
+    13:     </div>
+    14: 
+    15:   </li>
+  app/views/profiles/index.html.erb:12:in `_app_views_profiles_index_html_erb___2948241785984460791_70347074491220'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (21.3ms)
+
+
+Started GET "/profiles/14" for 127.0.0.1 at 2012-11-12 22:53:40 -0800
+Processing by ProfilesController#index as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT id, first_name, last_name, username, email, phone FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "14"]]
+  [1m[35mStatus Load (0.3ms)[0m  SELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = 14 LIMIT 1
+  Rendered profiles/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `message' for nil:NilClass):
+    9:         <% @User.attributes.each do |name, value| %>
+    10:           <p><b><%= name %>: </b> <%= value %>
+    11:         <% end %>
+    12:         <p><b>Status: </b> <%= @User.status.message if @User.status.message != nil %>
+    13:     </div>
+    14: 
+    15:   </li>
+  app/views/profiles/index.html.erb:12:in `_app_views_profiles_index_html_erb___2948241785984460791_70347074491220'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.2ms)
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (24.2ms)
+
+
+Started GET "/profiles/14" for 127.0.0.1 at 2012-11-12 22:53:41 -0800
+Processing by ProfilesController#index as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT id, first_name, last_name, username, email, phone FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "14"]]
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = 14 LIMIT 1
+  Rendered profiles/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `message' for nil:NilClass):
+    9:         <% @User.attributes.each do |name, value| %>
+    10:           <p><b><%= name %>: </b> <%= value %>
+    11:         <% end %>
+    12:         <p><b>Status: </b> <%= @User.status.message if @User.status.message != nil %>
+    13:     </div>
+    14: 
+    15:   </li>
+  app/views/profiles/index.html.erb:12:in `_app_views_profiles_index_html_erb___2948241785984460791_70347074491220'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.3ms)
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (26.6ms)
+
+
+Started GET "/profiles/14" for 127.0.0.1 at 2012-11-12 22:56:36 -0800
+Processing by ProfilesController#index as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT id, first_name, last_name, username, email, phone FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "14"]]
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = 14 LIMIT 1
+  Rendered profiles/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 32ms (Views: 29.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-12 22:56:36 -0800
+Served asset /bootstrap.css - 304 Not Modified (18ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:36 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:36 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-12 22:56:36 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-12 22:56:36 -0800
+Served asset /global.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:36 -0800
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fb.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:36 -0800
+Served asset /fb.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fb_all.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:36 -0800
+Served asset /fb_all.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:36 -0800
+Served asset /log_in.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:36 -0800
+Served asset /private_messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:36 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:36 -0800
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:36 -0800
+Served asset /searches.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:36 -0800
+Served asset /twitter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:36 -0800
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:56:38 -0800
+Served asset /ico/favicon.ico - 404 Not Found (7ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:56:46 -0800
+Served asset /ico/favicon.ico - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:56:46 -0800
+Served asset /ico/favicon.ico - 404 Not Found (9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:56:46 -0800
+Served asset /ico/favicon.ico - 404 Not Found (7ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:56:46 -0800
+Served asset /ico/favicon.ico - 404 Not Found (10ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:56:46 -0800
+Served asset /ico/favicon.ico - 404 Not Found (7ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-11-12 22:56:54 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zXcHxEuhrsVMOe1BiwNq8b69HQ51Z3S8uqP+r1fvkHc=", "user"=>{"username"=>"q9", "password"=>"[FILTERED]", "repassword"=>"[FILTERED]", "first_name"=>"q6", "last_name"=>"q6", "email"=>"q6", "address"=>"q6", "phone"=>"q6", "birthday(1i)"=>"2012", "birthday(2i)"=>"11", "birthday(3i)"=>"13"}, "commit"=>"Register User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `password`
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "users" ("address", "admin", "birthday", "created_at", "email", "first_name", "last_name", "password", "phone", "show_addr", "show_birthday", "show_email", "show_fn", "show_ln", "show_phone", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "q6"], ["admin", 0], ["birthday", 0], ["created_at", Tue, 13 Nov 2012 06:56:54 UTC +00:00], ["email", "q6"], ["first_name", "q6"], ["last_name", "q6"], ["password", "88d18e9ed746f32c04610c689559e726e72595e29fb7dee1d324d92d0b7ee0bf3b7ea0ac7525ddae8bd9af0c4af9bc80f1ff7a19910d385bd507564b5799075d"], ["phone", 0], ["show_addr", 1], ["show_birthday", 1], ["show_email", 1], ["show_fn", 1], ["show_ln", 1], ["show_phone", 1], ["updated_at", Tue, 13 Nov 2012 06:56:54 UTC +00:00], ["username", "q9"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/profiles/15
+Completed 302 Found in 10ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/profiles/15" for 127.0.0.1 at 2012-11-12 22:56:54 -0800
+Processing by ProfilesController#index as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT id, first_name, last_name, username, email, phone FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "15"]]
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = 15 LIMIT 1[0m
+  Rendered profiles/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-12 22:56:54 -0800
+Served asset /bootstrap.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-12 22:56:54 -0800
+Served asset /global.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-12 22:56:54 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:54 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:54 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:54 -0800
+Served asset /bootstrap.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/fb.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:54 -0800
+Served asset /fb.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:54 -0800
+Served asset /log_in.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fb_all.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:54 -0800
+Served asset /fb_all.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:54 -0800
+Served asset /private_messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:54 -0800
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:54 -0800
+Served asset /searches.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:54 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:54 -0800
+Served asset /twitter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:54 -0800
+Served asset /application.js - 304 Not Modified (54ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:56:55 -0800
+Served asset /ico/favicon.ico - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-12 22:56:56 -0800
+Processing by FrontpageController#index as HTML
+  Rendered frontpage/index.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 20ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-12 22:56:56 -0800
+Served asset /bootstrap.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:56 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-12 22:56:56 -0800
+Served asset /global.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:56 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-12 22:56:56 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:56 -0800
+Served asset /bootstrap.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/fb.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:56 -0800
+Served asset /fb.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fb_all.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:56 -0800
+Served asset /fb_all.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:56 -0800
+Served asset /log_in.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:56 -0800
+Served asset /private_messages.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:56 -0800
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:56 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:56 -0800
+Served asset /searches.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:56 -0800
+Served asset /twitter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:56 -0800
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:56:58 -0800
+Served asset /ico/favicon.ico - 404 Not Found (9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/log_in" for 127.0.0.1 at 2012-11-12 22:56:59 -0800
+Processing by LogInController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" 
+  Rendered log_in/index.html.haml within layouts/application (7.4ms)
+Completed 200 OK in 27ms (Views: 23.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-12 22:56:59 -0800
+Served asset /bootstrap.css - 304 Not Modified (61ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:59 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-12 22:56:59 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-12 22:56:59 -0800
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:59 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:59 -0800
+Served asset /bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fb.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:59 -0800
+Served asset /fb.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/fb_all.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:59 -0800
+Served asset /fb_all.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:59 -0800
+Served asset /private_messages.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:59 -0800
+Served asset /log_in.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:59 -0800
+Served asset /profiles.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:59 -0800
+Served asset /searches.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:59 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:59 -0800
+Served asset /twitter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-12 22:56:59 -0800
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:57:00 -0800
+Served asset /ico/favicon.ico - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/log_in" for 127.0.0.1 at 2012-11-12 22:57:02 -0800
+Processing by LogInController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zXcHxEuhrsVMOe1BiwNq8b69HQ51Z3S8uqP+r1fvkHc=", "user"=>{"username"=>"q9", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username = 'q9') LIMIT 1[0m
+Redirected to http://localhost:3000/profiles/15
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/profiles/15" for 127.0.0.1 at 2012-11-12 22:57:02 -0800
+Processing by ProfilesController#index as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT id, first_name, last_name, username, email, phone FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "15"]]
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = 15 LIMIT 1[0m
+  Rendered profiles/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.css" for 127.0.0.1 at 2012-11-12 22:57:02 -0800
+Served asset /bootstrap.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/global.css" for 127.0.0.1 at 2012-11-12 22:57:02 -0800
+Served asset /global.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-12 22:57:02 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.css" for 127.0.0.1 at 2012-11-12 22:57:02 -0800
+Served asset /bootstrap-responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-12 22:57:02 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-12 22:57:02 -0800
+Served asset /bootstrap.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/fb.js?body=1" for 127.0.0.1 at 2012-11-12 22:57:02 -0800
+Served asset /fb.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fb_all.js?body=1" for 127.0.0.1 at 2012-11-12 22:57:02 -0800
+Served asset /fb_all.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/private_messages.js?body=1" for 127.0.0.1 at 2012-11-12 22:57:02 -0800
+Served asset /private_messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in.js?body=1" for 127.0.0.1 at 2012-11-12 22:57:02 -0800
+Served asset /log_in.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-11-12 22:57:02 -0800
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2012-11-12 22:57:02 -0800
+Served asset /searches.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2012-11-12 22:57:02 -0800
+Served asset /statuses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter.js?body=1" for 127.0.0.1 at 2012-11-12 22:57:02 -0800
+Served asset /twitter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-12 22:57:02 -0800
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/ico/favicon.ico" for 127.0.0.1 at 2012-11-12 22:57:03 -0800
+Served asset /ico/favicon.ico - 404 Not Found (9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Quynh/.rvm/rubies/ruby-1.9.3-head/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Quynh/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)

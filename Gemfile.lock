@@ -42,14 +42,11 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-<<<<<<< HEAD
+    faraday (0.8.4)
+      multipart-post (~> 1.1)
     googlevoiceapi (0.1.7)
       htmlentities
       mechanize
-=======
-    faraday (0.8.4)
-      multipart-post (~> 1.1)
->>>>>>> e09c9cbb81a6174a2ec1428be790359d1a88f816
     haml (3.1.7)
     haml-rails (0.3.5)
       actionpack (>= 3.1, < 4.1)
@@ -81,16 +78,13 @@ GEM
       webrobots (~> 0.0, >= 0.0.9)
     mime-types (1.19)
     multi_json (1.3.6)
-<<<<<<< HEAD
+    multipart-post (1.1.5)
     net-http-digest_auth (1.2.1)
     net-http-persistent (2.8)
     nokogiri (1.5.5)
     nokogiri (1.5.5-x86-mingw32)
     ntlm-http (0.1.1)
-=======
-    multipart-post (1.1.5)
     oauth (0.4.7)
->>>>>>> e09c9cbb81a6174a2ec1428be790359d1a88f816
     pg (0.14.1)
     pg (0.14.1-x86-mingw32)
     polyglot (0.3.3)
@@ -159,18 +153,12 @@ DEPENDENCIES
   googlevoiceapi
   haml-rails (>= 0.3.4)
   jquery-rails
-<<<<<<< HEAD
-  mail
-=======
   koala
->>>>>>> e09c9cbb81a6174a2ec1428be790359d1a88f816
+  mail
   pg
   rails (= 3.2.8)
   sass-rails (~> 3.2.3)
   sqlite3
-<<<<<<< HEAD
   tlsmail
-=======
   twitter_oauth
->>>>>>> e09c9cbb81a6174a2ec1428be790359d1a88f816
   uglifier (>= 1.0.3)

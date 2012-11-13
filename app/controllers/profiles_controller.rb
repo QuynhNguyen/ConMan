@@ -6,6 +6,9 @@ class ProfilesController < ApplicationController
 		#If we leave this as default, Rails will automatically
 		#render index.html.erb
 		@User = User.select("id, first_name, last_name, username, email, phone").find(params[:id])
+	end
+
+	def socialnetwork
 		@fb_friend_images = []
 		@fb_friends_list = flash[:fb_friends_list]
 		if (flash[:fb_friends_images])
@@ -14,6 +17,8 @@ class ProfilesController < ApplicationController
 			end
 
 		end
+		render "profiles/social"
+	end
 
 	def fb_wall()
 		@friend = params[:friend_id]

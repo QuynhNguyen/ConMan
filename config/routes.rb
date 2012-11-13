@@ -41,6 +41,7 @@ ConMan::Application.routes.draw do
   resources :contact_us
 
   match 'profiles/:id' => 'profiles#index'
+  match 'profiles/:id/social' => 'profiles#socialnetwork'
   match 'status' => 'statuses#index', :via => :get
   match 'status' => 'statuses#update', :via => :put
   match 'FB/test', :to => redirect('/facebook_sdk.html')

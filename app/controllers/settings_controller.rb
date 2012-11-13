@@ -12,7 +12,7 @@ class SettingsController < ApplicationController
 		#session[:fb_access_token] = @oauth.exchange_access_token(session[:fb_access_token])
 		#flash[:notice] =  @oauth.exchange_access_token_info(session[:fb_access_token])
 		flash[:notice ] = session[:fb_access_token]
-		redirect_to action: :index
+		redirect_to controller: :profiles, action: :index
 
 	end
 end

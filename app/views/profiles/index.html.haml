@@ -6,7 +6,9 @@
 	= submit_tag 'update status'
 
 - if (@fb_friend_images)
+	- index = 0
 	- @fb_friend_images.each do |image|
-		= image_tag(image)
+		= link_to image_tag(image), controller: :profiles, action: :fb_wall, friend_id: "#{@fb_friends_list[index]}"
+		-index+=1
 
-#fb= link_to "send message", action: :fb_wall, friend_id: :minhta 
+= link_to "send message", action: :fb_wall, friend_id: :minhta 

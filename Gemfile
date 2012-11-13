@@ -30,8 +30,6 @@ end
 
 gem 'jquery-rails'
 gem "koala"
-gem "twitter"
-gem 'omniauth-twitter'
 gem 'twitter_oauth'
 
 

@@ -1,6 +1,12 @@
 <h3>Update status</h3>
 
 <form method="PUT">
-	<input type="text" name="message" value="<%= @user.status.message %>" /> <br/>
+	<input type="text" name="message" value="<%= 
+		begin
+			@user.status.message 
+		rescue
+			""
+		end
+	%>" /> <br/>
 	<input type="submit" class="btn btn-primary" value="update!" />
 </form>

@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-
-  skip_filter :login
   
   def show
     id = params[:id] # retrieve movie ID from URI route

@@ -4,7 +4,7 @@ class SettingsController < ApplicationController
 	end
 
 	def get_fb_permission
-		@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/profiles')
+		@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/fb/index')
 		@facebook_cookies ||= @oauth.get_user_info_from_cookies(cookies) 
 		session[:fb_access_token] = @facebook_cookies["access_token"]
 		@graph = Koala::Facebook::API.new(session[:fb_access_token] )
@@ -12,7 +12,7 @@ class SettingsController < ApplicationController
 		#session[:fb_access_token] = @oauth.exchange_access_token(session[:fb_access_token])
 		#flash[:notice] =  @oauth.exchange_access_token_info(session[:fb_access_token])
 		flash[:notice ] = session[:fb_access_token]
-		redirect_to controller: :profiles, action: :index
+		redirect_to controller: :fb, action: :index
 
 	end
 end

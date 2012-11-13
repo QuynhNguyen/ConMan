@@ -7,23 +7,26 @@ ConMan::Application.routes.draw do
   match 'settings' => 'settings#index'
   post 'settings/get_fb_permission'
  
+  
   get 'fb/index'
-  get 'fb/get_friend_list'
-  get 'fb/get_newsfeed'
-  post 'fb/get_permission'
-  post 'fb/login'
-  post 'fb/logout'
-  post 'fb/update_status'
+  get 'fb/get_fb_friend_list'
+  get 'fb/get_fb_newsfeed'
+  post 'fb/get_fb_permission'
+  post 'fb/fb_login'
+  post 'fb/fb_logout'
+  post 'fb/update_fb_status'
+  get 'fb/fb_wall'
+  post 'fb/post_fb_wall'
 
-  get 'profiles/get_fb_friend_list'
-  get 'profiles/get_fb_newsfeed'
-  post 'profiles/get_fb_permission'
-  post 'profiles/fb_login'
-  post 'profiles/fb_logout'
-  post 'profiles/update_fb_status'
-  match 'profiles' => 'profiles#index'
-  get 'profiles/fb_wall'
-  post 'profiles/post_fb_wall'
+  #get 'profiles/get_fb_friend_list'
+  #get 'profiles/get_fb_newsfeed'
+  #post 'profiles/get_fb_permission'
+  #post 'profiles/fb_login'
+  #post 'profiles/fb_logout'
+  #post 'profiles/update_fb_status'
+  #match 'profiles' => 'profiles#index'
+  #get 'profiles/fb_wall'
+  #post 'profiles/post_fb_wall'
 
   get 'twitter/index'
   post 'twitter/tweet'
@@ -44,7 +47,6 @@ ConMan::Application.routes.draw do
   match 'profiles/:id/social' => 'profiles#socialnetwork'
   match 'status' => 'statuses#index', :via => :get
   match 'status' => 'statuses#update', :via => :put
-  match 'FB/test', :to => redirect('/facebook_sdk.html')
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

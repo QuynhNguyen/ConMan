@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  before_filter :login
+ # before_filter :login
 
   protect_from_forgery
   rescue_from ActiveRecord::RecordNotFound do |exception|

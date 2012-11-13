@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def show
     id = params[:id] # retrieve movie ID from URI route
     @user = User.find(id) # look up movie by unique ID
-    redirect_to profiles_path
+    redirect_to profile_path(id)
     # will render app/views/movies/show.<extension> by default
   end
 
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
         @user = User.create!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email], :birthday => params[:user][:birthday], :password => User.encrypt(params[:user][:password]))
     
       flash[:notice] = "#{@user.username} was successfully created."
-      redirect_to users_path
+      redirect_to profile_path(@user.id)
     else
       flash[:notice] = "Password and confirm password doesn't match."
       redirect_to new_user_path

@@ -1,6 +1,9 @@
 
 ConMan::Application.routes.draw do
-  root :to => 'log_in#index'
+
+  root :to => 'frontpage#index'
+  resources :statuses
+  resources :profiles
   resources :searches
   resources :users
   resources :log_in

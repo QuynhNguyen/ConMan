@@ -1,4 +1,4 @@
-%h1 User
+%h1 Users
 =flash[:notice]
 %table#users
   %thead
@@ -19,8 +19,11 @@
           %td= user.first_name
           %td= user.last_name
           %td= user.email
-          %td= user.admin
+          - if user.admin == 0 
+            %td= "User"
+          - else
+            %td= "Admin"
           %td= link_to "Edit", edit_user_path(user)
           %td= link_to "Delete", user_path(user), :method => :delete, :confirm => 'Are you sure?'
-
+%br
 = link_to 'Add new user', new_user_path

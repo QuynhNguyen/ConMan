@@ -11,7 +11,12 @@ class LogInController < ApplicationController
     @user = User.authenticate(params[:user][:username], params[:user][:password])
     if @user
       session[:id] = @user.id
-      redirect_to "/profiles/#{@user.id}"
+      if @user.admin == 1
+        redirect_to users_path
+      else
+        redirect_to "/profiles/#{@user.id}"
+      end
+>>>>>>> b9950502cc02b61520ecc4e17a9a487a06c985a3
     else
       flash[:notice] = "Username or Password don't match with our database"
       redirect_to log_in_index_path

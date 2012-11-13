@@ -18,7 +18,7 @@
   = text_field :user, 'last_name'
 
   = label :user, :email, 'Email'
-  = text_field :user, 'email'
+  = email_field :user, 'email'
 
   = label :user, :address, 'Address'
   = text_field :user, 'address'
@@ -29,4 +29,5 @@
   = label :user, :birthday, 'Birthday'
   = date_select :user, 'birthday'
 
+  %br
   = submit_tag 'Register User'

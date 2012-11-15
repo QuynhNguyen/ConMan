@@ -6,9 +6,25 @@
     </a>
     <div class="media-body">
       <h4 class="media-heading"><a href=<%= "#{@User.id}/social" %> class="btn btn-info">Get Social!</a></h4>
-        <% @User.attributes.each do |name, value| %>
-          <p><b><%= name %>: </b> <%= value %>
-        <% end %>
+        <% if @User.show_fn %>
+          <b>First Name: </b> <%= @User.first_name %>
+        <% end %> <br/>
+        <% if @User.show_ln %>
+          <b>Last Name: </b> <%= @User.last_name %>
+        <% end %> <br/>
+        <% if @User.show_addr %>
+          <b>Address: </b> <%= @User.address %>
+        <% end %> <br/>
+        <% if @User.show_email %>
+          <b>Email: </b> <%= @User.email %>
+        <% end %> <br/>
+        <% if @User.show_phone %>
+          <b>Phone: </b> <%= @User.phone %>
+        <% end %> <br/>
+        <% if @User.show_birthday %>
+          <b>Birthday: </b> <%= @User.birthday %>
+        <% end %> <br/>
+       
         <p><b>Status: </b> <%= 
          begin
             @User.status.message 

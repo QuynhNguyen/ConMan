@@ -5,7 +5,7 @@ class ProfilesController < ApplicationController
 	def index
 		#If we leave this as default, Rails will automatically
 		#render index.html.erb
-		@User = User.select("admin, id, first_name, last_name, username, email, phone").find(params[:id])
+		@User = User.find(params[:id])
 	end
 
 	def socialnetwork

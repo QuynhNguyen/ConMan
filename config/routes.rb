@@ -33,7 +33,6 @@ ConMan::Application.routes.draw do
   post 'twitter/twitter_login'
   get 'twitter/twitter_authorize'
 
-  resources :statuses
   resources :searches
   resources :users
   resources :log_in
@@ -46,7 +45,7 @@ ConMan::Application.routes.draw do
   match 'profiles/:id' => 'profiles#index'
   match 'profiles/:id/social' => 'profiles#socialnetwork'
   match 'status' => 'statuses#index', :via => :get
-  match 'status' => 'statuses#update', :via => :put
+  match 'status' => 'statuses#update', :via => :post
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

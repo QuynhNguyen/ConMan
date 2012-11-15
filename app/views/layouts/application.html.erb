@@ -63,19 +63,8 @@
               <li><a href="/private_messages">Inbox</a></li>
               <li><a href=<%= "/profiles/#{session[:id]}" %>>Profile</a></li>
               <li><a href="/status">Status</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Friends</li>
               <% if @fb_friend_images %>
+              <li class="nav-header">Friends</li>
                 <% @fb_friend_images.each do |photo| %>
                   <li><%= image_tag(photo) %></li>
                 <% end %>

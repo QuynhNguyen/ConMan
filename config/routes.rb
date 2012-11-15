@@ -42,10 +42,11 @@ ConMan::Application.routes.draw do
   resources :frontpage
   resources :contact_us
 
-  match 'profiles/:id' => 'profiles#index'
-  match 'profiles/:id/social' => 'profiles#socialnetwork'
+  match 'profiles/:id' => 'profiles#index', :via => :get
+  match 'profiles/:id/social' => 'fb#index', :via => :get
   match 'status' => 'statuses#index', :via => :get
   match 'status' => 'statuses#update', :via => :post
+  match 'user/:user_id/status/:status_id' => 'statuses#delete', :via => :get
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

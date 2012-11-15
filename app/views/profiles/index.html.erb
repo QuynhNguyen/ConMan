@@ -5,7 +5,7 @@
       <img class="media-object" src="http://www.yaf.org/uploadedImages/Blogs/UCSD%20Logo.jpg" width="80" height="80">
     </a>
     <div class="media-body">
-      <h4 class="media-heading"><button class="btn btn-success">Add Me as Friend</button> <a href=<%= "#{@User.id}/social" %> class="btn btn-info">Get Social!</a></h4>
+      <h4 class="media-heading"><a href=<%= "#{@User.id}/social" %> class="btn btn-info">Get Social!</a></h4>
         <% @User.attributes.each do |name, value| %>
           <p><b><%= name %>: </b> <%= value %>
         <% end %>
@@ -15,6 +15,11 @@
          rescue
             "Empty"
           end %>
+          <%
+            if @User.admin
+          %>
+            <a href=<%= "/user/#{@User.id}/status/#{@User.status.id}" %> class="icon-remove" onclick="return confirm('Delete entry?');"></a>
+          <% end %>
     </div>
 
   </li>

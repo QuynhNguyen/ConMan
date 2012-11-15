@@ -24,6 +24,14 @@ class StatusesController < ApplicationController
     @user.save!
   end
 
+  def delete
+    if @user.admin
+      status = Status.find(params[:status_id])
+      status.update_attributes(:message => "")
+    end
+    redirect_to "/profiles/#{params[:user_id]}"
+  end
+
   def get_user
   	@user = User.find(session[:id])
   end

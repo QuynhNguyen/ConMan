@@ -32,7 +32,7 @@
             "Empty"
           end %>
           <%
-            if @User.admin
+            if @User.admin and @User.status != nil
           %>
             <a href=<%= "/user/#{@User.id}/status/#{@User.status.id}" %> class="icon-remove" onclick="return confirm('Delete entry?');"></a>
           <% end %>

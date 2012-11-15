@@ -1,62 +1,56 @@
-'require koala'
-'require json'
 class FbController < ApplicationController
-	#before_filter :login
+
+	skip_filter :login
+	#GET /profiles
 	def index
-		
+		@fb_friend_images = []
+		@fb_friends_list = flash[:fb_friends_list]
+		if (flash[:fb_friends_images])
+			flash[:fb_friends_images].each do |image|
+				@fb_friend_images << image
+			end
+
+		end
 	end
 
-	def get_permission
-		@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/fb/index')
-		@Facebook_cookies ||= @oauth.get_user_info_from_cookies(cookies) 
-		@graph = Koala::Facebook::API.new(@Facebook_cookies["access_token"])
-		url  = @oauth.url_for_oauth_code(permissions: "read_friendlists,read_mailbox,read_requests,read_stream,ads_management,manage_friendlists,manage_notifications,friends_online_presence,publish_checkins,publish_stream")
-		redirect_to url
+	def fb_wall()
+		@friend = params[:friend_id]
 	end
 
-
-	def update_status	
-		@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/fb/index')
-		@graph = Koala::Facebook::API.new(session[:fb_access_token])
+	def post_fb_wall()
+		@graph = Koala::Facebook::API.new(session[:fb_access_token] )
+		@graph.put_wall_post(params[:message],{name: 'test'},params["friend_id"])
+		flash[:notice] = "Your message #{params[:message]} has been posted on #{params[:friend_id]}'s wall"
+		flash[:notice] = params[:friend_id]
+		redirect_to action: :index
+	end
+	
+	def update_fb_status	
+		@graph = Koala::Facebook::API.new(session[:fb_access_token] )
 		@graph.put_wall_post(params[:fb_status_message])
 		redirect_to action: :index
 	end
 
-	def get_friend_list
-		@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/fb/index')
-		@graph = Koala::Facebook::API.new(session[:fb_access_token])
-		friends = @graph.get_connections("me", "friends")
-		id_list = []
-		friends.each do |f|
-			id_list << f["id"]
+	def get_fb_friend_list
+		@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/profiles')
+		@facebook_cookies ||= @oauth.get_user_info_from_cookies(cookies) 
+		session[:fb_access_token] = @facebook_cookies["access_token"]
+		@graph = Koala::Facebook::API.new(session[:fb_access_token] )
+		@friends = @graph.get_connections("me", "friends")
+		@fb_friends_images = []
+		@fb_friends_list = []
+		@friends.each do |f|
+			@fb_friends_images << @graph.get_picture(f["id"])
+			@fb_friends_list << f["id"]
 		end
-		session[:fb_friend_list] = id_list
-		redirect_to controller: :profiles, action: :index
+		flash[:fb_friends_images] = @fb_friends_images
+		flash[:fb_friends_list] = @fb_friends_list
+		redirect_to action: :index
 	end
 
-	def get_newsfeed
-		@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/fb/index')
-		@graph = Koala::Facebook::API.new(session[:fb_access_token])
-		feed = @graph.get_connections("me", "feed")
-		#flash[:notice] = feed
-		#redirect_to action: :index
-	end
-
-	def login
-		if (!session[:fb_access_token])
-			get_permission()
-		end
-		#respond_to do |format|
-		#	format.js
-		#end
-	end
-
-	def logout
+	def fb_logout
 		reset_session
 		redirect_to action: :index
 	end
 
-	def inbox
-
-	end
 end

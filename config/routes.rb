@@ -33,6 +33,7 @@ ConMan::Application.routes.draw do
   post 'twitter/twitter_login'
   get 'twitter/twitter_authorize'
 
+  resources :profile_display_settings
   resources :statuses
   resources :searches
   resources :users

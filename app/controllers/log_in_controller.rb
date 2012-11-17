@@ -24,7 +24,7 @@ class LogInController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
     session[:id] = nil
     reset_session
     session.delete :id

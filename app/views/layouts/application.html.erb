@@ -45,7 +45,7 @@
               <li><a href="/about">About</a></li>
               <li><a href="/contact_us">Contact</a></li>
               <% if session[:id] %>
-              <li><a href="/log_in#destory">Log Out</a></li>
+              <li><a href=<%= "/log_in/#{session[:id]}" %> data-method="delete" rel="nofollow">Log Out</a></li>
               <% else %>
               <li><a href="/log_in">Log In</a></li>
               <% end %>

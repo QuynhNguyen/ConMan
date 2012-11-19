@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+
+  skip_filter :login
   
   def show
     if (session[:id] != nil)

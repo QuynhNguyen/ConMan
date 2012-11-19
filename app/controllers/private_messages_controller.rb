@@ -2,7 +2,7 @@ class PrivateMessagesController < ApplicationController
 	after_filter :mark_read, :only => [:show]
 
 	def index
-		@pm = PrivateMessage.all
+		@pm = PrivateMessage.where("user = '#{session[:id]}'")
 	end
 
 	def show
@@ -15,7 +15,7 @@ class PrivateMessagesController < ApplicationController
 	
 	def create
 		@user_id = User.where("username = '#{params[:private_message][:user]}'").first.id
-		@private_message = PrivateMessage.create(message: params[:private_message][:message], date: DateTime.now, subject: params[:private_message][:subject], from: @user_id)
+		@private_message = PrivateMessage.create(message: params[:private_message][:message], date: DateTime.now, subject: params[:private_message][:subject], from: session[:id], user: @user_id, read: false)
 		flash[:notice] = "Message was successfully sent!"
 		redirect_to private_messages_path
 	end

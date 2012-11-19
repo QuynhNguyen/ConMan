@@ -43,6 +43,11 @@
               <li class="active"><a href="/">Home</a></li>
               <li><a href="/about">About</a></li>
               <li><a href="/contact_us">Contact</a></li>
+              <% if session[:id] %>
+              <li><a href=<%= "/log_in/#{session[:id]}" %> data-method="delete" rel="nofollow">Log Out</a></li>
+              <% else %>
+              <li><a href="/log_in">Log In</a></li>
+              <% end %>
             </ul>
             <form method="GET" action="/searches" class="navbar-search pull-right">
               <input name="query" type="text" class="search-query" placeholder="Search">
@@ -58,11 +63,13 @@
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
+
               <li class="nav-header">Preferences</li>
+              <li><a href=<%= "/profile_display_settings/#{session[:id]}/edit"%>>Profile Display Settings</a></li>
               <li><%= link_to 'Settings', controller: :settings %></li>
               <li><a href="/private_messages">Inbox</a></li>
               <li><a href=<%= "/profiles/#{session[:id]}" %>>Profile</a></li>
-              <li><a href="/status">Status</a></li>
+              <li><a href="/status">Status</a></li
               <% if @fb_friend_images %>
               <li class="nav-header">Friends</li>
                 <% @fb_friend_images.each do |photo| %>

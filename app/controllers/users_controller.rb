@@ -1,14 +1,24 @@
 class UsersController < ApplicationController
   
   def show
-    id = params[:id] # retrieve movie ID from URI route
-    @user = User.find(id) # look up movie by unique ID
-    redirect_to profile_path(id)
+    if (session[:id] != nil)
+      id = params[:id] # retrieve movie ID from URI route
+      @user = User.find(id) # look up movie by unique ID
+      redirect_to profile_path(id)
+    else
+      flash[:notice] = "You need to log in first"
+      redirect_to log_in_index_path
+    end
     # will render app/views/movies/show.<extension> by default
   end
 
   def index
-    @users = User.all
+    if (session[:id] != nil)
+      @users = User.all
+    else
+      flash[:notice] = "You need to log in first"
+      redirect_to log_in_index_path
+    end
   end
 
   def new
@@ -28,29 +38,44 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find params[:id]
+    if (session[:id] != nil)
+      @user = User.find params[:id]
+    else
+      flash[:notice] = "You need to log in first"
+      redirect_to log_in_index_path
+    end
   end
 
   def update
-    @user = User.find params[:id]
-    if params[:user][:password] == params[:user][:repassword]
-      if params[:user][:password] == ""
-        @user.update_attributes!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email], :birthday => params[:user][:birthday])
+    if (session[:id] != nil)
+      @user = User.find params[:id]
+      if params[:user][:password] == params[:user][:repassword]
+        if params[:user][:password] == ""
+          @user.update_attributes!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email], :birthday => params[:user][:birthday])
+        else
+          @user.update_attributes!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email], :birthday => params[:user][:birthday], :password => User.encrypt(params[:user][:password]))
+        end
+        flash[:notice] = "#{@user.username} was successfully updated."
+        redirect_to users_path
       else
-        @user.update_attributes!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email], :birthday => params[:user][:birthday], :password => User.encrypt(params[:user][:password]))
+        flash[:notice] = "Password and confirm password doesn't match."
+        redirect_to edit_user_path(params[:id])
       end
-      flash[:notice] = "#{@user.username} was successfully updated."
-      redirect_to users_path
     else
-      flash[:notice] = "Password and confirm password doesn't match."
-      redirect_to edit_user_path(params[:id])
+        flash[:notice] = "You need to log in first"
+        redirect_to log_in_index_path
     end
   end
 
   def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-    flash[:notice] = "User '#{@user.username}' deleted."
-    redirect_to users_path
+    if (session[:id] != nil)
+      @user = User.find(params[:id])
+      @user.destroy
+      flash[:notice] = "User '#{@user.username}' deleted."
+      redirect_to users_path
+    else
+      flash[:notice] = "You need to log in first"
+      redirect_to log_in_index_path
+    end
   end
 end

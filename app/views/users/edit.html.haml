@@ -1,11 +1,11 @@
--# edit.html.haml using partial
-
+-# edit.html.haml using partial 
 %h1 Edit User
 
 = form_tag user_path(@user), :method => :put do
-
-  = label :user, :admin, 'Admin'
-  = select :user, :admin, [["User", 0],["Admin", 1]]
+    
+  -if User.find(session[:id]).admin == 1 
+    = label :user, :admin, 'Admin'
+    = select :user, :admin, [["User", 0],["Admin", 1]]
 
   = label :user, :username, 'Username'
   = text_field :user, 'username', :size => 50, :maxlength => 20, :autofocus => true
@@ -37,4 +37,4 @@
 
   = submit_tag 'Update User Info'
 
-  %p= link_to 'Back to user list', users_path
+  %p= link_to 'Back to user list', users_path 

@@ -1,12 +1,10 @@
 class UsersController < ApplicationController
-
   skip_filter :login
-  
   def show
-    if (session[:id] != nil)
+    if (session[:id] != nil )
       id = params[:id] # retrieve movie ID from URI route
       @user = User.find(id) # look up movie by unique ID
-      redirect_to profile_path(id)
+      redirect_to "/profiles/#{session[:id]}"
     else
       flash[:notice] = "You need to log in first"
       redirect_to log_in_index_path
@@ -16,7 +14,12 @@ class UsersController < ApplicationController
 
   def index
     if (session[:id] != nil)
-      @users = User.all
+      if (User.find(session[:id]).admin == 1)
+        @users = User.all
+      else
+        flash[:notice] = "You are not an admin"
+        redirect_to "/profiles/#{session[:id]}"
+      end
     else
       flash[:notice] = "You need to log in first"
       redirect_to log_in_index_path
@@ -32,7 +35,11 @@ class UsersController < ApplicationController
         @user = User.create!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email], :birthday => params[:user][:birthday], :password => User.encrypt(params[:user][:password]))
     
       flash[:notice] = "#{@user.username} was successfully created."
-      redirect_to "/profiles/#{@user.id}"
+      if (session[:id] == nil)
+        redirect_to log_in_index_path
+      elsif(User.find(session[:id]).admin == 1)
+        redirect_to users_path
+      end
     else
       flash[:notice] = "Password and confirm password doesn't match."
       redirect_to new_user_path
@@ -41,7 +48,11 @@ class UsersController < ApplicationController
 
   def edit
     if (session[:id] != nil)
-      @user = User.find params[:id]
+      if (User.find(session[:id]).admin == 1)
+        @user = User.find params[:id]
+      else
+        @user = User.find session[:id]
+      end
     else
       flash[:notice] = "You need to log in first"
       redirect_to log_in_index_path

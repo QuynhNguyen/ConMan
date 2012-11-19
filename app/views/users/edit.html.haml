@@ -35,6 +35,7 @@
   = date_select :user, 'birthday',{:start_year => 1926,
 :end_year => Time.now.year}
 
+  %br
   = submit_tag 'Update User Info'
-
-  %p= link_to 'Back to user list', users_path 
+  -if User.find(session[:id]).admin == 1 
+    %p= link_to 'Back to user list', users_path 

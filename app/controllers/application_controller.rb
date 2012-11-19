@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-
+  @users = User
   before_filter :login
 
   protect_from_forgery

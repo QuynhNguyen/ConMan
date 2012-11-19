@@ -59,17 +59,16 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
-
+        <% if session[:id] != nil %>
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
-
               <li class="nav-header">Preferences</li>
-              <li><a href=<%= "/profile_display_settings/#{session[:id]}/edit"%>>Profile Display Settings</a></li>
-              <li><%= link_to 'Settings', controller: :settings %></li>
-              <li><a href="/private_messages">Inbox</a></li>
               <li><a href=<%= "/profiles/#{session[:id]}" %>>Profile</a></li>
-              <li><a href="/status">Status</a></li
+              <li><a href="/status">Status</a></li>
+              <li><a href="/private_messages">Message</a></li>
+              <li><a href=<%= "/users/#{session[:id]}/edit"%>>User Information</a></li>
+              <li><%= link_to 'Settings', controller: :settings %></li>
               <% if @fb_friend_images %>
               <li class="nav-header">Friends</li>
                 <% @fb_friend_images.each do |photo| %>
@@ -79,7 +78,7 @@
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
-
+        <% end %>
          <div class="span9">
           <%= yield %>
          </div>

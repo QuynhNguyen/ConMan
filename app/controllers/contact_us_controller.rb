@@ -1,5 +1,7 @@
 class ContactUsController < ApplicationController
 
+    skip_filter :login
+
     def show
 
     end

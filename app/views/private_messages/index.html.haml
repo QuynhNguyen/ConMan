@@ -1,18 +1,22 @@
 %h2 Inbox
 
-%table#private_messages
-        %thead
-                %tr
-                        %th From
-                        %th Subject
-                        %th Date
-                        %th Read
-                        %th Actions
-        %tbody
-                - @pm.each do |private_message|
-                        %tr
-                                %td= User.find(private_message.from).username
-                                %td= link_to "#{private_message.subject}", private_message_path(private_message)
-                                %td= private_message.date
-                                %td= button_to "Delete", private_message_path(private_message), method: :delete, confirm: "Are you sure?"
+%table.table.table-hover#private_messages
+  %thead
+    %tr
+      %th From
+      %th Subject
+      %th Date
+      %th Read
+      %th Actions
+  %tbody
+  - @pm.each do |private_message|
+    %tr
+      %td= User.find(private_message.from).username
+      %td= link_to "#{private_message.subject}", private_message_path(private_message)
+      %td= private_message.date
+      - if private_message.read == false
+        %td="UNREAD"
+      - else
+        %td="READ"
+      %td= button_to "Delete", private_message_path(private_message), method: :delete, confirm: "Are you sure?"
 = link_to "Create Message", new_private_message_path

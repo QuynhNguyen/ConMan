@@ -5,16 +5,37 @@
       <img class="media-object" src="http://www.yaf.org/uploadedImages/Blogs/UCSD%20Logo.jpg" width="80" height="80">
     </a>
     <div class="media-body">
-      <h4 class="media-heading"><button class="btn btn-success">Add Me as Friend</button> <a href=<%= "#{@User.id}/social" %> class="btn btn-info">Get Social!</a></h4>
-        <% @User.attributes.each do |name, value| %>
-          <p><b><%= name %>: </b> <%= value %>
-        <% end %>
+      <h4 class="media-heading"><a href=<%= "#{@User.id}/social" %> class="btn btn-info">Get Social!</a></h4>
+        <% if @User.show_fn %>
+          <b>First Name: </b> <%= @User.first_name %>
+        <% end %> <br/>
+        <% if @User.show_ln %>
+          <b>Last Name: </b> <%= @User.last_name %>
+        <% end %> <br/>
+        <% if @User.show_addr %>
+          <b>Address: </b> <%= @User.address %>
+        <% end %> <br/>
+        <% if @User.show_email %>
+          <b>Email: </b> <%= @User.email %>
+        <% end %> <br/>
+        <% if @User.show_phone %>
+          <b>Phone: </b> <%= @User.phone %>
+        <% end %> <br/>
+        <% if @User.show_birthday %>
+          <b>Birthday: </b> <%= @User.birthday %>
+        <% end %> <br/>
+       
         <p><b>Status: </b> <%= 
          begin
             @User.status.message 
          rescue
             "Empty"
           end %>
+          <%
+            if @User.admin and @User.status != nil
+          %>
+            <a href=<%= "/user/#{@User.id}/status/#{@User.status.id}" %> class="icon-remove" onclick="return confirm('Delete entry?');"></a>
+          <% end %>
     </div>
 
   </li>

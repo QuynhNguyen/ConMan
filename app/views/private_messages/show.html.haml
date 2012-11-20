@@ -1,16 +1,26 @@
 %h2 Message
 
-%table#private_messages
-	%thead
-		%tr
-			%th From
-			%th Subject
-			%th Date
-			%th Message
-	%tbody
+%table
+	%tr
 		%td
-			%td= User.find(@private_message.from).username
-			%td= @private_message.subject
-			%td= @private_message.date
-			%td= @private_message.message
+			%strong From
+		%td#content= User.find(@private_message.from).username
+	%tr
+		%td
+			%strong Date
+		%td#content= @private_message.date.in_time_zone("Pacific Time (US & Canada)").strftime("%A, %B %e, %Y %l:%m %p")
+	%tr
+		%td
+			%strong Subject
+		%td#content= @private_message.subject
+
+%br
+
+%p= @private_message.message
+
+%br
+
 = link_to "Back to Inbox", private_messages_path
+
+:css
+	#content{padding-left:10px;}

@@ -1,6 +1,6 @@
 <h3>Update status</h3>
-
-<form method="PUT">
+<%= flash[:notice] %>
+<form method="post">
 	<input type="text" name="message" value="<%= 
 		begin
 			@user.status.message 

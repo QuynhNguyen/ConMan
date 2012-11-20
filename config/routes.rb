@@ -43,6 +43,7 @@ ConMan::Application.routes.draw do
   resources :private_messages
   resources :frontpage
   resources :contact_us
+  resources :privacy
 
   match 'profiles/:id' => 'profiles#index'
   match 'profiles/:id/social' => 'profiles#socialnetwork'

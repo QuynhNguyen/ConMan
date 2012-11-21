@@ -1,4 +1,10 @@
 
+n=document.getElementById('fb-root');
+if(!n){
+  console.log('creating the divs');
+  n=document.createElement('div');
+  n.id='fb-root';
+}
 
 
   window.fbAsyncInit = function() {
@@ -18,7 +24,7 @@
       } else if (response.status === 'not_authorized') {
         // not_authorized
         fbLogin();
-        console.log('must log in');
+
       } else {
         // not_logged_in
         console.log('not logged in');
@@ -63,12 +69,13 @@ function getPosition(e){
           if (response.authResponse) {
               // connected
               testAPI();
+              window.location = "http://localhost:3000/fb/index"
           } else {
               // cancelled
+              window.location = "http://localhost:3000/settings"
           }
-      });
+      }, {scope: 'publish_stream'});
   };
-
 
 
   // Load the SDK Asynchronously

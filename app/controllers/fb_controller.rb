@@ -3,14 +3,31 @@ class FbController < ApplicationController
 	skip_filter :login
 	#GET /profiles
 	def index
-		@fb_friend_images = []
-		@fb_friends_list = flash[:fb_friends_list]
-		if (flash[:fb_friends_images])
-			flash[:fb_friends_images].each do |image|
-				@fb_friend_images << image
-			end
-
+		@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/fb/index')
+		if (cookies)
+			@facebook_cookies ||= @oauth.get_user_info_from_cookies(cookies) 
 		end
+		session[:fb_access_token] ||= @facebook_cookies["access_token"]
+		@graph = Koala::Facebook::API.new(session[:fb_access_token] )
+		@friends = @graph.get_connections("me", "friends")
+		@fb_friends_images = []
+		@fb_friends_list = []
+		index = 0
+		@friends.each do |f|
+			break if index == 15
+			@fb_friends_list << f["id"]
+			@fb_friends_images << @graph.get_picture(f["id"])
+			index+=1
+		end
+		#exchange_access_token
+
+		#@fb_friend_images = []
+		#@fb_friends_list = flash[:fb_friends_list]
+		#if (flash[:fb_friends_images])
+		#	flash[:fb_friends_images].each do |image|
+		#		@fb_friend_images << image
+		#	end
+		#end
 	end
 
 	def fb_wall()

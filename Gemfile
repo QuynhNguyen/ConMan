@@ -35,6 +35,21 @@ end
 gem 'jquery-rails'
 gem "koala"
 gem 'twitter_oauth'
+gem 'gmail'
+#gem 'gmail_contacts'
+gem 'google-api-client'
+#gem 'gdata'
+#gem 'oauth'
+#gem 'oauth-plugin'
+#gem 'omniauth'
+gem 'google_plus'
+#gem 'ethon'
+#gem 'typhoeus'
+#gem 'curb'
+gem 'json'
+#gem 'curb'
+
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

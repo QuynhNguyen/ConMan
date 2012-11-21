@@ -1,0 +1,12 @@
+%h1 Google#index
+%p Find me in app/views/google/index.html.haml
+
+= form_tag( controller: :google, action: :check_gmail) do
+	= label_tag(:email,"Email")
+	= text_field_tag(:email)
+	= label_tag(:password,"Password")
+	= text_field_tag(:password)
+	= submit_tag 'Read Emails'
+
+-if(@result)
+	= @result

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'sqlite3'
+#gem 'sqlite3'
 gem 'rails', '3.2.8'
 gem 'googlevoiceapi'
 gem 'tlsmail'
@@ -15,7 +15,7 @@ group :development, :test do
 	gem 'sqlite3'
 end
 
-group :production do
+group :production, :staging do
 	gem 'pg'
 end
 

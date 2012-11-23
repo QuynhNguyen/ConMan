@@ -34,7 +34,7 @@ class PrivacyController < ApplicationController
 
   def update
     @user = User.find session[:id]
-    @user.update_attributes!(:show_fn => params[:user][:show_fn], :show_ln => params[:user][:show_ln], :show_addr => params[:user][:show_addr], :show_phone => params[:user][:show_phone], :show_email => params[:user][:show_email], :show_birthday => params[:user][:show_birthday])
+    @user.update_attributes!(:show_fn => params[:user][:show_fn], :show_ln => params[:user][:show_ln], :show_addr => params[:user][:show_addr], :show_phone => params[:user][:show_phone], :show_email => params[:user][:show_email])
     flash[:notice] = "#{@user.username} was successfully updated."
     redirect_to "/profiles/#{session[:id]}"
   end

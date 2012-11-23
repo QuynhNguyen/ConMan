@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(:version => 20121112034939) do
     t.integer  "show_addr"
     t.integer  "show_phone"
     t.integer  "show_email"
-    t.integer  "show_birthday"
+    t.datetime  "show_birthday"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end

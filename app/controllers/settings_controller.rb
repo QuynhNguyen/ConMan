@@ -1,8 +1,9 @@
 class SettingsController < ApplicationController
-	#attr_accessible :price, :id #,:product
-	#belongs_to :product
+
 	def index
 	end
+
+
 	def get_fb_permission
 		@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/settings/get_fb_permission')
 		@facebook_cookies ||= @oauth.get_user_info_from_cookies(cookies) 

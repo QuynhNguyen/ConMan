@@ -1,41 +1,54 @@
+require 'net/http'
+require 'json'
+require 'open-uri'
 class FbController < ApplicationController
 
 	skip_filter :login
 	#GET /profiles
 	def index
-		@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/fb/index')
-		if (cookies)
-			@facebook_cookies ||= @oauth.get_user_info_from_cookies(cookies) 
+		@user = User.find(session[:id])
+		@setting ||= Setting.find_by_id(@user.id)
+		if (@setting)
+			@fb_token = @setting.fb_token
+		else
+			@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/fb/index')
+			@fb_cookies ||= @oauth.get_user_info_from_cookies(cookies) 
+			@fb_token = @oauth.exchange_access_token(@fb_cookies["access_token"])
+			@setting = Setting.new(user_id: @user.id, fb_token: @fb_token)
+			@setting.save!
 		end
-		session[:fb_access_token] ||= @facebook_cookies["access_token"]
-		@graph = Koala::Facebook::API.new(session[:fb_access_token] )
+		@graph = Koala::Facebook::API.new(@fb_token)
 		@friends = @graph.get_connections("me", "friends")
 		@fb_friends_images = []
 		@fb_friends_list = []
 		index = 0
 		@friends.each do |f|
-			break if index == 15
+			break if index == 10
 			@fb_friends_list << f["id"]
 			@fb_friends_images << @graph.get_picture(f["id"])
 			index+=1
 		end
-		#exchange_access_token
-
-		#@fb_friend_images = []
-		#@fb_friends_list = flash[:fb_friends_list]
-		#if (flash[:fb_friends_images])
-		#	flash[:fb_friends_images].each do |image|
-		#		@fb_friend_images << image
-		#	end
-		#end
+		to = Time.now.to_i
+		from = 1.day.ago.to_i
+		@f_requests = @graph.fql_query("SELECT uid_from, time, message FROM friend_request WHERE uid_to = me()")
+		@feed = @graph.fql_query("SELECT actor_id, target_id, message FROM stream WHERE filter_key in (SELECT filter_key FROM stream_filter WHERE uid=me() AND type='newsfeed') AND is_hidden = 0
+")
+		 # require 'open-uri'
+		#  file = open("https://graph.facebook.com/19292868552")
+		 # file.read
 	end
 
+
+
+	
 	def fb_wall()
 		@friend = params[:friend_id]
 	end
 
 	def post_fb_wall()
-		@graph = Koala::Facebook::API.new(session[:fb_access_token] )
+		@user = User.find(session[:id])
+		@setting ||= Setting.find_by_id(@user.id)
+		@graph = Koala::Facebook::API.new(@setting.fb_token)
 		@graph.put_wall_post(params[:message],{name: 'test'},params["friend_id"])
 		flash[:notice] = "Your message #{params[:message]} has been posted on #{params[:friend_id]}'s wall"
 		flash[:notice] = params[:friend_id]
@@ -43,31 +56,12 @@ class FbController < ApplicationController
 	end
 	
 	def update_fb_status	
-		@graph = Koala::Facebook::API.new(session[:fb_access_token] )
+		@user = User.find(session[:id])
+		@setting ||= Setting.find_by_id(@user.id)
+		@graph = Koala::Facebook::API.new(@setting.fb_token)
 		@graph.put_wall_post(params[:fb_status_message])
 		redirect_to action: :index
 	end
 
-	def get_fb_friend_list
-		@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/profiles')
-		@facebook_cookies ||= @oauth.get_user_info_from_cookies(cookies) 
-		session[:fb_access_token] = @facebook_cookies["access_token"]
-		@graph = Koala::Facebook::API.new(session[:fb_access_token] )
-		@friends = @graph.get_connections("me", "friends")
-		@fb_friends_images = []
-		@fb_friends_list = []
-		@friends.each do |f|
-			@fb_friends_images << @graph.get_picture(f["id"])
-			@fb_friends_list << f["id"]
-		end
-		flash[:fb_friends_images] = @fb_friends_images
-		flash[:fb_friends_list] = @fb_friends_list
-		redirect_to action: :index
-	end
-
-	def fb_logout
-		reset_session
-		redirect_to action: :index
-	end
 
 end

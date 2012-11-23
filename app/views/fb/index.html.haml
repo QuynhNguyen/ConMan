@@ -10,5 +10,9 @@
 	- @fb_friends_images.each do |image|
 		= link_to image_tag(image), controller: :fb, action: :fb_wall, friend_id: "#{@fb_friends_list[index]}"
 		-index+=1
+- if (@feed)
+	%h3 Latest Feeds
+	- @feed.each do |f|
+		%p= @graph.get_object(f["actor_id"])["name"].to_s + ": " + f["message"].to_s
 
-= link_to "send message", action: :fb_wall, friend_id: :minhta 
+%p= link_to "send message", action: :fb_wall, friend_id: :minhta 

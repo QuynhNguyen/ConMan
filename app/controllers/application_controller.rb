@@ -19,12 +19,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  #rescue_from Koala::Facebook::APIError, :with => :handle_fb_exception
+  	#rescue_from Koala::Facebook::APIError, :with => :handle_fb_exception
 	protected
 	  def handle_fb_exception exception
 		  if exception.fb_error_type.eql? 'OAuthException'
 		    logger.debug "[OAuthException] Either the user's access token has expired, they've logged out of Facebook, deauthorized the app, or changed their password"
-				oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/settings/')
+			oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/fb/index')
 		    # If there is a code in the url, attempt to request a new access token with it
 		    if params.has_key? 'code'
 		      code = params['code']
@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
 		      logger.debug session[:fb_oauth_token].to_yaml
 		      redirect_to controller: :fb, action: :index
 		    else # Since there is no code in the url, redirect the user to the Facebook auth page for the app
-					url = oauth.url_for_oauth_code(permissions: "read_friendlists,read_mailbox,read_requests,read_stream,ads_management,manage_friendlists,manage_notifications,friends_online_presence,publish_checkins,publish_stream")
+				url = oauth.url_for_oauth_code(permissions: "read_friendlists,read_mailbox,read_requests,read_stream,ads_management,manage_friendlists,manage_notifications,friends_online_presence,publish_checkins,publish_stream")
 		    	logger.debug "No code was present; redirecting to the following url to obtain one: #{url}"
 		    	redirect_to url
 		    end

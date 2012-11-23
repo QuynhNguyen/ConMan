@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 
   #Association
   has_one  :status
+  has_one  :setting
 
   attr_accessible :status, :first_name, :last_name, :address, :phone, :admin, :email, :birthday, :username, :password, :show_fn, :show_ln, :show_addr, :show_phone, :show_email, :show_birthday
   before_save :default_values

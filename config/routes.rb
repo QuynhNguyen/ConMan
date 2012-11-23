@@ -2,43 +2,21 @@
 ConMan::Application.routes.draw do
 
 
+  root :to => 'frontpage#index'
+  
   get "google/g_login"
-
   get "google/g_logout"
-
   get "google/index"
-
   get "google/get_g_contacts"
   post "google/exchange_token"
   post "google/check_gmail"
-
   match '/users/auth/google_oauth2/callback' => 'google#index'
 
-  root :to => 'frontpage#index'
-
   match 'settings' => 'settings#index'
-  get 'settings/get_fb_permission'
- 
-  
   get 'fb/index'
-  get 'fb/get_fb_friend_list'
-  get 'fb/get_fb_newsfeed'
-  post 'fb/get_fb_permission'
-  post 'fb/fb_login'
-  post 'fb/fb_logout'
   post 'fb/update_fb_status'
   get 'fb/fb_wall'
   post 'fb/post_fb_wall'
-
-  #get 'profiles/get_fb_friend_list'
-  #get 'profiles/get_fb_newsfeed'
-  #post 'profiles/get_fb_permission'
-  #post 'profiles/fb_login'
-  #post 'profiles/fb_logout'
-  #post 'profiles/update_fb_status'
-  #match 'profiles' => 'profiles#index'
-  #get 'profiles/fb_wall'
-  #post 'profiles/post_fb_wall'
 
   get 'twitter/index'
   post 'twitter/tweet'

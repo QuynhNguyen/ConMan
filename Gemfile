@@ -7,7 +7,7 @@ gem 'tlsmail'
 gem 'mail'
 
 #haml
-gem 'haml-rails', '>= 0.3.4', :group => :development
+gem 'haml-rails', '>= 0.3.4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

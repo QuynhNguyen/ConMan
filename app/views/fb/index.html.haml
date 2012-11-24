@@ -1,6 +1,7 @@
+
 = form_tag( controller: :fb, action: :update_fb_status) do
 	= label_tag(:fb_status,'Current Status')
-	= text_field_tag :fb_status_message, nil, placeholder: @fb_status
+	= text_field_tag :fb_status_message, nil, placeholder: @fb_status[0]["message"]
 	= submit_tag 'Update'
 
 - if (@online_friends)
@@ -12,35 +13,34 @@
 		-index+=1
 - if (@feed)
 	%h3 Latest Feeds
-	- @feed.each do |f|
+	- @feed.each_with_index do |f,index|
 		-if (f["message"].empty?)
 			-unless (f["permalink"].empty?)
 				%p
-					%b= @graph.get_object(f["actor_id"])["name"].to_s + ": " 
+					%b= @actors[index]["name"].to_s + ": " 
 					= link_to "#{f["permalink"]}", f["permalink"]
 		-else
 			%p
-				%b= @graph.get_object(f["actor_id"])["name"].to_s + ": "
+				%b= @actors[index]["name"].to_s + ": "
 				= message = f["message"].to_s
-
 
 
 - if (@friends_request)
 	%h3 New Friends Requests
-	-@friends_request.each do |req|
-		= @graph.get_object(req["uid_from"])["name"]
-		= link_to image_tag(@graph.get_picture(req["uid_from"])), "https://www.facebook.com/#{req["uid_from"]}"
+	-@friends_request.each_with_index do |req, index|
+		= @fb_friends_request_names[index]["name"]
+		= link_to image_tag(@fb_friends_request_images[index]), "https://www.facebook.com/#{req["uid_from"]}"
+
 
 - if (@fb_inbox)
 	%h3 Latest Messages
 	- @fb_inbox.each do |m|
-		- m.each do |t|
-			- author = @graph.get_object(t["author_id"])["name"].to_s
+		- m.each_with_index do |t,index|
 			%p 
-				%b= link_to author, "https://wwww.facebook.com/#{t["author_id"]}"
+				%b= link_to @authors[index]["name"], "https://wwww.facebook.com/#{t["author_id"]}"
 				= t["body"]
 
 
 
 %p FEED DEBUG
-= @feed
+=# @feed

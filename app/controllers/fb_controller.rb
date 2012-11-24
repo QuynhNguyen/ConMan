@@ -2,9 +2,7 @@ require 'net/http'
 require 'json'
 require 'open-uri'
 class FbController < ApplicationController
-
-	skip_filter :login
-	#GET /profiles
+	#skip_filter :login
 	def index
 		@user = User.find(session[:id])
 		@setting ||= Setting.find_by_user_id(@user.id)
@@ -34,28 +32,58 @@ class FbController < ApplicationController
 		@graph = Koala::Facebook::API.new(@fb_token)
 		@fb_friends_images = []
 		@fb_friends_list = []
-		@online_friends = @graph.fql_query("SELECT uid, name FROM user WHERE online_presence IN ('active') AND uid IN (SELECT uid2 FROM friend WHERE uid1 = me())")
-		@online_friends.each do |f|
-			@fb_friends_list << f["uid"]
-			@fb_friends_images << @graph.get_picture(f["uid"])
-		end
-		@fb_status = @graph.fql_query("SELECT message FROM status WHERE uid=me() LIMIT 1")[0]["message"]
+		@fb_friends_request_names =[]
+		@fb_friends_request_images =[]
+		@fb_inbox = []
+		@actors = []
+		@authors = []
 
+		@online_friends, @fb_status, @friends_request, @feed, @threads = @graph.batch do |batch_api|
+			batch_api.fql_query("SELECT uid, name FROM user WHERE online_presence IN ('active') AND uid IN (SELECT uid2 FROM friend WHERE uid1 = me())")
+			batch_api.fql_query("SELECT message FROM status WHERE uid=me() LIMIT 1")
+			batch_api.fql_query("SELECT uid_from, message FROM friend_request WHERE uid_to = me()")			
+			batch_api.fql_query("SELECT actor_id, target_id, action_links, message , permalink, type FROM stream WHERE filter_key in (SELECT filter_key FROM stream_filter WHERE uid=me() AND type='newsfeed') AND is_hidden = 0")
+			batch_api.fql_query("SELECT thread_id, subject, recipients FROM thread WHERE folder_id = 0 LIMIT 5")
+		end
+
+		@fb_friends_images = @graph.batch do |batch_api|
+			@online_friends.each do |f|
+				@fb_friends_list << f["uid"]
+				batch_api.get_picture(f["uid"])
+			end
+		end
+		@fb_friends_request_names = @graph.batch do |batch_api|
+			@friends_request.each do |f|
+				batch_api.get_object(f["uid_from"])
+			end
+		end
+		@fb_friends_request_images = @graph.batch do |batch_api|
+			@friends_request.each do |f|
+				batch_api.get_picture(f["uid_from"])
+			end
+		end
+		@actors = @graph.batch do |batch_api|
+			@feed.each do |f|
+				batch_api.get_object(f["actor_id"])
+			end
+		end
 		#to = Time.now.to_i
 		from = 7.day.ago.to_i
-		@friends_request = @graph.fql_query("SELECT uid_from, message FROM friend_request WHERE uid_to = me()")
-		@feed = @graph.fql_query("SELECT actor_id, target_id, action_links, message , permalink, type FROM stream WHERE filter_key in (SELECT filter_key FROM stream_filter WHERE uid=me() AND type='newsfeed') AND is_hidden = 0")
-	
-		@threads = @graph.fql_query("SELECT thread_id, subject, recipients FROM thread WHERE folder_id = 0 LIMIT 5")
-		@fb_inbox = []
-		@threads.each do |t|
-			@fb_inbox << @graph.fql_query("SELECT author_id, body FROM message WHERE thread_id = #{t["thread_id"]} AND created_time > #{from}")
+		@fb_inbox = @graph.batch do |batch_api|
+			@threads.each do |t|
+				batch_api.fql_query("SELECT author_id, body FROM message WHERE thread_id = #{t["thread_id"]} AND created_time > #{from}")
+			end
 		end
-
+		@authors = @graph.batch do |batch_api|
+			@fb_inbox.each do |m|
+				m.each do |message|
+					batch_api.get_object(message["author_id"])
+				end
+			end
+		end
+				
 
 	end
-
-
 
 	
 	def fb_wall()

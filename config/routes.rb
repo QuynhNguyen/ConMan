@@ -11,12 +11,15 @@ ConMan::Application.routes.draw do
   post "google/exchange_token"
   post "google/check_gmail"
   match '/users/auth/google_oauth2/callback' => 'google#index'
+  get 'google/delete_contact'
+  get 'google/insert_contact'
 
   match 'settings' => 'settings#index'
   get 'fb/index'
   post 'fb/update_fb_status'
   get 'fb/fb_wall'
   post 'fb/post_fb_wall'
+  get 'fb/delete_friend'
 
   get 'twitter/index'
   post 'twitter/tweet'

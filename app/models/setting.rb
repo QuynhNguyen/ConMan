@@ -1,3 +1,4 @@
 class Setting < ActiveRecord::Base
-  attr_accessible :fb_token, :user_id
+  attr_accessible :fb_token, :google_code, :twitter_token, :user_id
+  validate :user_id, uniqueness: :true
 end

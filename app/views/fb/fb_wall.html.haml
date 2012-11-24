@@ -1,5 +1,7 @@
 = form_tag( controller: :fb, action: :post_fb_wall) do
-	= label_tag(:wall_message,"post on #{@friend}'s wall")
-	= hidden_field_tag :friend_id, "#{@friend}"
+	= label_tag(:wall_message,"post on #{@graph.get_object(@friend_id)["name"]}'s wall")
+	= hidden_field_tag :friend_id, "#{@friend_id}"
 	= text_field_tag(:message)
 	= submit_tag 'post to wall'#, friend_id: "#{@friend}"
+
+= link_to "Delete This Friend", controller: :fb, action: :delete_friend, friend_id: @friend_id

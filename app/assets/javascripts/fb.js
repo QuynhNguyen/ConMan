@@ -74,7 +74,7 @@ function getPosition(e){
               // cancelled
               window.location = "http://localhost:3000/settings"
           }
-      }, {scope: "read_insights,read_friendlists,read_mailbox,read_requests,read_stream,ads_management,manage_friendlists,manage_notifications,friends_online_presence,publish_checkins,publish_stream"});
+      }, {scope: "user_status,user_online_presence,friends_online_presence,read_insights,read_friendlists,manage_friendlists,read_mailbox,read_requests,read_stream,ads_management,manage_friendlists,manage_notifications,friends_online_presence,publish_checkins,publish_stream"});
   };
 
 

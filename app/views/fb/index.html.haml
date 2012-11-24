@@ -1,18 +1,46 @@
-= #button_to 'get friendlist', {controller: :fb, action: :get_fb_friend_list}, method: :get
-
 = form_tag( controller: :fb, action: :update_fb_status) do
-	= label_tag(:fb_status,"update fb status")
-	= text_field_tag(:fb_status_message)
-	= submit_tag 'update status'
+	= label_tag(:fb_status,'Current Status')
+	= text_field_tag :fb_status_message, nil, placeholder: @fb_status
+	= submit_tag 'Update'
 
-- if (@fb_friends_images)
+- if (@online_friends)
+	%h3 Online Friends
 	- index = 0
 	- @fb_friends_images.each do |image|
+		= @online_friends[index]["name"]
 		= link_to image_tag(image), controller: :fb, action: :fb_wall, friend_id: "#{@fb_friends_list[index]}"
 		-index+=1
 - if (@feed)
 	%h3 Latest Feeds
 	- @feed.each do |f|
-		%p= @graph.get_object(f["actor_id"])["name"].to_s + ": " + f["message"].to_s
+		-if (f["message"].empty?)
+			-unless (f["permalink"].empty?)
+				%p
+					%b= @graph.get_object(f["actor_id"])["name"].to_s + ": " 
+					= link_to "#{f["permalink"]}", f["permalink"]
+		-else
+			%p
+				%b= @graph.get_object(f["actor_id"])["name"].to_s + ": "
+				= message = f["message"].to_s
 
-%p= link_to "send message", action: :fb_wall, friend_id: :minhta 
+
+
+- if (@friends_request)
+	%h3 New Friends Requests
+	-@friends_request.each do |req|
+		= @graph.get_object(req["uid_from"])["name"]
+		= link_to image_tag(@graph.get_picture(req["uid_from"])), "https://www.facebook.com/#{req["uid_from"]}"
+
+- if (@fb_inbox)
+	%h3 Latest Messages
+	- @fb_inbox.each do |m|
+		- m.each do |t|
+			- author = @graph.get_object(t["author_id"])["name"].to_s
+			%p 
+				%b= link_to author, "https://wwww.facebook.com/#{t["author_id"]}"
+				= t["body"]
+
+
+
+%p FEED DEBUG
+= @feed

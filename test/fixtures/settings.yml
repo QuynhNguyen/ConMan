@@ -3,7 +3,11 @@
 one:
   user_id: 1
   fb_token: MyString
+  twitter_token: MyString
+  google_code: MyString
 
 two:
   user_id: 1
   fb_token: MyString
+  twitter_token: MyString
+  google_code: MyString

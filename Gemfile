@@ -6,6 +6,7 @@ gem 'googlevoiceapi'
 gem 'tlsmail'
 gem 'mail'
 
+
 #haml
 gem 'haml-rails', '>= 0.3.4', :group => :development
 
@@ -36,15 +37,11 @@ gem 'jquery-rails'
 gem "koala"
 gem 'twitter_oauth'
 gem 'gmail'
-#gem 'gmail_contacts'
 gem 'google-api-client'
-#gem 'gdata'
-#gem 'oauth'
-#gem 'oauth-plugin'
-#gem 'omniauth'
 gem 'google_plus'
 gem 'json'
-#gem 'curb'
+gem 'nokogiri'
+gem 'gdata'
 
 
 

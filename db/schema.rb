@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121122224702) do
+ActiveRecord::Schema.define(:version => 20121123071721) do
 
   create_table "private_messages", :force => true do |t|
     t.integer  "user"
@@ -25,8 +25,10 @@ ActiveRecord::Schema.define(:version => 20121122224702) do
   create_table "settings", :force => true do |t|
     t.integer  "user_id"
     t.string   "fb_token"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "twitter_token"
+    t.string   "google_code"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "statuses", :force => true do |t|

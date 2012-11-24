@@ -1,9 +1,11 @@
-require 'gmail'
+
 require 'net/http'
 require 'net/https'
 require 'uri'
 require "json"
-require 'google/api_client'
+require 'nokogiri'
+require 'gdata'
+require 'contacts'
 
 class GoogleController < ApplicationController
 	CLIENT_ID = '178522046203.apps.googleusercontent.com'
@@ -11,21 +13,15 @@ class GoogleController < ApplicationController
 	REDIRECT_URI = 'http://localhost:3000/google/index'
 
   def g_login
-  	#gmail = Gmail.connect('project.conman','Raging_Flamingos')
-  	#flash[:notice] = gmail.inbox.count(:unread)
-  	#flash[:notice] = gmail.logged_in?
-		 #register your project with google at https://code.google.com/apis/console/, get the below constants
+   	@user = User.find(session[:id])
+		@setting ||= Setting.find_by_user_id(@user.id)
 
-		 
-		#first we send users to this URL:
 		google_contacts_api_uri = 'https://www.google.com/m8/feeds'
 		google_calendar_api_uri = 'http://www.google.com/calendar/feeds/default/allcalendars/full'
 		plus_uri = "https://www.googleapis.com/auth/plus.me" 
-		url = "https://accounts.google.com/o/oauth2/auth?scope=#{plus_uri}+#{google_contacts_api_uri}+#{google_calendar_api_uri}&response_type=code&redirect_uri=#{REDIRECT_URI}&approval_prompt=force&client_id=#{CLIENT_ID}&lahl=en-US&from_login=1&access_type=offline"
+		url = "https://accounts.google.com/o/oauth2/auth?approval_prompt=force&scope=#{plus_uri}+#{google_contacts_api_uri}+#{google_calendar_api_uri}&response_type=code&redirect_uri=#{REDIRECT_URI}&client_id=#{CLIENT_ID}&lahl=en-US&from_login=1&access_type=offline"
 		redirect_to url
-		#the user approves the request and you get a code in your redirect URI 'http://YOUR_SITE/googleauth?code=YOUR_CODE
 
-		 	
   end
 
   def exchange_token
@@ -36,13 +32,8 @@ class GoogleController < ApplicationController
   end
 
   def index
-  	param = {
-		  :code => params[:code],
-		  :client_id => CLIENT_ID,
-		  :client_secret => CLIENT_SECRET,
-		  :redirect_uri => REDIRECT_URI,
-		  :grant_type => 'authorization_code'
-		}
+  	@user = User.find(session[:id])
+		@setting ||= Setting.find_by_user_id(@user.id)
 
 		uri = URI.parse("https://accounts.google.com/o/oauth2/token")
 		http = Net::HTTP.new(uri.host, uri.port)
@@ -50,47 +41,99 @@ class GoogleController < ApplicationController
 		http.use_ssl = true
 		request = Net::HTTP::Post.new(uri.request_uri)
 		request.content_type = "application/x-www-form-urlencoded"
-		request.body = param.to_query
-		#request.set_form_data(code: params[:code],
-		#	:client_id => CLIENT_ID,
-		 # :client_secret => CLIENT_SECRET,
-		 # :redirect_uri => REDIRECT_URI,
-		  #:grant_type => 'authorization_code')
-		#response = http.request(request)
-		#response = JSON.parse(response.body)
-		#flash[:notice] = response["access_token"]
 
 
-	    client = Google::APIClient.new
-	    plus = client.discovered_api('plus')
+		if (@setting)
+			if (params[:code])
+				param = {
+				  code: params[:code],
+				  client_id: CLIENT_ID,
+				  client_secret: CLIENT_SECRET,
+				  redirect_uri: REDIRECT_URI,
+				  grant_type: 'authorization_code'
+				}
+				request.body = param.to_query
+				@response = JSON.parse(http.request(request).body)
+				@setting.google_code = @response["refresh_token"]
+				@setting.save!
+			else
+				flash[:notice] = "Please sign in your google account"
+				redirect_to controller: :settings, action: :index			
+				return
+			end
 
-	    # Initialize OAuth 2.0 client    
-	    #client.authorization.client_id = CLIENT_ID
-	    #client.authorization.client_secret = CLIENT_SECRET
-	    #client.authorization.redirect_uri = REDIRECT_URI
-	    
-	    #client.authorization.scope = 'https://www.googleapis.com/auth/plus.me'
+		else
+			if (params[:code])
+				param = {
+				  code: params[:code],
+				  client_id: CLIENT_ID,
+				  client_secret: CLIENT_SECRET,
+				  redirect_uri: REDIRECT_URI,
+				  grant_type: 'authorization_code'
+				}
+				request.body = param.to_query
+				@response = JSON.parse(http.request(request).body)
+				@setting = Setting.new(user_id: @user.id, google_code: @response["refresh_token"])
+				@setting.save!
+			else
+				flash[:notice] = "Please sign in your google account"
+				redirect_to controller: :settings, action: :index
+				return
+			end
+		end
 
-	    # Request authorization
-	    #redirect_uri = client.authorization.authorization_uri
+		@token = @response["access_token"]
+		@url = "https://www.google.com/m8/feeds/contacts/default/full?access_token=#{@token}"
+		@doc = Nokogiri::XML(open(@url))
+		@titles = []
+		@emails = @doc.xpath("//gd:email/@address")
+		@doc.css("entry").each do |e|
+			@titles << e.css("title")[0].inner_text
+		end
 
-	    # Wait for authorization code then exchange for token
-	    client.authorization.code = params[:code]
-	    client.authorization.fetch_access_token!
+		@id = []
+		@contacts_id = @doc.search("id")
+		@contacts_id.shift
+		@contacts_id.each do |id|
+			@id  << id.inner_text[/[a-zA-Z0-9]*$/]
+		end
 
-	    # Make an API call
-	    @result = client.execute(
-	      :api_method => plus.activities.list,
-	      :parameters => {'collection' => 'public', 'userId' => 'me'}
-	    )
-	    #@result = @result.getContent()
-	  end
 
-	def check_gmail
-		gmail = Gmail.connect(params[:email],params[:password])
-  	flash[:notice] = "You have #{gmail.inbox.count(:unread)} unread emails"
-		@emails = gmail.inbox.emails(:before => Date.parse("2012-10-01"))
+  end
+ 
+ 	def insert_contact
+ 		@token = params[:access_token]
+  	@id = params[:id]
+
+		uri = URI.parse("https://www.google.com/m8/feeds/contacts/default/full")
+		http = Net::HTTP.new(uri.host, uri.port)
+		http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+		http.use_ssl = true
+		request = Net::HTTP::Post.new(uri.request_uri)
+		request.content_type = "application/json"
+		request["Gdata-version"] = '3.0'
+		request.set_form_data(access_token: @token,
+			name: 'minh',
+			address: 'assa@as.com')
+		@response = http.request(request).body
+		
+ 	end
+
+
+  def delete_contact
+  	@token = params[:access_token]
+  	@id = params[:id]
+
+ 		uri = URI.parse("https://www.google.com/m8/feeds/contacts/default/full/")
+		http = Net::HTTP.new(uri.host, uri.port)
+		http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+		http.use_ssl = true
+		request = Net::HTTP::Delete.new(uri.path+"#{@id}&access_token=#{@token}")
+		request.content_type = "application/json"
+		request["Gdata-version"] = '3.0'
+		@response = (http.request(request).body)
 	end
+
 
   def get_g_contacts
   end

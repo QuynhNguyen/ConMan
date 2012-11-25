@@ -116,12 +116,11 @@ class FbController < ApplicationController
 
 	def post_fb_wall
 		@user = User.find(session[:id])
-		@setting ||= Setting.find_by_id(@user.id)
+		@setting ||= Setting.find_by_user_id(@user.id)
 		@graph = Koala::Facebook::API.new(@setting.fb_token)
 		@graph.put_wall_post(params[:message],{name: 'test'},params["friend_id"])
 		flash[:notice] = "Your message #{params[:message]} has been posted on #{params[:friend_id]}'s wall"
-		flash[:notice] = params[:friend_id]
-		redirect_to action: :index
+		redirect_to action: :fb_wall, friend_id: params["friend_id"]
 	end
 	
 	def update_fb_status	

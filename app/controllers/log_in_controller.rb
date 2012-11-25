@@ -3,6 +3,9 @@ class LogInController < ApplicationController
   skip_filter :login
 
   def index
+    if session[:id]
+      redirect_to controller: :profiles, id: session[:id]
+    end
     @Users = User.all
   end
 
@@ -21,5 +24,7 @@ class LogInController < ApplicationController
       redirect_to log_in_index_path
     end
   end
+
+  
 
 end

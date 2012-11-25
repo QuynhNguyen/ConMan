@@ -5,11 +5,7 @@ ConMan::Application.routes.draw do
   root :to => 'frontpage#index'
   
   get "google/g_login"
-  get "google/g_logout"
   get "google/index"
-  get "google/get_g_contacts"
-  post "google/exchange_token"
-  post "google/check_gmail"
   match '/users/auth/google_oauth2/callback' => 'google#index'
   get 'google/delete_contact'
   get 'google/insert_contact'

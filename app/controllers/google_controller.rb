@@ -23,14 +23,7 @@ class GoogleController < ApplicationController
 		redirect_to url
 
   end
-
-  def exchange_token
   
-  end
-  def g_logout
-
-  end
-
   def index
   	@user = User.find(session[:id])
 		@setting ||= Setting.find_by_user_id(@user.id)

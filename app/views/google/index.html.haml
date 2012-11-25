@@ -1,12 +1,8 @@
 %h1 Google#index
 %p Find me in app/views/google/index.html.haml
 
-= form_tag( controller: :google, action: :check_gmail) do
-	= label_tag(:email,"Email")
-	= text_field_tag(:email)
-	= label_tag(:password,"Password")
-	= text_field_tag(:password)
-	= submit_tag 'Read Emails'
+= @gmail.inbox.emails(:unread).each do |m|
+	= m.to_s
 
 - if(@titles)
 	= link_to 'Add', controller: :google, action: :insert_contact, access_token: @token

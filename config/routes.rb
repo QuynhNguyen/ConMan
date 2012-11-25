@@ -20,6 +20,7 @@ ConMan::Application.routes.draw do
   get 'fb/fb_wall'
   post 'fb/post_fb_wall'
   get 'fb/delete_friend'
+  get 'fb/friends'
 
   get 'twitter/index'
   post 'twitter/tweet'

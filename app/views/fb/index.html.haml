@@ -40,7 +40,7 @@
 				%b= link_to @authors[index]["name"], "https://wwww.facebook.com/#{t["author_id"]}"
 				= t["body"]
 
-
+%h3= link_to "View all friends", controller: :fb, action: :friends
 
 %p FEED DEBUG
 =# @feed

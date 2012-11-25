@@ -17,7 +17,7 @@ class FbController < ApplicationController
 				@fb_token = @oauth.exchange_access_token(@fb_cookies["access_token"])
 				@setting.fb_token = @fb_token
 				@setting.save!
-				flash[:notice] = 'saving token'
+				flash[:notice] = 'update token'
 			end
 		else
 			@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/fb/index')
@@ -85,15 +85,36 @@ class FbController < ApplicationController
 
 	end
 
+	def friends
+		@user = User.find(session[:id])
+		@setting ||= Setting.find_by_user_id(@user.id)
+		@graph = Koala::Facebook::API.new(@setting.fb_token)	
+		@friends = @graph.get_connections("me","friends")
+		@images =[]
+		@friends.each_slice(50) do |friends|
+			@images << @graph.batch do |batch_api|
+				friends.each do |f|
+					batch_api.get_picture(f["id"])
+				end
+			end
+		end
+		@fb_friends_images = []
+		@images.each do |list|
+			list.each do |image|
+				@fb_friends_images << image
+			end
+		end
+
+	end
 	
-	def fb_wall()
+	def fb_wall
 		@user = User.find(session[:id])
 		@setting ||= Setting.find_by_user_id(@user.id)
 		@graph = Koala::Facebook::API.new(@setting.fb_token)	
 		@friend_id = params[:friend_id]
 	end
 
-	def post_fb_wall()
+	def post_fb_wall
 		@user = User.find(session[:id])
 		@setting ||= Setting.find_by_id(@user.id)
 		@graph = Koala::Facebook::API.new(@setting.fb_token)
@@ -112,19 +133,33 @@ class FbController < ApplicationController
 	end
 
 	def delete_friend
+
+
 		@user = User.find(session[:id])
 		@setting ||= Setting.find_by_user_id(@user.id)
 		@graph = Koala::Facebook::API.new(@setting.fb_token)	
 		@friend_id = params[:friend_id]
 		@me = @graph.get_object("me")["id"]
 
-		uri = URI.parse("https://www.facebook.com/#{@me}/members/#{@friend_id}")
+		#uri = URI.parse("https://www.facebook.com/#{@me}/members")
+		uri = URI.parse("https://graph.facebook.com")
 		http = Net::HTTP.new(uri.host, uri.port)
 		http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 		http.use_ssl = true
-		request = Net::HTTP::Delete.new(uri.path)
-		request.set_form_data(access_token: @setting.fb_token)
-		@response = http.request(request).code
+		#request = Net::HTTP::Delete.new(uri.path)
+		request = Net::HTTP::Post.new(uri.request_uri)
+		#request.set_form_data(members: "#{@friend_id}", access_token: @setting.fb_token)
+
+		para = { method: :delete,
+			relative_url: "#{@me}/members/#{@friend_id}"
+		}
+		params={	access_token: @setting.fb_token,
+			batch: "["+para.to_json+ "]"
+		}
+		request.body = params.to_query
+		@response = http.request(request).body
+		flash[:notice] = "Sending and accepting friend requests is not available via the Facebook Graph API for regular user accounts."
 	end
+
 
 end

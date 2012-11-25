@@ -5,7 +5,7 @@ require 'uri'
 require "json"
 require 'nokogiri'
 require 'gdata'
-require 'contacts'
+require 'gmail'
 
 class GoogleController < ApplicationController
 	CLIENT_ID = '178522046203.apps.googleusercontent.com'
@@ -56,10 +56,23 @@ class GoogleController < ApplicationController
 				@response = JSON.parse(http.request(request).body)
 				@setting.google_code = @response["refresh_token"]
 				@setting.save!
+				flash[:notice] = "update refresh token"
 			else
-				flash[:notice] = "Please sign in your google account"
-				redirect_to controller: :settings, action: :index			
-				return
+				begin
+					param = {
+					  refresh_token: @setting.google_code,
+					  client_id: CLIENT_ID,
+					  client_secret: CLIENT_SECRET,
+					  grant_type: 'refresh_token'
+					}
+					request.body = param.to_query
+					@response = JSON.parse(http.request(request).body)
+					flash[:notice] = "using refresh token"
+				rescue Exception
+					flash[:notice] = "Please sign in your google account"
+					redirect_to controller: :settings, action: :index			
+					return
+				end
 			end
 
 		else
@@ -75,12 +88,14 @@ class GoogleController < ApplicationController
 				@response = JSON.parse(http.request(request).body)
 				@setting = Setting.new(user_id: @user.id, google_code: @response["refresh_token"])
 				@setting.save!
+				flash[:notice] = "create refresh token"
 			else
 				flash[:notice] = "Please sign in your google account"
 				redirect_to controller: :settings, action: :index
 				return
 			end
 		end
+		@gmail = Gmail.connect("project.conman@gmail.com","Raging_Flamingos")
 
 		@token = @response["access_token"]
 		@url = "https://www.google.com/m8/feeds/contacts/default/full?access_token=#{@token}"

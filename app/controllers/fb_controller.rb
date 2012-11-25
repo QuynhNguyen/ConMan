@@ -89,6 +89,12 @@ class FbController < ApplicationController
 		@user = User.find(session[:id])
 		@setting ||= Setting.find_by_user_id(@user.id)
 		@graph = Koala::Facebook::API.new(@setting.fb_token)	
+		@contacts = FbContact.find_all_by_user_id(@user.id)
+		if (@contacts.count >0)
+			flash[:notice] = "you have friends"
+			return
+		end
+
 		@friends = @graph.get_connections("me","friends")
 		@images =[]
 		@friends.each_slice(50) do |friends|
@@ -103,6 +109,11 @@ class FbController < ApplicationController
 			list.each do |image|
 				@fb_friends_images << image
 			end
+		end
+
+		@friends.each_with_index do |f,index|
+			friend = FbContact.new(user_id: @user.id, friend_id: f["id"],name: f["name"], photo: @fb_friends_images[index])
+			friend.save!
 		end
 
 	end

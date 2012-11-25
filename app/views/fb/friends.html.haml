@@ -1,3 +1,8 @@
-- @friends.each_with_index do |f,index|
-	%b= f["name"]
-	= link_to image_tag(@fb_friends_images[index]), controller: :fb, action: :fb_wall, friend_id: "#{f["id"]}"
+- if (@contacts.count >0)
+	- @contacts.each do |f|
+		%b= f.name
+		= link_to image_tag(f.photo), controller: :fb, action: :fb_wall, friend_id: "#{f.friend_id}"
+- else
+	- @friends.each_with_index do |f,index|
+		%b= f["name"]
+		= link_to image_tag(@fb_friends_images[index]), controller: :fb, action: :fb_wall, friend_id: "#{f["id"]}"

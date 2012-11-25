@@ -36,6 +36,7 @@ ConMan::Application.routes.draw do
   resources :private_messages
   resources :frontpage
   resources :contact_us
+  get 'frontpage/log_out'
 
   match 'profiles/:id' => 'profiles#index'
   match 'profiles/:id/social' => 'profiles#socialnetwork'

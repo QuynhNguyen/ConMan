@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
     render "log_in/index" if session[:id].blank?
   end
 
+
   def render_404
     respond_to do |format|
       format.html { render "errors/404", :status => '404 Not Found', :layout => false }

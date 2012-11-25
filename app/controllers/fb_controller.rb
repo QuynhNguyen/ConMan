@@ -81,21 +81,47 @@ class FbController < ApplicationController
 				end
 			end
 		end
-				
-
 	end
 
 	def friends
 		@user = User.find(session[:id])
 		@setting ||= Setting.find_by_user_id(@user.id)
 		@graph = Koala::Facebook::API.new(@setting.fb_token)	
+		@friends = @graph.get_connections("me","friends")
+
+		@dup = 0
 		@contacts = FbContact.find_all_by_user_id(@user.id)
+
+
+
 		if (@contacts.count >0)
+			#check for new or old friends
+			@f_live = []
+			@f_db = []
+			@friends.each do |f|
+				@f_live << f["id"].to_i
+			end
+			@contacts.each do |c|
+				@f_db << c.friend_id
+			end
+			#make new
+			@f_live.each_with_index do |fid,index|
+				unless (@f_db.include? fid)
+					friend = FbContact.new(user_id: @user.id, friend_id: fid, name: @friends[index]["name"], photo: @graph.get_picture(fid))
+					friend.save!
+				end
+			end
+			#delete old
+			@f_db.each_with_index do |fid,index|
+				unless (@f_live.include? fid)
+					friend = @contacts[index]
+					friend.destroy
+				end
+			end
 			flash[:notice] = "you have friends"
 			return
 		end
 
-		@friends = @graph.get_connections("me","friends")
 		@images =[]
 		@friends.each_slice(50) do |friends|
 			@images << @graph.batch do |batch_api|
@@ -115,7 +141,6 @@ class FbController < ApplicationController
 			friend = FbContact.new(user_id: @user.id, friend_id: f["id"],name: f["name"], photo: @fb_friends_images[index])
 			friend.save!
 		end
-
 	end
 	
 	def fb_wall

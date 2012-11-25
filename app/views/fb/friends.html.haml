@@ -1,3 +1,6 @@
+%p= "live count #{@friends.count}"
+%p= "db count #{@contacts.count}"
+
 - if (@contacts.count >0)
 	- @contacts.each do |f|
 		%b= f.name

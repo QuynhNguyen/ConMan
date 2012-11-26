@@ -5,3 +5,19 @@
 	= submit_tag 'post to wall'#, friend_id: "#{@friend}"
 
 = link_to "Delete This Friend", controller: :fb, action: :delete_friend, friend_id: @friend_id
+
+-if (@feed)
+	%h3 Their latest feed 
+	- @feed["data"].each do |f|
+		%p
+			%b= f["from"]["name"]
+			= f["story"]
+			- if (f["to"])
+				= f["to"]["data"][0]["name"]
+			- if (f["message"])
+				= f["message"]
+			- if (f["link"])
+				= link_to 'link', "#{f["link"]}"
+
+
+

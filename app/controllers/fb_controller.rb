@@ -148,6 +148,13 @@ class FbController < ApplicationController
 		@setting ||= Setting.find_by_user_id(@user.id)
 		@graph = Koala::Facebook::API.new(@setting.fb_token)	
 		@friend_id = params[:friend_id]
+
+		uri = URI.parse("https://graph.facebook.com/#{@friend_id}/feed")
+		http = Net::HTTP.new(uri.host, uri.port)
+		http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+		http.use_ssl = true
+		request = Net::HTTP::Get.new(uri.path+"?access_token=#{@setting.fb_token}")
+		@feed = JSON.parse(http.request(request).body)
 	end
 
 	def post_fb_wall
@@ -156,6 +163,7 @@ class FbController < ApplicationController
 		@graph = Koala::Facebook::API.new(@setting.fb_token)
 		@graph.put_wall_post(params[:message],{name: 'test'},params["friend_id"])
 		flash[:notice] = "Your message #{params[:message]} has been posted on #{params[:friend_id]}'s wall"
+
 		redirect_to action: :fb_wall, friend_id: params["friend_id"]
 	end
 	

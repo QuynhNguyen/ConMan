@@ -9,14 +9,12 @@ class CreateUsers < ActiveRecord::Migration
       t.string    :address
       t.integer   :phone
       t.integer   :admin
-      t.datetime  :birthday
       
       t.integer   :show_fn
       t.integer   :show_ln
       t.integer   :show_addr
       t.integer   :show_phone
       t.integer   :show_email
-      t.integer   :show_birthday
 
       t.timestamps
     end

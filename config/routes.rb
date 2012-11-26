@@ -44,6 +44,7 @@ ConMan::Application.routes.draw do
   resources :frontpage
   resources :contact_us
   resources :about
+  resources :privacy
 
   match 'profiles/:id' => 'profiles#index', :via => :get
   match 'profiles/:id/social' => 'fb#index', :via => :get

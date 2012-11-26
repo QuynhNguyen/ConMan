@@ -63,12 +63,19 @@
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <li class="nav-header">Preferences</li>
+              <b>Hello, <%= User.find(session[:id]).first_name %></b>
+              <li class="nav-header">Menu</li>
               <li><a href=<%= "/profiles/#{session[:id]}" %>>Profile</a></li>
               <li><a href="/status">Status</a></li>
               <li><a href="/private_messages">Message</a></li>
               <li><a href=<%= "/users/#{session[:id]}/edit"%>>User Information</a></li>
-              <li><%= link_to 'Settings', controller: :settings %></li>
+              <li><a href=<%= "/privacy/#{session[:id]}/edit"%>>Privacy Setting</a></li>
+              <li><%= link_to 'Social Media', controller: :settings %></li>
+              <% if User.find(session[:id]).admin == 1 %>
+                <li class="nav-header">Admin</li>
+                <li><a href="/users">View Users</a></li>
+                <li><a href="#">Link</a></li>
+              <% end %>
               <% if @fb_friend_images %>
               <li class="nav-header">Friends</li>
                 <% @fb_friend_images.each do |photo| %>

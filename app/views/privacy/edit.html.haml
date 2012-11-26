@@ -1,0 +1,28 @@
+-# edit.html.haml using partial 
+%h1 Privacy
+
+= form_tag privacy_path(@user), :method => :put do
+  %table.table.table-hover
+    %tr
+      %td= label :user, :show_fn, 'Show first name'
+      %td= select :user, 'show_fn',[["Yes",1],["No",0]]
+
+    %tr
+      %td= label :user, :show_ln, 'Show last name'
+      %td= select :user, 'show_ln',[["Yes",1],["No",0]]
+
+    %tr
+      %td= label :user, :show_email, 'Show email'
+      %td= select :user, 'show_email',[["Yes",1],["No",0]]
+
+    %tr
+      %td= label :user, :show_phone, 'Show phone'
+      %td= select :user, 'show_phone',[["Yes",1],["No",0]]
+
+    %tr
+      %td= label :user, :show_addr, 'Show address'
+      %td= select :user, 'show_addr',[["Yes",1],["No",0]] 
+
+
+
+  = submit_tag 'Update Privacy'

@@ -5,7 +5,7 @@
     
   -if User.find(session[:id]).admin == 1 
     = label :user, :admin, 'Admin'
-    = select :user, :admin, [["User", 0],["Admin", 1]]
+    = select :user, 'admin', [["User", 0],["Admin", 1]]
 
   = label :user, :username, 'Username'
   = text_field :user, 'username', :size => 50, :maxlength => 20, :autofocus => true
@@ -31,9 +31,7 @@
   = label :user, :phone, 'Phone'
   = text_field :user, 'phone', :size => 15, :maxlength => 15
 
-  = label :user, :birthday, 'Birthday'
-  = date_select :user, 'birthday',{:start_year => 1926,
-:end_year => Time.now.year}
+ 
 
   %br
   = submit_tag 'Update User Info'

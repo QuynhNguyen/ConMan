@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
  def create
     if params[:user][:password] == params[:user][:repassword]
-        @user = User.create!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email], :birthday => params[:user][:birthday], :password => User.encrypt(params[:user][:password]))
+        @user = User.create!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email], :password => User.encrypt(params[:user][:password]))
     
       flash[:notice] = "#{@user.username} was successfully created."
       if (session[:id] == nil)
@@ -64,9 +64,9 @@ class UsersController < ApplicationController
       @user = User.find params[:id]
       if params[:user][:password] == params[:user][:repassword]
         if params[:user][:password] == ""
-          @user.update_attributes!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email], :birthday => params[:user][:birthday])
+          @user.update_attributes!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email])
         else
-          @user.update_attributes!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email], :birthday => params[:user][:birthday], :password => User.encrypt(params[:user][:password]))
+          @user.update_attributes!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email], :password => User.encrypt(params[:user][:password]))
         end
         flash[:notice] = "#{@user.username} was successfully updated."
         redirect_to users_path

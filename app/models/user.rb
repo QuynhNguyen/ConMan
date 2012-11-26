@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   #Association
   has_one  :status
 
-  attr_accessible :status, :first_name, :last_name, :address, :phone, :admin, :email, :birthday, :username, :password, :show_fn, :show_ln, :show_addr, :show_phone, :show_email, :show_birthday
+  attr_accessible :status, :first_name, :last_name, :address, :phone, :admin, :email, :username, :password, :show_fn, :show_ln, :show_addr, :show_phone, :show_email
   before_save :default_values
 
   def default_values
@@ -15,7 +15,6 @@ class User < ActiveRecord::Base
     self.password ||= ""
     self.admin ||= 0
     self.phone ||= ""
-    self.birthday ||= 11/11/11
 
 #all shows are defualt to true
     self.show_fn ||= 1
@@ -23,7 +22,6 @@ class User < ActiveRecord::Base
     self.show_addr ||= 1
     self.show_phone ||= 1
     self.show_email ||= 1
-    self.show_birthday ||= 1
     
   end
 

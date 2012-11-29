@@ -19,7 +19,7 @@ class UsernameRecoveryController < ApplicationController
       message = "Project ConMan. PLEASE DON'T REPLY THIS SMS. Your username is " + @user.username
       api.sms(@user.phone.to_s(), message)
       flash[:notice] = "We have sent the username to your phone"
-      redirect_to username_recovery_index_path
+      redirect_to log_in_index_path
     else
       flash[:notice]= "Email is not in our database"
       redirect_to username_recovery_index_path

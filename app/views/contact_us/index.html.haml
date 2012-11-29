@@ -1,5 +1,4 @@
 %h1 Contact Us
-%b= flash[:notice]
 = form_tag do
   = label :mail, :email, 'Email'
   = email_field :mail, 'email', :size => 50, :maxlength => 255, :autofocus => true

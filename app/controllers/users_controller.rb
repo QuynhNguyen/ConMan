@@ -69,7 +69,7 @@ class UsersController < ApplicationController
           @user.update_attributes!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email], :password => User.encrypt(params[:user][:password]))
         end
         flash[:notice] = "#{@user.username} was successfully updated."
-        redirect_to users_path
+        redirect_to edit_user_path(params[:id])
       else
         flash[:notice] = "Password and confirm password doesn't match."
         redirect_to edit_user_path(params[:id])

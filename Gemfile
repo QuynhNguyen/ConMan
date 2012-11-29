@@ -60,3 +60,12 @@ gem 'gmail'
 
 # To use debugger
 # gem 'debugger'
+
+group :test, :development do
+  gem 'rspec-expectations'
+  gem 'cucumber-rails'
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
+end

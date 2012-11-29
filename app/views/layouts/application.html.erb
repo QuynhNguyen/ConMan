@@ -89,6 +89,12 @@
         </div><!--/span-->
         <% end %>
          <div class="span9">
+          <% if notice %>
+            <div class="alert alert-block">
+              <h4>Notification</h4>
+              <%= notice %>
+            </div>
+          <% end %>
           <%= yield %>
          </div>
 

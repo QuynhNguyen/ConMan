@@ -1,10 +1,8 @@
-
 require 'net/http'
 require 'net/https'
 require 'uri'
 require "json"
 require 'nokogiri'
-require 'gdata'
 require 'gmail'
 
 class GoogleController < ApplicationController
@@ -155,14 +153,14 @@ class GoogleController < ApplicationController
   	@token = params[:access_token]
   	@id = params[:id]
 
- 		uri = URI.parse("https://www.google.com/m8/feeds/contacts/default/full/")
-		http = Net::HTTP.new(uri.host, uri.port)
-		http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-		http.use_ssl = true
-		request = Net::HTTP::Delete.new(uri.path+"#{@id}&access_token=#{@token}")
-		request.content_type = "application/json"
-		request["Gdata-version"] = '3.0'
-		@response = (http.request(request).code)
+	uri = URI.parse("https://www.google.com/m8/feeds/contacts/default/full/")
+	http = Net::HTTP.new(uri.host, uri.port)
+	http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+	http.use_ssl = true
+	request = Net::HTTP::Delete.new(uri.path+"#{@id}&access_token=#{@token}")
+	request.content_type = "application/json"
+	request["Gdata-version"] = '3.0'
+	@response = (http.request(request).code)
 	end
 
 

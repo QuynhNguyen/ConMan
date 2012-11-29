@@ -41,7 +41,6 @@ gem 'google-api-client'
 gem 'google_plus'
 gem 'json'
 gem 'nokogiri'
-gem 'gdata'
 gem 'gmail'
 
 

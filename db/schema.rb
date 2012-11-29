@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20121125211742) do
     t.string   "email"
     t.string   "phone_number"
     t.string   "photo"
-    t.integer  "friend_id"
+    t.string   "friend_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end

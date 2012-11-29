@@ -10,6 +10,8 @@ class TwitterController < ApplicationController
 			:secret => access_token.secret
 		)
 		@home_timeline = @client.home_timeline()
+		@followers = @client.all_followers()
+		@friends = @client.friends()
 	end
 
 	def tweet

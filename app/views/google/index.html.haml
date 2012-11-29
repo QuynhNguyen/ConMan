@@ -1,0 +1,20 @@
+- if (@contacts.count >0)
+	%h3 Gmail contact list
+	- @contacts.each_with_index do |contact,index|
+		%p
+			%b= contact.name
+			= mail_to "#{contact.email}", "#{contact.email}"
+			= link_to 'Delete', controller: :google, action: :delete_contact, access_token: @token, id: "#{contact.friend_id}"
+
+
+- if(@titles)
+	= link_to 'Add', controller: :google, action: :insert_contact, access_token: @token
+	%h3 Gmail contact list
+	- @titles.each_with_index do |title,index|
+		%p
+			%b= title
+			= mail_to "#{@emails[index]}", "#{@emails[index]}"
+			= link_to 'Delete', controller: :google, action: :delete_contact, access_token: @token, id: "#{@id[index]}"
+			= #link_to 'Direct Delete', "https://www.google.com/m8/feeds/contacts/default/full/#{@id[index]}?access_token=#{@token}", method: :delete
+
+=@response

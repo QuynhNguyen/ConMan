@@ -7,6 +7,10 @@ class LogInController < ApplicationController
   end
 
   def index
+    if session[:id]
+      redirect_to controller: :profiles, id: session[:id]
+    end
+    @Users = User.all
   end
 
   def create

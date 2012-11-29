@@ -1,14 +1,46 @@
-= button_to 'get friendlist', {controller: :fb, action: :get_fb_friend_list}, method: :get
 
 = form_tag( controller: :fb, action: :update_fb_status) do
-	= label_tag(:fb_status,"update fb status")
-	= text_field_tag(:fb_status_message)
-	= submit_tag 'update status'
+	= label_tag(:fb_status,'Current Status')
+	= text_field_tag :fb_status_message, nil, placeholder: @fb_status[0]["message"]
+	= submit_tag 'Update'
 
-- if (@fb_friend_images)
+- if (@online_friends)
+	%h3 Online Friends
 	- index = 0
-	- @fb_friend_images.each do |image|
+	- @fb_friends_images.each do |image|
+		= @online_friends[index]["name"]
 		= link_to image_tag(image), controller: :fb, action: :fb_wall, friend_id: "#{@fb_friends_list[index]}"
 		-index+=1
+- if (@feed)
+	%h3 Latest Feeds
+	- @feed.each_with_index do |f,index|
+		-if (f["message"].empty?)
+			-unless (f["permalink"].empty?)
+				%p
+					%b= @actors[index]["name"].to_s + ": " 
+					= link_to "#{f["permalink"]}", f["permalink"]
+		-else
+			%p
+				%b= @actors[index]["name"].to_s + ": "
+				= message = f["message"].to_s
 
-= link_to "send message", action: :fb_wall, friend_id: :minhta 
+
+- if (@friends_request)
+	%h3 New Friends Requests
+	-@friends_request.each_with_index do |req, index|
+		= @fb_friends_request_names[index]["name"]
+		= link_to image_tag(@fb_friends_request_images[index]), "https://www.facebook.com/#{req["uid_from"]}"
+
+
+- if (@fb_inbox)
+	%h3 Latest Messages
+	- @fb_inbox.each do |m|
+		- m.each_with_index do |t,index|
+			%p 
+				%b= link_to @authors[index]["name"], "https://wwww.facebook.com/#{t["author_id"]}"
+				= t["body"]
+
+%h3= link_to "View all friends", controller: :fb, action: :friends
+
+%p FEED DEBUG
+=# @feed

@@ -10,14 +10,14 @@ class FbController < ApplicationController
 		if (@setting)
 			begin
 				@fb_token = @setting.fb_token
-				flash[:notice] = 'token exists'
+				#flash[:notice] = 'token exists'
 			rescue Exception
 				@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/fb/index')
 				@fb_cookies ||= @oauth.get_user_info_from_cookies(cookies) 
 				@fb_token = @oauth.exchange_access_token(@fb_cookies["access_token"])
 				@setting.fb_token = @fb_token
 				@setting.save!
-				flash[:notice] = 'update token'
+				#flash[:notice] = 'update token'
 			end
 		else
 			@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/fb/index')
@@ -25,7 +25,7 @@ class FbController < ApplicationController
 			@fb_token = @oauth.exchange_access_token(@fb_cookies["access_token"])
 			@setting = Setting.new(user_id: @user.id, fb_token: @fb_token)
 			@setting.save!
-			flash[:notice] = 'creating token'
+			#flash[:notice] = 'creating token'
 		end
 		
 	
@@ -130,7 +130,7 @@ class FbController < ApplicationController
 					friend.destroy
 				end
 			end
-			flash[:notice] = "you have friends"
+			#flash[:notice] = "you have friends"
 			return
 		end
 
@@ -174,7 +174,7 @@ class FbController < ApplicationController
 		@setting ||= Setting.find_by_user_id(@user.id)
 		@graph = Koala::Facebook::API.new(@setting.fb_token)
 		@graph.put_wall_post(params[:message],{name: 'test'},params["friend_id"])
-		flash[:notice] = "Your message #{params[:message]} has been posted on #{params[:friend_id]}'s wall"
+		#flash[:notice] = "Your message #{params[:message]} has been posted on #{params[:friend_id]}'s wall"
 
 		redirect_to action: :fb_wall, friend_id: params["friend_id"]
 	end

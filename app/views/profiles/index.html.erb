@@ -38,11 +38,13 @@
           <% end %>
     </div>
     <h3> Your Social Networks </h3>
-    <% setting = Setting.find_by_user_id(session[:id]) %>
-    <% #setting.fb_token %>
-    <%#= link_to image_tag("fb_logo.png", :size => "64x64"),controller: :fb, action: :index %>
-    <%#= link_to image_tag("twitter_logo.png", :size => "64x64"), {controller: :twitter, action: :index} %>
-    <%#= link_to image_tag("google_logo.png"), {controller: :google, action: :index}  %>
+    <% if (@fb_token) %>
+    <%= link_to image_tag("fb_logo.png", :size => "48x48"),controller: :fb, action: :index %>
+    <% end %>
+    <%= link_to image_tag("twitter_logo.png", :size => "48x48"), {controller: :twitter, action: :index} %>
+    <% if (@google_code) %>
+    <%= link_to image_tag("google_logo.png", :size => "48x48"), {controller: :google, action: :index}  %>
+    <% end %>
 
   </li>
 </ul>

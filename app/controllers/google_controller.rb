@@ -72,7 +72,7 @@ class GoogleController < ApplicationController
 				@response = JSON.parse(http.request(request).body)
 				flash[:notice] = "using refresh token"
 			rescue Exception
-				flash[:notice] = "Please sign in your google account"
+				#flash[:notice] = "Please sign in your google account"
 				redirect_to controller: :settings, action: :index			
 				return
 			end
@@ -91,9 +91,9 @@ class GoogleController < ApplicationController
 			@response = JSON.parse(http.request(request).body)
 			@setting = Setting.new(user_id: @user.id, google_code: @response["refresh_token"])
 			@setting.save!
-			flash[:notice] = "create refresh token"
+			#flash[:notice] = "create refresh token"
 		else
-			flash[:notice] = "Please sign in your google account"
+			#flash[:notice] = "Please sign in your google account"
 			redirect_to controller: :settings, action: :index
 			return
 		end
@@ -102,7 +102,7 @@ class GoogleController < ApplicationController
 
 	@contacts = GoogleContact.find_all_by_user_id(@user.id)
 	if (@contacts.count >0)
-		flash[:notice] = "you have friends"
+		#flash[:notice] = "you have friends"
 		return
 	end
 

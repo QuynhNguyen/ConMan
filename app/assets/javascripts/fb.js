@@ -60,7 +60,8 @@ function getPosition(e){
   function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
-        console.log('Good to see you, ' + response.name + '.');
+
+        console.log('Goooooood to see you, ' + response.name + '.');
     });
 };
 
@@ -83,6 +84,6 @@ function getPosition(e){
      var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
      if (d.getElementById(id)) {return;}
      js = d.createElement('script'); js.id = id; js.async = true;
-     js.src = "https://connect.facebook.net/en_US/all.js ";
+     js.src = "https://connect.facebook.net/en_US/all.js";
      ref.parentNode.insertBefore(js, ref);
    }(document));

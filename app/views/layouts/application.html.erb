@@ -78,8 +78,9 @@
                 <li><a href="#">Link</a></li>
               <% end %>
               <li class="nav-header"><i class="icon-envelope"></i>Message</li>
-              <li><a href="/private_messages/new">New Message</a></li>
-              <li><a href="/private_messages">Read Message</a></li>
+              <li><a href="/private_messages/new">New</a></li>
+              <li><a href="/private_messages">Inbox</a></li>
+              <li><a href="/sent">Outbox</a></li>
               <% if @fb_friend_images %>
               <li class="nav-header">Friends</li>
                 <% @fb_friend_images.each do |photo| %>

@@ -46,12 +46,24 @@ class FbController < ApplicationController
 			batch_api.fql_query("SELECT thread_id, subject, recipients FROM thread WHERE folder_id = 0 LIMIT 5")
 		end
 
-		@fb_friends_images = @graph.batch do |batch_api|
-			@online_friends.each do |f|
-				@fb_friends_list << f["uid"]
-				batch_api.get_picture(f["uid"])
+		@online_friends.each do |f|
+			@fb_friends_list << f["uid"]
+		end
+		@images = []
+		@online_friends.each_slice(50) do |friends|
+			@images << @graph.batch do |batch_api|
+				friends.each do |f|
+					batch_api.get_picture(f["uid"])
+				end
 			end
 		end
+		@images.each do |list|
+			list.each do |image|
+				@fb_friends_images << image
+			end
+		end
+
+
 		@fb_friends_request_names = @graph.batch do |batch_api|
 			@friends_request.each do |f|
 				batch_api.get_object(f["uid_from"])

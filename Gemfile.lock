@@ -72,12 +72,15 @@ GEM
     extlib (0.9.15)
     faraday (0.8.4)
       multipart-post (~> 1.1)
+<<<<<<< HEAD
     ffi (1.2.0)
     ffi (1.2.0-x86-mingw32)
     gherkin (2.11.5)
       json (>= 1.4.6)
     gherkin (2.11.5-x86-mingw32)
       json (>= 1.4.6)
+=======
+>>>>>>> minhsbranch
     gmail (0.4.0)
       gmail_xoauth (>= 0.3.0)
       mail (>= 2.2.1)
@@ -230,9 +233,12 @@ PLATFORMS
 DEPENDENCIES
   capybara
   coffee-rails (~> 3.2.1)
+<<<<<<< HEAD
   cucumber-rails
   cucumber-rails-training-wheels
   database_cleaner
+=======
+>>>>>>> minhsbranch
   gmail
   google-api-client
   google_plus

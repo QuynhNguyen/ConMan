@@ -1,7 +1,11 @@
 class ApplicationController < ActionController::Base
   @users = User
 
-	before_filter :login
+<<<<<<< HEAD
+#	before_filter :login
+=======
+	#before_filter :login
+>>>>>>> 9bcf73fe39e156bd05714dbb2fe61a5587ab652f
 
   protect_from_forgery
   rescue_from ActiveRecord::RecordNotFound do |exception|

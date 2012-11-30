@@ -50,7 +50,6 @@ GEM
     extlib (0.9.15)
     faraday (0.8.4)
       multipart-post (~> 1.1)
-    gdata (1.1.2)
     gmail (0.4.0)
       gmail_xoauth (>= 0.3.0)
       mail (>= 2.2.1)
@@ -189,7 +188,6 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
-  gdata
   gmail
   google-api-client
   google_plus

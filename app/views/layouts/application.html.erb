@@ -65,7 +65,7 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <b>Hello, <%= User.find(session[:id]).first_name %></b>
-              <li class="nav-header">Menu</li>
+              <li class="nav-header"><i class="icon-home"></i>Home</li>
               <li><a href=<%= "/profiles/#{session[:id]}" %>>Profile</a></li>
               <li><a href="/status">Status</a></li>
               <li><a href="/private_messages">Message</a></li>
@@ -73,10 +73,13 @@
               <li><a href=<%= "/privacy/#{session[:id]}/edit"%>>Privacy Setting</a></li>
               <li><%= link_to 'Social Media', controller: :settings %></li>
               <% if User.find(session[:id]).admin == 1 %>
-                <li class="nav-header">Admin</li>
+                <li class="nav-header"><i class="icon-user"></i>Admin</li>
                 <li><a href="/users">View Users</a></li>
                 <li><a href="#">Link</a></li>
               <% end %>
+              <li class="nav-header"><i class="icon-envelope"></i>Message</li>
+              <li><a href="/private_messages/new">New Message</a></li>
+              <li><a href="/private_messages">Read Message</a></li>
               <% if @fb_friend_images %>
               <li class="nav-header">Friends</li>
                 <% @fb_friend_images.each do |photo| %>
@@ -90,6 +93,7 @@
          <div class="span9">
           <% if notice %>
             <div class="alert alert-block">
+              <button type="button" class="close" data-dismiss="alert">×</button>
               <h4>Notification</h4>
               <%= notice %>
             </div>

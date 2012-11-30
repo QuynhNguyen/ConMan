@@ -73,15 +73,13 @@ ActiveRecord::Schema.define(:version => 20121125211742) do
     t.string   "address"
     t.integer  "phone"
     t.integer  "admin"
-    t.datetime "birthday"
     t.integer  "show_fn"
     t.integer  "show_ln"
     t.integer  "show_addr"
     t.integer  "show_phone"
     t.integer  "show_email"
-    t.integer  "show_birthday"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

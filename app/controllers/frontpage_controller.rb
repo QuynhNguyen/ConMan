@@ -9,5 +9,4 @@ class FrontpageController < ApplicationController
   end
 
 
-
 end

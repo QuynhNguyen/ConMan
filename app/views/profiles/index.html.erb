@@ -21,10 +21,6 @@
         <% if @User.show_phone %>
           <b>Phone: </b> <%= @User.phone %>
         <% end %> <br/>
-        <% if @User.show_birthday %>
-          <b>Birthday: </b> <%= @User.birthday %>
-        <% end %> <br/>
-       
         <p><b>Status: </b> <%= 
          begin
             @User.status.message 

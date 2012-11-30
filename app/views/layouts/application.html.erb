@@ -68,7 +68,6 @@
               <li class="nav-header"><i class="icon-home"></i>Home</li>
               <li><a href=<%= "/profiles/#{session[:id]}" %>>Profile</a></li>
               <li><a href="/status">Status</a></li>
-              <li><a href="/private_messages">Message</a></li>
               <li><a href=<%= "/users/#{session[:id]}/edit"%>>User Information</a></li>
               <li><a href=<%= "/privacy/#{session[:id]}/edit"%>>Privacy Setting</a></li>
               <li><%= link_to 'Social Media', controller: :settings %></li>

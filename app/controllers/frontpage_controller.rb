@@ -8,14 +8,4 @@ class FrontpageController < ApplicationController
     end
   end
 
-  def log_out
-    reset_session
-  	redirect_to action: :index
-  end
-
-  def show
-    reset_session
-  	redirect_to action: :index
-  end
-
 end

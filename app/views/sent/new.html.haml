@@ -1,6 +1,6 @@
 %h2 Add Private Message
 
-= form_tag new_sent_path, method: :post do
+= form_tag private_messages_path, method: :post do
 
 	= label :private_message, :user, 'To'
 	= text_field :private_message, :user

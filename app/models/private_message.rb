@@ -1,3 +1,3 @@
 class PrivateMessage < ActiveRecord::Base
-	attr_accessible :from, :message, :date, :read, :user, :subject
+	attr_accessible :from_user, :message, :date, :read, :user, :subject
 end

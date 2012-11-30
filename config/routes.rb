@@ -40,6 +40,7 @@ ConMan::Application.routes.draw do
   resources :password_recovery
   resources :username_recovery
   resources :private_messages
+  resources :sent
   resources :frontpage
   resources :contact_us
 

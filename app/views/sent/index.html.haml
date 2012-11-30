@@ -1,9 +1,9 @@
-%h2 Inbox
+%h2 Sent Box
 
 %table#private_messages
   %thead
     %tr
-      %th From
+      %th To
       %th Subject
       %th Date
       %th Read
@@ -12,15 +12,15 @@
   - @pm.each do |private_message|
     %tr
       %td= User.find(private_message.from_user).username
-      %td= link_to "#{private_message.subject}", private_message_path(private_message)
+      %td= link_to "#{private_message.subject}", sent_path(private_message)
       %td= private_message.date.in_time_zone("Pacific Time (US & Canada)").strftime("%b %e, %Y %l:%m %p")
       - if private_message.read == false
         %td="UNREAD"
       - else
         %td="READ"
-      %td= button_to "Delete", private_message_path(private_message), method: :delete, confirm: "Are you sure?"
+      %td= button_to "Delete", sent_path(private_message), method: :delete, confirm: "Are you sure?"
 
-= link_to "Create Message", new_private_message_path
+= link_to "Create Message", new_sent_path
 
 :css 
   #private_message{align:left;}

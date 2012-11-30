@@ -4,7 +4,7 @@
 	%tr
 		%td
 			%strong From
-		%td#content= User.find(@private_message.from_user).username
+		%td#content= User.find(@private_message.user).username
 	%tr
 		%td
 			%strong Date
@@ -20,7 +20,7 @@
 
 %br
 
-= link_to "Back to Inbox", private_messages_path
+= link_to "Back to Inbox", sents_path
 
 :css
 	#content{padding-left:10px;}

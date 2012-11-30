@@ -1,16 +1,10 @@
 
-n=document.getElementById('fb-root');
-if(!n){
-  console.log('creating the divs');
-  n=document.createElement('div');
-  n.id='fb-root';
-}
 
 
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '430537743669484', // App ID
-      channelUrl : 'http://localhost:3000/settings/',
+      channelUrl : 'blooming-fjord-1291.herokuapp.com',
       status     : true, // check login status
       cookie     : true, // enable cookies to allow the server to access the session
       xfbml      : true,  // parse XFBML
@@ -24,7 +18,7 @@ if(!n){
       } else if (response.status === 'not_authorized') {
         // not_authorized
         fbLogin();
-
+        console.log('must log in');
       } else {
         // not_logged_in
         console.log('not logged in');
@@ -69,13 +63,12 @@ function getPosition(e){
           if (response.authResponse) {
               // connected
               testAPI();
-              window.location = "http://localhost:3000/fb/index"
           } else {
               // cancelled
-              window.location = "http://localhost:3000/settings"
           }
-      }, {scope: "user_status,user_online_presence,friends_online_presence,read_insights,read_friendlists,manage_friendlists,read_mailbox,read_requests,read_stream,ads_management,manage_friendlists,manage_notifications,friends_online_presence,publish_checkins,publish_stream"});
+      });
   };
+
 
 
   // Load the SDK Asynchronously

@@ -27,6 +27,8 @@ module NavigationHelpers
       '/username_recovery'
     when /^the privacy setting page$/
       '/privacy_setting'
+    when /^(.*)'s profile page$/i
+      '/profiles/#{User.find_by_username($1)}'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

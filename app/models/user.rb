@@ -2,9 +2,6 @@ class User < ActiveRecord::Base
 
   #Association
   has_one  :status
-  has_one  :setting
-  has_many  :fb_contact
-
 
   attr_accessible :status, :first_name, :last_name, :address, :phone, :admin, :email, :username, :password, :show_fn, :show_ln, :show_addr, :show_phone, :show_email
   before_save :default_values

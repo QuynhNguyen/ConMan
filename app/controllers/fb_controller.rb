@@ -1,208 +1,56 @@
-require 'net/http'
-require 'json'
-require 'open-uri'
 class FbController < ApplicationController
-	#skip_filter :login
+
+	skip_filter :login
+	#GET /profiles
 	def index
-		@user = User.find(session[:id])
-		@setting ||= Setting.find_by_user_id(@user.id)
+		@fb_friend_images = []
+		@fb_friends_list = flash[:fb_friends_list]
+		if (flash[:fb_friends_images])
+			flash[:fb_friends_images].each do |image|
+				@fb_friend_images << image
+			end
 
-		if (@setting)
-			begin
-				@fb_token = @setting.fb_token
-				flash[:notice] = 'token exists'
-			rescue Exception
-				@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/fb/index')
-				@fb_cookies ||= @oauth.get_user_info_from_cookies(cookies) 
-				@fb_token = @oauth.exchange_access_token(@fb_cookies["access_token"])
-				@setting.fb_token = @fb_token
-				@setting.save!
-				flash[:notice] = 'update token'
-			end
-		else
-			@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/fb/index')
-			@fb_cookies ||= @oauth.get_user_info_from_cookies(cookies) 
-			@fb_token = @oauth.exchange_access_token(@fb_cookies["access_token"])
-			@setting = Setting.new(user_id: @user.id, fb_token: @fb_token)
-			@setting.save!
-			flash[:notice] = 'creating token'
-		end
-		
-	
-		@graph = Koala::Facebook::API.new(@fb_token)
-		@fb_friends_images = []
-		@fb_friends_list = []
-		@fb_friends_request_names =[]
-		@fb_friends_request_images =[]
-		@fb_inbox = []
-		@actors = []
-		@authors = []
-
-		@online_friends, @fb_status, @friends_request, @feed, @threads = @graph.batch do |batch_api|
-			batch_api.fql_query("SELECT uid, name FROM user WHERE online_presence IN ('active') AND uid IN (SELECT uid2 FROM friend WHERE uid1 = me())")
-			batch_api.fql_query("SELECT message FROM status WHERE uid=me() LIMIT 1")
-			batch_api.fql_query("SELECT uid_from, message FROM friend_request WHERE uid_to = me()")			
-			batch_api.fql_query("SELECT actor_id, target_id, action_links, message , permalink, type FROM stream WHERE filter_key in (SELECT filter_key FROM stream_filter WHERE uid=me() AND type='newsfeed') AND is_hidden = 0")
-			batch_api.fql_query("SELECT thread_id, subject, recipients FROM thread WHERE folder_id = 0 LIMIT 5")
-		end
-
-		@fb_friends_images = @graph.batch do |batch_api|
-			@online_friends.each do |f|
-				@fb_friends_list << f["uid"]
-				batch_api.get_picture(f["uid"])
-			end
-		end
-		@fb_friends_request_names = @graph.batch do |batch_api|
-			@friends_request.each do |f|
-				batch_api.get_object(f["uid_from"])
-			end
-		end
-		@fb_friends_request_images = @graph.batch do |batch_api|
-			@friends_request.each do |f|
-				batch_api.get_picture(f["uid_from"])
-			end
-		end
-		@actors = @graph.batch do |batch_api|
-			@feed.each do |f|
-				batch_api.get_object(f["actor_id"])
-			end
-		end
-		#to = Time.now.to_i
-		from = 7.day.ago.to_i
-		@fb_inbox = @graph.batch do |batch_api|
-			@threads.each do |t|
-				batch_api.fql_query("SELECT author_id, body FROM message WHERE thread_id = #{t["thread_id"]} AND created_time > #{from}")
-			end
-		end
-		@authors = @graph.batch do |batch_api|
-			@fb_inbox.each do |m|
-				m.each do |message|
-					batch_api.get_object(message["author_id"])
-				end
-			end
 		end
 	end
 
-	def friends
-		@user = User.find(session[:id])
-		@setting ||= Setting.find_by_user_id(@user.id)
-		@graph = Koala::Facebook::API.new(@setting.fb_token)	
-		@friends = @graph.get_connections("me","friends")
-
-		@dup = 0
-		@contacts = FbContact.find_all_by_user_id(@user.id)
-
-
-
-		if (@contacts.count >0)
-			#check for new or old friends
-			@f_live = []
-			@f_db = []
-			@friends.each do |f|
-				@f_live << f["id"].to_i
-			end
-			@contacts.each do |c|
-				@f_db << c.friend_id
-			end
-			#make new
-			@f_live.each_with_index do |fid,index|
-				unless (@f_db.include? fid)
-					friend = FbContact.new(user_id: @user.id, friend_id: fid, name: @friends[index]["name"], photo: @graph.get_picture(fid))
-					friend.save!
-				end
-			end
-			#delete old
-			@f_db.each_with_index do |fid,index|
-				unless (@f_live.include? fid)
-					friend = @contacts[index]
-					friend.destroy
-				end
-			end
-			flash[:notice] = "you have friends"
-			return
-		end
-
-		@images =[]
-		@friends.each_slice(50) do |friends|
-			@images << @graph.batch do |batch_api|
-				friends.each do |f|
-					batch_api.get_picture(f["id"])
-				end
-			end
-		end
-		@fb_friends_images = []
-		@images.each do |list|
-			list.each do |image|
-				@fb_friends_images << image
-			end
-		end
-
-		@friends.each_with_index do |f,index|
-			friend = FbContact.new(user_id: @user.id, friend_id: f["id"],name: f["name"], photo: @fb_friends_images[index])
-			friend.save!
-		end
-	end
-	
-	def fb_wall
-		@user = User.find(session[:id])
-		@setting ||= Setting.find_by_user_id(@user.id)
-		@graph = Koala::Facebook::API.new(@setting.fb_token)	
-		@friend_id = params[:friend_id]
-
-		uri = URI.parse("https://graph.facebook.com/#{@friend_id}/feed")
-		http = Net::HTTP.new(uri.host, uri.port)
-		http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-		http.use_ssl = true
-		request = Net::HTTP::Get.new(uri.path+"?access_token=#{@setting.fb_token}")
-		@feed = JSON.parse(http.request(request).body)
+	def fb_wall()
+		@friend = params[:friend_id]
 	end
 
-	def post_fb_wall
-		@user = User.find(session[:id])
-		@setting ||= Setting.find_by_user_id(@user.id)
-		@graph = Koala::Facebook::API.new(@setting.fb_token)
+	def post_fb_wall()
+		@graph = Koala::Facebook::API.new(session[:fb_access_token] )
 		@graph.put_wall_post(params[:message],{name: 'test'},params["friend_id"])
 		flash[:notice] = "Your message #{params[:message]} has been posted on #{params[:friend_id]}'s wall"
-
-		redirect_to action: :fb_wall, friend_id: params["friend_id"]
+		flash[:notice] = params[:friend_id]
+		redirect_to action: :index
 	end
 	
 	def update_fb_status	
-		@user = User.find(session[:id])
-		@setting ||= Setting.find_by_id(@user.id)
-		@graph = Koala::Facebook::API.new(@setting.fb_token)
+		@graph = Koala::Facebook::API.new(session[:fb_access_token] )
 		@graph.put_wall_post(params[:fb_status_message])
 		redirect_to action: :index
 	end
 
-	def delete_friend
-
-
-		@user = User.find(session[:id])
-		@setting ||= Setting.find_by_user_id(@user.id)
-		@graph = Koala::Facebook::API.new(@setting.fb_token)	
-		@friend_id = params[:friend_id]
-		@me = @graph.get_object("me")["id"]
-
-		#uri = URI.parse("https://www.facebook.com/#{@me}/members")
-		uri = URI.parse("https://graph.facebook.com")
-		http = Net::HTTP.new(uri.host, uri.port)
-		http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-		http.use_ssl = true
-		#request = Net::HTTP::Delete.new(uri.path)
-		request = Net::HTTP::Post.new(uri.request_uri)
-		#request.set_form_data(members: "#{@friend_id}", access_token: @setting.fb_token)
-
-		para = { method: :delete,
-			relative_url: "#{@me}/members/#{@friend_id}"
-		}
-		params={	access_token: @setting.fb_token,
-			batch: "["+para.to_json+ "]"
-		}
-		request.body = params.to_query
-		@response = http.request(request).body
-		flash[:notice] = "Sending and accepting friend requests is not available via the Facebook Graph API for regular user accounts."
+	def get_fb_friend_list
+		@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/profiles')
+		@facebook_cookies ||= @oauth.get_user_info_from_cookies(cookies) 
+		session[:fb_access_token] = @facebook_cookies["access_token"]
+		@graph = Koala::Facebook::API.new(session[:fb_access_token] )
+		@friends = @graph.get_connections("me", "friends")
+		@fb_friends_images = []
+		@fb_friends_list = []
+		@friends.each do |f|
+			@fb_friends_images << @graph.get_picture(f["id"])
+			@fb_friends_list << f["id"]
+		end
+		flash[:fb_friends_images] = @fb_friends_images
+		flash[:fb_friends_list] = @fb_friends_list
+		redirect_to action: :index
 	end
 
+	def fb_logout
+		reset_session
+		redirect_to action: :index
+	end
 
 end

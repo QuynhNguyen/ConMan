@@ -6,7 +6,6 @@ gem 'googlevoiceapi'
 gem 'tlsmail'
 gem 'mail'
 
-
 #haml
 gem 'haml-rails', '>= 0.3.4'
 
@@ -36,14 +35,6 @@ end
 gem 'jquery-rails'
 gem "koala"
 gem 'twitter_oauth'
-gem 'gmail'
-gem 'google-api-client'
-gem 'google_plus'
-gem 'json'
-gem 'nokogiri'
-gem 'gmail'
-
-
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

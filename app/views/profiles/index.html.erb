@@ -6,23 +6,20 @@
     </a>
     <div class="media-body">
       <h4 class="media-heading"><a href="/settings" class="btn btn-info">Get Social!</a></h4>
-        <% if @User.show_fn %>
+        <% if @User.show_fn == 1%>
           <b>First Name: </b> <%= @User.first_name %>
         <% end %> <br/>
-        <% if @User.show_ln %>
+        <% if @User.show_ln == 1 %>
           <b>Last Name: </b> <%= @User.last_name %>
         <% end %> <br/>
-        <% if @User.show_addr %>
+        <% if @User.show_addr == 1%>
           <b>Address: </b> <%= @User.address %>
         <% end %> <br/>
-        <% if @User.show_email %>
+        <% if @User.show_email == 1%>
           <b>Email: </b> <%= @User.email %>
         <% end %> <br/>
-        <% if @User.show_phone %>
+        <% if @User.show_phone == 1 %>
           <b>Phone: </b> <%= @User.phone %>
-        <% end %> <br/>
-        <% if @User.show_birthday %>
-          <b>Birthday: </b> <%= @User.birthday %>
         <% end %> <br/>
        
         <p><b>Status: </b> <%= 

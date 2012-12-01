@@ -13,7 +13,7 @@
     %tr
       %td= User.find(private_message.from_user).username
       %td= link_to "#{private_message.subject}", private_message_path(private_message)
-      %td= private_message.date.in_time_zone("Pacific Time (US & Canada)").strftime("%b %e, %Y %l:%m %p")
+      %td= private_message.date.in_time_zone("Pacific Time (US & Canada)").strftime("%b %d, %Y %I:%M %p")
       - if private_message.read == false
         %td="UNREAD"
       - else

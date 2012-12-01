@@ -21,7 +21,7 @@ class SentController < ApplicationController
 		@user_id = User.where("username = '#{params[:private_message][:user]}'").first.id
 		@private_message = PrivateMessage.create(message: params[:private_message][:message], date: DateTime.now, subject: params[:private_message][:subject], from_user: session[:id], user: @user_id, read: false)
 		flash[:notice] = "Message was successfully sent!"
-		redirect_to sent_path
+		redirect_to sent_index_path
 	end
 
 	def edit
@@ -36,7 +36,7 @@ class SentController < ApplicationController
 		@private_message = PrivateMessage.find(params[:id])
 		@private_message.destroy
 		flash[:notice] = "Message deleted."
-		redirect_to sent_path
+		redirect_to sent_index_path
 	end
 
 	protected

@@ -27,21 +27,31 @@ class UsersController < ApplicationController
   end
 
   def new
-    # default: render 'new' template
+    if session[:id] != nil
+      if (User.find(session[:id]).admin == 0)
+        flash[:notice] = "You are login"
+        redirect_to "/profiles/#{session[:id]}"
+      end
+    end
   end
 
  def create
     if params[:user][:password] == params[:user][:repassword]
+      if User.where("username = '#{params[:user][:username]}' OR email = '#{params[:user][:email]}'").size == 0
         @user = User.create!(:admin => params[:user][:admin], :username => params[:user][:username], :first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :address => params[:user][:address], :phone => params[:user][:phone], :email => params[:user][:email], :password => User.encrypt(params[:user][:password]))
     
-      flash[:notice] = "#{@user.username} was successfully created."
-      if (session[:id] == nil)
-        redirect_to log_in_index_path
-      elsif(User.find(session[:id]).admin == 1)
-        redirect_to users_path
+        flash[:notice] = "#{@user.username} was successfully created."
+        if (session[:id] == nil)
+          redirect_to log_in_index_path
+        elsif(User.find(session[:id]).admin == 1)
+          redirect_to users_path
+        end
+      else
+        flash[:notice] = "Username or email is exist in our database."
+        redirect_to new_user_path
       end
     else
-      flash[:notice] = "Password and confirm password doesn't match."
+      flash[:warning] = "Password and confirm password doesn't match."
       redirect_to new_user_path
     end
   end

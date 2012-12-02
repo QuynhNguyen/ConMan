@@ -5,11 +5,11 @@ one:
   screen_name: MyString
   photo: MyString
   user_id: 1
-  id: 1
+  friend_id: 1
 
 two:
   name: MyString
   screen_name: MyString
   photo: MyString
   user_id: 1
-  id: 1
+  friend_id: 1

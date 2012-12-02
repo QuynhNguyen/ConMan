@@ -1,2 +1,18 @@
-%h1 Contacts#index
-%p Find me in app/views/contacts/index.html.haml
+-if (@fb_contacts.count >0)
+	%h3 Facebook
+	- @fb_contacts.each do |f|
+		%b= f.name
+		= link_to image_tag(f.photo), controller: :fb, action: :fb_wall, friend_id: "#{f.friend_id}"
+
+-if (@google_contacts.count >0)
+	%h3 Google
+	- @google_contacts.each do |contact|
+		%p
+			%b= contact.name
+			= mail_to "#{contact.email}", "#{contact.email}"
+
+-if (@twitter_contacts.count >0)
+	%h3 Twitter
+	- @twitter_contacts.each do |f|
+		%b= f.name
+		= link_to image_tag(f.photo), "https://twitter.com/#{f["screen_name"]}"

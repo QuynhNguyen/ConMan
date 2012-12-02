@@ -5,7 +5,7 @@ class CreateTwitterContacts < ActiveRecord::Migration
       t.string :screen_name
       t.string :photo
       t.integer :user_id
-      t.integer :id
+      t.integer :friend_id
 
       t.timestamps
     end

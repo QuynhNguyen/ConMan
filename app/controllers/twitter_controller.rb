@@ -12,6 +12,42 @@ class TwitterController < ApplicationController
 		@home_timeline = @client.home_timeline()
 		@followers = @client.all_followers()
 		@friends = @client.friends()
+
+		#@client.unfriend(15846407)
+
+		@twitter_contacts = TwitterContact.find_all_by_user_id(session[:id])
+
+		if (@twitter_contacts.count > 0)
+			@db_screen_names = []
+			@live_screen_names = []
+			@twitter_contacts.each do |old|
+				@db_screen_names << old.screen_name
+			end
+			@friends.each do |f|
+				@live_screen_names << f["screen_name"]
+			end
+
+			@db_screen_names.each_with_index do |old,index|
+				unless (@live_screen_names.include? old)
+					@twitter_contacts[index].destroy
+				end
+			end
+
+			@live_screen_names.each_with_index do |neww, index|
+				unless (@db_screen_names.include? neww)
+					contact = TwitterContact.new(id: @friends[index]["id"].to_i, user_id: session[:id], name: @friends[index]["name"], screen_name: neww, photo: @friends[index]["profile_image_url"])
+					contact.save!
+				end
+			end
+			return
+
+		end
+		@friends.each do |f|
+			contact = TwitterContact.new(id: f["id"].to_i, user_id: session[:id], name: f["name"], screen_name: f["screen_name"], photo: f["profile_image_url"])
+			contact.save!
+		end
+
+
 	end
 
 	def tweet

@@ -11,7 +11,6 @@
 - if(@friends)
 	%h4 Top friends
 	- @friends.each do |f|
-		= f["name"] 
-		= image_tag(f["profile_image_url"])
+		%b= f["name"] 
+		= link_to image_tag(f["profile_image_url"]), "https://twitter.com/#{f["screen_name"]}"
 
-%h3 debug

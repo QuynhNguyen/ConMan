@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121125211742) do
+ActiveRecord::Schema.define(:version => 20121202082734) do
 
   create_table "fb_contacts", :force => true do |t|
     t.integer  "user_id"
@@ -64,6 +64,15 @@ ActiveRecord::Schema.define(:version => 20121125211742) do
     t.integer  "user_id"
   end
 
+  create_table "twitter_contacts", :force => true do |t|
+    t.string   "name"
+    t.string   "screen_name"
+    t.string   "photo"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "password"
@@ -73,13 +82,15 @@ ActiveRecord::Schema.define(:version => 20121125211742) do
     t.string   "address"
     t.integer  "phone"
     t.integer  "admin"
+    t.datetime "birthday"
     t.integer  "show_fn"
     t.integer  "show_ln"
     t.integer  "show_addr"
     t.integer  "show_phone"
     t.integer  "show_email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "show_birthday"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end

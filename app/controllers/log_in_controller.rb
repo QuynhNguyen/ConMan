@@ -36,4 +36,11 @@ class LogInController < ApplicationController
     redirect_to log_in_index_path
   end
 
+  def log_out
+    session[:id] = nil
+    reset_session
+    session.delete :id
+    cookies.delete :id
+    redirect_to log_in_index_path
+  end
 end

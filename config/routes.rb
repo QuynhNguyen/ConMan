@@ -2,6 +2,8 @@
 ConMan::Application.routes.draw do
 
 
+  get "contacts/index"
+
   root :to => 'frontpage#index'
   
   get "google/g_login"

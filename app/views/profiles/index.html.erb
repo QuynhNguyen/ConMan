@@ -38,9 +38,11 @@
     <% if (@fb_token) %>
     <%= link_to image_tag("fb_logo.png", :size => "48x48"),controller: :fb, action: :index %>
     <% end %>
-    <%= link_to image_tag("twitter_logo.png", :size => "48x48"), {controller: :twitter, action: :index} %>
     <% if (@google_code) %>
     <%= link_to image_tag("google_logo.png", :size => "48x48"), {controller: :google, action: :index}  %>
+    <% end %>
+    <% if (@twitter_contact) %>
+    <%= link_to image_tag("twitter_logo.png", :size => "48x48"), {controller: :twitter, action: :twitter_login}, method: :post %>
     <% end %>
 
   </li>

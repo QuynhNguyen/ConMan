@@ -14,6 +14,7 @@
     <%#= stylesheet_link_tag    "application", :media => "all" %>
 
     <%= csrf_meta_tags %>
+    <%= javascript_include_tag "application" %>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -29,7 +30,6 @@
   </head>
 <body>
   <div id="fb-root"></div>
-  <%= javascript_include_tag "application" %>
    <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -71,6 +71,7 @@
               <li><a href=<%= "/users/#{session[:id]}/edit"%>>User Information</a></li>
               <li><a href=<%= "/privacy/#{session[:id]}/edit"%>>Privacy Setting</a></li>
               <li><%= link_to 'Social Media', controller: :settings %></li>
+              <li><%= link_to 'Contacts', controller: :contacts %></li>
               <% if User.find(session[:id]).admin == 1 %>
                 <li class="nav-header"><i class="icon-user"></i>Admin</li>
                 <li><a href="/users">View Users</a></li>
@@ -80,12 +81,6 @@
               <li><a href="/private_messages/new">New</a></li>
               <li><a href="/private_messages">Inbox</a></li>
               <li><a href="/sent">Outbox</a></li>
-              <% if @fb_friend_images %>
-              <li class="nav-header">Friends</li>
-                <% @fb_friend_images.each do |photo| %>
-                  <li><%= image_tag(photo) %></li>
-                <% end %>
-              <% end %>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->

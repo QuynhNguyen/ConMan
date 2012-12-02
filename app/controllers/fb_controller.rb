@@ -10,14 +10,17 @@ class FbController < ApplicationController
 		if (@setting)
 			begin
 				@fb_token = @setting.fb_token
-				#flash[:notice] = 'token exists'
+				if (@fb_token.empty?)
+					raise 'empty token'
+				end
+				flash[:notice] = 'token exists'
 			rescue Exception
 				@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/fb/index')
 				@fb_cookies ||= @oauth.get_user_info_from_cookies(cookies) 
 				@fb_token = @oauth.exchange_access_token(@fb_cookies["access_token"])
 				@setting.fb_token = @fb_token
 				@setting.save!
-				#flash[:notice] = 'update token'
+				flash[:notice] = 'update token'
 			end
 		else
 			@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/fb/index')
@@ -25,7 +28,7 @@ class FbController < ApplicationController
 			@fb_token = @oauth.exchange_access_token(@fb_cookies["access_token"])
 			@setting = Setting.new(user_id: @user.id, fb_token: @fb_token)
 			@setting.save!
-			#flash[:notice] = 'creating token'
+			flash[:notice] = 'creating token'
 		end
 		
 	
@@ -37,6 +40,7 @@ class FbController < ApplicationController
 		@fb_inbox = []
 		@actors = []
 		@authors = []
+
 
 		@online_friends, @fb_status, @friends_request, @feed, @threads = @graph.batch do |batch_api|
 			batch_api.fql_query("SELECT uid, name FROM user WHERE online_presence IN ('active') AND uid IN (SELECT uid2 FROM friend WHERE uid1 = me())")
@@ -81,11 +85,12 @@ class FbController < ApplicationController
 		end
 		#to = Time.now.to_i
 		from = 7.day.ago.to_i
-		@fb_inbox = @graph.batch do |batch_api|
-			@threads.each do |t|
-				batch_api.fql_query("SELECT author_id, body FROM message WHERE thread_id = #{t["thread_id"]} AND created_time > #{from}")
-			end
-		end
+		#@fb_inbox = @graph.batch do |batch_api|
+		#	@threads.each do |t|
+		#		batch_api.fql_query("SELECT author_id, body FROM message WHERE thread_id = #{t["thread_id"]} AND created_time > #{from}")
+		#	end
+		#end
+	
 		@authors = @graph.batch do |batch_api|
 			@fb_inbox.each do |m|
 				m.each do |message|

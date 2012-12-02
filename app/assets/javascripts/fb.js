@@ -1,10 +1,4 @@
 
-n=document.getElementById('fb-root');
-if(!n){
-  console.log('creating the divs');
-  n=document.createElement('div');
-  n.id='fb-root';
-}
 
 
   window.fbAsyncInit = function() {
@@ -24,7 +18,6 @@ if(!n){
       } else if (response.status === 'not_authorized') {
         // not_authorized
         fbLogin();
-
       } else {
         // not_logged_in
         console.log('not logged in');

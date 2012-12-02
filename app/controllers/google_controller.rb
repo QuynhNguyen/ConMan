@@ -36,17 +36,18 @@ class GoogleController < ApplicationController
 
 	if (@setting)
 		if (params[:code])
-			begin
+			if (@setting.google_code)
 				param = {
 				  refresh_token: @setting.google_code,
 				  client_id: CLIENT_ID,
 				  client_secret: CLIENT_SECRET,
 				  grant_type: 'refresh_token'
 				}
+	
 				request.body = param.to_query
 				@response = JSON.parse(http.request(request).body)
 				flash[:notice] = "using refresh token"
-			rescue Exception
+			else
 				param = {
 				  code: params[:code],
 				  client_id: CLIENT_ID,
@@ -61,7 +62,7 @@ class GoogleController < ApplicationController
 				flash[:notice] = "update refresh token"
 			end
 		else
-			begin
+			if (@setting.google_code)
 				param = {
 				  refresh_token: @setting.google_code,
 				  client_id: CLIENT_ID,
@@ -71,7 +72,7 @@ class GoogleController < ApplicationController
 				request.body = param.to_query
 				@response = JSON.parse(http.request(request).body)
 				flash[:notice] = "using refresh token"
-			rescue Exception
+			else
 				#flash[:notice] = "Please sign in your google account"
 				redirect_to controller: :settings, action: :index			
 				return
@@ -98,19 +99,57 @@ class GoogleController < ApplicationController
 			return
 		end
 	end
-	#@gmail = Gmail.connect("project.conman@gmail.com","Raging_Flamingos")
-
-	@contacts = GoogleContact.find_all_by_user_id(@user.id)
-	if (@contacts.count >0)
-		#flash[:notice] = "you have friends"
-		return
-	end
 
 	@token = @response["access_token"]
 	@url = "https://www.google.com/m8/feeds/contacts/default/full?access_token=#{@token}"
 	@doc = Nokogiri::XML(open(@url))
 	@titles = []
 	@emails = @doc.xpath("//gd:email/@address")
+
+
+	@contacts = GoogleContact.find_all_by_user_id(@user.id)
+	if (@contacts.count >0)
+		titles = []
+		ids = []
+		@contact_db_email = []
+		@live_email = []
+		@emails.each do |email|
+			@live_email << email.to_s
+		end
+
+		#get existing contact list
+		@contacts.each do |contact|
+			@contact_db_email << contact.email
+		end
+
+		#get titles
+		@doc.css("entry").each do |e|
+			titles << e.css("title")[0].inner_text
+		end
+
+		#get live result IDs
+		contacts_id = @doc.search("id")
+		contacts_id.shift
+		contacts_id.each do |id|
+			ids  << id.inner_text[/[a-zA-Z0-9]*$/]
+		end
+
+		#remove old contacts
+		@live_email.each_with_index do |email, index|
+			unless (@contact_db_email.include? email)
+				contact = GoogleContact.new(user_id: @user.id, friend_id: ids[index], email: @emails[index].to_s, name: titles[index])
+				contact.save!
+			end
+		end
+		@contact_db_email.each_with_index do |email, index|
+			unless (@live_email.include? email)
+				@contacts[index].destroy
+			end
+		end
+		return
+	end
+
+
 	@doc.css("entry").each do |e|
 		@titles << e.css("title")[0].inner_text
 	end

@@ -1,4 +1,4 @@
-e 'nokogiri'
+require 'nokogiri'
 require 'open-uri'
 require_relative '../contact'
  

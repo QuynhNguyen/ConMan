@@ -9,7 +9,7 @@ class Contacts
    
   #get and parse the contacts with your access token
   def Contacts.get token
-    url = &quot;https://www.google.com/m8/feeds/contacts/default/full?client_id=#{CLIENT_ID}&amp;access_token=#{token}&amp;max-results=#{MAX_RESULTS}&quot;
+    url = "https://www.google.com/m8/feeds/contacts/default/full?client_id=#{CLIENT_ID}&amp;access_token=#{token}&amp;max-results=#{MAX_RESULTS}"
     p url
      
     contacts = [] #keeps track of all the contacts

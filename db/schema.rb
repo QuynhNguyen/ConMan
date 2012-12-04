@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(:version => 20121204123728) do
 
   create_table "private_messages", :force => true do |t|
     t.integer  "user"
-    t.integer  "from"
+    t.integer  "from_user"
     t.string   "message"
     t.datetime "date"
     t.boolean  "read"
@@ -84,15 +84,13 @@ ActiveRecord::Schema.define(:version => 20121204123728) do
     t.string   "address"
     t.integer  "phone"
     t.integer  "admin"
-    t.datetime "birthday"
     t.integer  "show_fn"
     t.integer  "show_ln"
     t.integer  "show_addr"
     t.integer  "show_phone"
     t.integer  "show_email"
-    t.integer  "show_birthday"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

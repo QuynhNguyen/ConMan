@@ -2,7 +2,7 @@
 class TwitterController < ApplicationController
 
 	def index
-		access_token = session[:access_token]
+		access_token = session[:twitter_access_token]
 		@client = TwitterOAuth::Client.new(
 		    :consumer_key => 'H3fbcU3ByJj1lT81ctvISg',
 			:consumer_secret => 'exshVfiVaJv1WDw1LLgMcPTbfeQrONEyRBFxPisMY',
@@ -51,7 +51,7 @@ class TwitterController < ApplicationController
 	end
 
 	def tweet
-		access_token = session[:access_token]
+		access_token = session[:twitter_access_token]
 		@client = TwitterOAuth::Client.new(
 		    :consumer_key => 'H3fbcU3ByJj1lT81ctvISg',
 			:consumer_secret => 'exshVfiVaJv1WDw1LLgMcPTbfeQrONEyRBFxPisMY',
@@ -88,7 +88,16 @@ class TwitterController < ApplicationController
 		  request_token.secret,
 		  :oauth_verifier => params[:oauth_verifier]
 		)
-		session[:access_token] = access_token
+		@setting = Setting.find_by_user_id(session[:id])
+		if (@setting)
+			@setting.twitter_token = access_token.token
+			@setting.twitter_secret = access_token.secret
+			@setting.save!
+		else
+			setting = Setting.new(user_id: session[:id], twitter_token: access_token.token, twitter_secret: access_token.secret)
+			setting.save!
+		session[:twitter_access_token] = access_token
+		end
 		redirect_to action: :index
 	end
 

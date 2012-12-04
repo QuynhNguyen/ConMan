@@ -7,20 +7,20 @@
     <div class="media-body">
       <h4 class="media-heading"><a href="/settings" class="btn btn-info">Get Social!</a></h4>
         <% if @User.show_fn == 1%>
-          <b>First Name: </b> <%= @User.first_name %>
-        <% end %> <br/>
+          <b>First Name: </b> <%= @User.first_name %><br/>
+        <% end %> 
         <% if @User.show_ln == 1 %>
-          <b>Last Name: </b> <%= @User.last_name %>
-        <% end %> <br/>
+          <b>Last Name: </b> <%= @User.last_name %> <br/>
+        <% end %> 
         <% if @User.show_addr == 1%>
-          <b>Address: </b> <%= @User.address %>
-        <% end %> <br/>
+          <b>Address: </b> <%= @User.address %> <br/>
+        <% end %> 
         <% if @User.show_email == 1%>
-          <b>Email: </b> <%= @User.email %>
-        <% end %> <br/>
+          <b>Email: </b> <%= @User.email %> <br/>
+        <% end %> 
         <% if @User.show_phone == 1 %>
-          <b>Phone: </b> <%= @User.phone %>
-        <% end %> <br/>
+          <b>Phone: </b> <%= @User.phone %> <br/>
+        <% end %> 
        
         <p><b>Status: </b> <%= 
          begin

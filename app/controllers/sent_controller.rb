@@ -36,7 +36,7 @@ class SentController < ApplicationController
 		@private_message = PrivateMessage.find(params[:id])
 		@private_message.destroy
 		flash[:notice] = "Message deleted."
-		redirect_to sent_path
+		redirect_to sent_index_path
 	end
 
 	protected

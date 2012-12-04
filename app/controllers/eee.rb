@@ -56,7 +56,7 @@ class Contacts
       phone_numbers = []
       if item.xpath('./phonenumber')[0] != nil
         item.xpath('./phonenumber').each do |number|
-          phone_numbers &lt;&lt; item.xpath('./phonenumber')[j].children.inner_text
+          phone_numbers << item.xpath('./phonenumber')[j].children.inner_text
           i +=1
         end
       end

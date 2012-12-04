@@ -5,7 +5,7 @@ require_relative '../contact'
 class Contacts
   #specify the number of contacts you need
   MAX_RESULTS = 3000
-  CLIENT_ID = &quot;YOUR CLIENT ID&quot;
+  CLIENT_ID = "YOUR CLIENT ID"
    
   #get and parse the contacts with your access token
   def Contacts.get token
@@ -19,7 +19,7 @@ class Contacts
        
       #get external id
       base_uri = item.xpath('./id')[0].children.inner_text
-      external_id = base_uri.gsub(/^.*/(w+)$/,'1')
+      external_id = base_uri.gsub(/^.*\/(w+)$/,'1')
  
       #get contact name
       first_name = ''
@@ -46,7 +46,7 @@ class Contacts
       email_addresses = []
       i = 0
       item.xpath('./email').each do |email|
-        email_addresses &lt;&lt; item.xpath('./email')[i].attributes['address'].inner_text
+        email_addresses << item.xpath('./email')[i].attributes['address'].inner_text
         i+=1
       end
       p email_addresses
@@ -64,13 +64,13 @@ class Contacts
        
       #create a new contact - see below code for the Contact object
       contact = Contact.new({
-        :source =&gt; 'google',
-        :external_id =&gt; external_id,
-        :first_name =&gt; first_name,
-        :middle_name =&gt; middle_name,
-        :last_name =&gt; last_name,
-        :emails =&gt; email_addresses,
-        :phones =&gt; phone_numbers
+        :source => 'google',
+        :external_id => external_id,
+        :first_name => first_name,
+        :middle_name => middle_name,
+        :last_name => last_name,
+        :emails => email_addresses,
+        :phones => phone_numbers
       })
       contacts.push( contact  )
     end

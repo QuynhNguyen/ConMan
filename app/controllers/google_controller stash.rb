@@ -4,7 +4,6 @@ require 'net/https'
 require 'uri'
 require "json"
 require 'nokogiri'
-require 'gdata'
 require 'gmail'
 
 class GoogleController < ApplicationController

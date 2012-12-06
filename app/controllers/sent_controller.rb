@@ -1,5 +1,4 @@
 class SentController < ApplicationController
-	after_filter :mark_read, :only => [:show]
 
 	def index
 		if session[:id] != nil

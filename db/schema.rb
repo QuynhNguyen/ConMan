@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(:version => 20121204123728) do
     t.string   "last_name"
     t.string   "email"
     t.string   "address"
-    t.integer  "phone"
+    t.integer  "phone", :limit => 8
     t.integer  "admin"
     t.integer  "show_fn"
     t.integer  "show_ln"

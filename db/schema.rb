@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121204123728) do
+ActiveRecord::Schema.define(:version => 20121206050044) do
 
   create_table "fb_contacts", :force => true do |t|
     t.integer  "user_id"
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(:version => 20121204123728) do
     t.string   "last_name"
     t.string   "email"
     t.string   "address"
-    t.integer  "phone", :limit => 8
+    t.integer  "phone"
     t.integer  "admin"
     t.integer  "show_fn"
     t.integer  "show_ln"

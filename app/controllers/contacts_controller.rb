@@ -5,9 +5,15 @@ class ContactsController < ApplicationController
   def index
   	@user = User.find(session[:id])
   	@fb_contacts = get_fb_contacts()
-  	@google_contacts = get_google_contacts()
-  	#@twitter_contacts = []
-  	@twitter_contact = twitter_authorize()
+    @google_contacts = []
+    @twitter_contacts = []
+  	if (@fb_contacts.count>0)
+  		@google_contacts = get_google_contacts()
+  	end
+  	if (@google_contacts.count>0)
+  		@twitter_contact = twitter_authorize()
+  		##
+  	end
   end
 
   def get_google_contacts
@@ -63,7 +69,7 @@ class ContactsController < ApplicationController
 				else
 					flash[:notice] = "Please sign in your google account"
 					redirect_to controller: :settings, action: :index			
-					return
+					return []
 				end
 			end
 
@@ -84,7 +90,7 @@ class ContactsController < ApplicationController
 			else
 				flash[:notice] = "Please sign in your google account"
 				redirect_to controller: :settings, action: :index
-				return
+				return []
 			end
 		end
 
@@ -155,6 +161,9 @@ class ContactsController < ApplicationController
 			contact.save!
 		end
 		@contacts = GoogleContact.find_all_by_user_id(@user.id)
+		if (@contacts.count ==0)
+			return []
+		end
 		return @contacts
   end
 
@@ -209,10 +218,11 @@ class ContactsController < ApplicationController
 
   def twitter_authorize
 		@setting = Setting.find_by_user_id(session[:id])
+
 		if (@setting)
 			twitter_token = @setting.twitter_token
 			if (!twitter_token)
-				flash[:notice] = "Please sign in your twitter account"
+				flash[:notice] = "Please sign in your twitter"
 				redirect_to controller: :settings, action: :index
 				return []
 			end
@@ -232,27 +242,16 @@ class ContactsController < ApplicationController
 		@setting ||= Setting.find_by_user_id(@user.id)
 
 		if (@setting)
-			begin
-				@fb_token = @setting.fb_token
-				if (@fb_token.empty?)
-					raise 'empty token'
-				end
-				flash[:notice] = 'token exists'
-			rescue Exception
-				@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/fb/index')
-				@fb_cookies ||= @oauth.get_user_info_from_cookies(cookies) 
-				@fb_token = @oauth.exchange_access_token(@fb_cookies["access_token"])
-				@setting.fb_token = @fb_token
-				@setting.save!
-				flash[:notice] = 'update token'
+			@fb_token = @setting.fb_token
+			if (!@fb_token)
+				flash[:notice] = "Please sign in your facebook account"
+				redirect_to controller: :settings, action: :index
+				return []
 			end
 		else
-			@oauth = Koala::Facebook::OAuth.new('430537743669484', '8dae7f1d828b5549c029724040921dc8','http://localhost:3000/fb/index')
-			@fb_cookies ||= @oauth.get_user_info_from_cookies(cookies) 
-			@fb_token = @oauth.exchange_access_token(@fb_cookies["access_token"])
-			@setting = Setting.new(user_id: @user.id, fb_token: @fb_token)
-			@setting.save!
-			flash[:notice] = 'creating token'
+			flash[:notice] = "Please sign in your facebook account"
+			redirect_to controller: :settings, action: :index
+			return []
 		end
 
 		@graph = Koala::Facebook::API.new(@setting.fb_token)	
@@ -307,6 +306,10 @@ class ContactsController < ApplicationController
 			friend.save!
 		end
 		@contacts = FbContact.find_all_by_user_id(@user.id)
+		if (@contacts.count == 0)
+			return []
+		end
 		return @contacts
+
   end
 end

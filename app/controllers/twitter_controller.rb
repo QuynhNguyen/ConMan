@@ -14,7 +14,7 @@ class TwitterController < ApplicationController
 		@friends = @client.friends()
 
 		#@client.unfriend(15846407)
-		@friend_tl = @client.friends_timeline(92367751)
+		@friend_tl = @client.public_timeline('samsungmobileusa')
 
 		@twitter_contacts = TwitterContact.find_all_by_user_id(session[:id])
 

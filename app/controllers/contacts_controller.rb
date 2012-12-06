@@ -40,7 +40,7 @@ class ContactsController < ApplicationController
 		
 					request.body = param.to_query
 					@response = JSON.parse(http.request(request).body)
-					flash[:notice] = "using refresh token"
+					#flash[:notice] = "using refresh token"
 				else
 					param = {
 					  code: params[:code],
@@ -53,7 +53,7 @@ class ContactsController < ApplicationController
 					@response = JSON.parse(http.request(request).body)
 					@setting.google_code = @response["refresh_token"]
 					@setting.save!
-					flash[:notice] = "update refresh token"
+					#flash[:notice] = "update refresh token"
 				end
 			else
 				if (@setting.google_code)
@@ -65,9 +65,9 @@ class ContactsController < ApplicationController
 					}
 					request.body = param.to_query
 					@response = JSON.parse(http.request(request).body)
-					flash[:notice] = "using refresh token"
+					#flash[:notice] = "using refresh token"
 				else
-					flash[:notice] = "Please sign in your google account"
+					#flash[:notice] = "Please sign in your google account"
 					redirect_to controller: :settings, action: :index			
 					return []
 				end

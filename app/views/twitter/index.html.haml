@@ -1,5 +1,3 @@
-=@friendtl
-=@friends
 
 = form_tag( controller: :twitter, action: :tweet) do
 	= label_tag(:tweet,"Enter a message")
@@ -13,7 +11,9 @@
 %p= #@followers
 - if(@friends)
 	%h4 Top friends
-	- @friends.each do |f|
-		%b= f["name"] 
-		= link_to image_tag(f["profile_image_url"]), "https://twitter.com/#{f["screen_name"]}"
+	%table{class: "table table-hover"}
+		- @friends.each do |f|
+			%tr
+			%td= f["name"] 
+			%td= link_to image_tag(f["profile_image_url"]), "https://twitter.com/#{f["screen_name"]}"
 

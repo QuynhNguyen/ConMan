@@ -33,7 +33,6 @@ class GoogleController < ApplicationController
 	request = Net::HTTP::Post.new(uri.request_uri)
 	request.content_type = "application/x-www-form-urlencoded"
 
-	flash[:notice] = @setting.twitter_token
 
 	if (@setting)
 		if (params[:code])

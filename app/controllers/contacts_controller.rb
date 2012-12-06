@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
   	@user = User.find(session[:id])
   	@fb_contacts = get_fb_contacts()
   	@google_contacts = get_google_contacts()
-  	@twitter_contacts = []
+  	#@twitter_contacts = []
   	@twitter_contact = twitter_authorize()
   end
 
@@ -210,18 +210,17 @@ class ContactsController < ApplicationController
   def twitter_authorize
 		@setting = Setting.find_by_user_id(session[:id])
 		if (@setting)
-			begin
-				twitter_token = @setting.twitter_token
-				if (twitter_token.empty?)
-					raise 'exception'
-				end
-			rescue Exception
-				flash[:notice] = "Please sign in twitter"
+			twitter_token = @setting.twitter_token
+			if (!twitter_token)
+				flash[:notice] = "Please sign in your twitter account"
 				redirect_to controller: :settings, action: :index
+				return []
 			end
+
 		else
-			flash[:notice] = "Please sign in twitter"
+			flash[:notice] = "Please sign in your twitter account"
 			redirect_to controller: :settings, action: :index
+			return []
 		end
 		@contacts = get_twitter_contacts()
 

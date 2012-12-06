@@ -12,13 +12,13 @@ class GoogleController < ApplicationController
 
   def g_login
    	@user = User.find(session[:id])
-		@setting ||= Setting.find_by_user_id(@user.id)
+	@setting ||= Setting.find_by_user_id(@user.id)
 
-		google_contacts_api_uri = 'https://www.google.com/m8/feeds'
-		google_calendar_api_uri = 'http://www.google.com/calendar/feeds/default/allcalendars/full'
-		plus_uri = "https://www.googleapis.com/auth/plus.me" 
-		url = "https://accounts.google.com/o/oauth2/auth?approval_prompt=force&scope=#{plus_uri}+#{google_contacts_api_uri}+#{google_calendar_api_uri}&response_type=code&redirect_uri=#{REDIRECT_URI}&client_id=#{CLIENT_ID}&lahl=en-US&from_login=1&access_type=offline"
-		redirect_to url
+	google_contacts_api_uri = 'https://www.google.com/m8/feeds'
+	google_calendar_api_uri = 'http://www.google.com/calendar/feeds/default/allcalendars/full'
+	plus_uri = "https://www.googleapis.com/auth/plus.me" 
+	url = "https://accounts.google.com/o/oauth2/auth?approval_prompt=force&scope=#{plus_uri}+#{google_contacts_api_uri}+#{google_calendar_api_uri}&response_type=code&redirect_uri=#{REDIRECT_URI}&client_id=#{CLIENT_ID}&lahl=en-US&from_login=1&access_type=offline"
+	redirect_to url
 
   end
   
@@ -33,6 +33,7 @@ class GoogleController < ApplicationController
 	request = Net::HTTP::Post.new(uri.request_uri)
 	request.content_type = "application/x-www-form-urlencoded"
 
+	flash[:notice] = @setting.twitter_token
 
 	if (@setting)
 		if (params[:code])
@@ -46,7 +47,7 @@ class GoogleController < ApplicationController
 	
 				request.body = param.to_query
 				@response = JSON.parse(http.request(request).body)
-				flash[:notice] = "using refresh token"
+				#flash[:notice] = "using refresh token"
 			else
 				param = {
 				  code: params[:code],
@@ -59,7 +60,7 @@ class GoogleController < ApplicationController
 				@response = JSON.parse(http.request(request).body)
 				@setting.google_code = @response["refresh_token"]
 				@setting.save!
-				flash[:notice] = "update refresh token"
+				#flash[:notice] = "update refresh token"
 			end
 		else
 			if (@setting.google_code)
@@ -71,7 +72,7 @@ class GoogleController < ApplicationController
 				}
 				request.body = param.to_query
 				@response = JSON.parse(http.request(request).body)
-				flash[:notice] = "using refresh token"
+				#flash[:notice] = "using refresh token"
 			else
 				#flash[:notice] = "Please sign in your google account"
 				redirect_to controller: :settings, action: :index			

@@ -2,12 +2,13 @@
 class TwitterController < ApplicationController
 
 	def index
-		access_token = session[:twitter_access_token]
+		@setting = Setting.find_by_user_id(session[:id])
+		#access_token = session[:twitter_access_token]
 		@client = TwitterOAuth::Client.new(
 		    :consumer_key => 'H3fbcU3ByJj1lT81ctvISg',
 			:consumer_secret => 'exshVfiVaJv1WDw1LLgMcPTbfeQrONEyRBFxPisMY',
-			:token => access_token.token,
-			:secret => access_token.secret
+			:token => @setting.twitter_token, 
+			:secret => @setting.twitter_secret
 		)
 		@home_timeline = @client.home_timeline()
 		@followers = @client.all_followers()

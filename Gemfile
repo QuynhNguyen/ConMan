@@ -59,10 +59,10 @@ gem 'nokogiri'
 # To use debugger
 # gem 'debugger'
 
-group :test, :development, :production do
+group :test, :development do
   gem 'rspec-expectations'
-  gem 'cucumber-rails'
-  gem 'cucumber-rails-training-wheels'
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels', :require => false
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'

@@ -1,9 +1,1 @@
-Sign your name here and commit
-
-Minh 
-QN
-kelvin was here
-Kelvin's branch
-Eric
-Michael
-Evan
+Contact Manager App Written In Ruby On Rails
